@@ -1,0 +1,38 @@
+{% block page_title %}Home{% endblock %}
+{% extends 'layout/base.twig' %}
+{% block title %}Club Cultural{% endblock %}
+
+{% block content %}
+    <section id="page" class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="hr-link">
+                    <hr class="mBtm-50 mTop-30" data-symbol="{{ category_name | upper }}">
+                    <div class="view-all">
+                        <a href="/search">
+                            Ver Todos
+                        </a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <search-deals category_slug="{{ category_name }}" search="{{ search }}"></search-deals>
+            </div>
+
+            <div class="col-sm-4 sidebar">
+                <div class="inner-side shadow">
+                    <ad-slider identifier="ad-slider" json-list="/json/homeClientLogosSlider.json"></ad-slider>
+                    {% if not Auth.check() %}
+                        {{ include('widgets/subscribe.twig') }}
+                    {% endif %}
+                    {{ include('widgets/popular_tags.twig') }}
+
+                    {#{{ include('widgets/categories.twig') }}
+                    {{ include('widgets/best_rated.twig') }}
+                    {{ include('widgets/latest-comments.twig') }}#}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

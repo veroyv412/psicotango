@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+
+{% block head %}
+<head>
+    <title>{% block title %}PSICOTANGO{% endblock %}</title>
+
+    <!-- These 3 MUST come first for Bootstrap to work. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#005281">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Stylesheets
+	============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/colors.php" type="text/css" />
+    <link rel="stylesheet" href="/css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="apple-touch-icon" sizes="72x72" href="#">
+    <link rel="apple-touch-icon" sizes="114x114" href="#">
+
+    <script>
+        window.Laravel = { 'csrfToken': '{{ csrf_token() }}'};
+        window.baseURL = '{{ url('/') }}';
+    </script>
+</head>
+{% endblock %}
+
+<body class="stretched">
+
+
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <div id="home" class="page-section" style="position:absolute;top:0;left:0;width:100%;height:200px;z-index:-2;"></div>
+
+
+    <!-- Header
+		============================================= -->
+    <header id="header" class="transparent-header dark">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu" class="style-3">
+
+                    <ul data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                        <li class="current"><a href="#" data-href="#wrapper"><div>Home</div></a></li>
+                        <li><a href="#" data-href="#section-psicotango"><div>Psicotango</div></a></li>
+                        <li><a href="#" data-href="#section-books"><div>Libros</div></a></li>
+                        <li><a href="#" data-href="#section-cursos"><div>Cursos Online</div></a></li>
+                        <li><a href="#" data-href="#section-prices"><div>Precios</div></a></li>
+                        <li><a href="#" data-href="#section-testimonials"><div>Testimonios</div></a></li>
+                        <li><a href="#" data-href="#section-contact"><div>Contactenos</div></a></li>
+                    </ul>
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header><!-- #header end -->
+
+    <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+
+        <div class="slider-parallax-inner">
+
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide dark" style="background-image: url('/images/fondo_landingpage.jpg');">
+                        <div class="container clearfix">
+                            <div class="slider-caption slider-caption-center">
+                                {#<h2 data-caption-animate="fadeInUp"></h2>#}
+                                <img class="img-responsive image_fade bottommargin-lg" style="display: block; margin-left: auto; margin-right: auto; width: 60%;" src="/images/psicotango_title.png">
+                                <p data-caption-animate="fadeInUp" data-caption-delay="200">
+                                    El Tango, como manifestación única en el mundo, es una expresión destacada, auténtica y
+                                    genuina de una cultura que necesita ser abrazada.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="clear"></div>
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <section id="section-psicotango" class="page-section"></section>
+
+            <section id="section-work" class="page-section topmargin-lg"></section>
+
+            <section id="section-team" class="page-section topmargin-lg"></section>
+
+            <section id="section-services" class="page-section topmargin-lg"></section>
+
+            <section id="section-pricing" class="page-section topmargin-lg"></section>
+
+
+        </div>
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark">
+
+        <div class="container">
+
+
+        </div>
+
+
+    </footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/plugins.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="/js/functions.js"></script>
+
+</body>
+
+</html>
+
