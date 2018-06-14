@@ -238,3 +238,7 @@ input.switch-toggle-round:checked + label:before,
 @media only screen and (max-width: 767px) {
 	.portfolio-filter li a:hover { color: #ff0000; }
 }
+
+.button-red {
+	background-color: #ff0000;
+}

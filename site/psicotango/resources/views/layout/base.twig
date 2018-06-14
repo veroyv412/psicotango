@@ -15,17 +15,21 @@
     <!-- Stylesheets
 	============================================= -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="/css/colors.php" type="text/css" />
-    <link rel="stylesheet" href="/css/swiper.css" type="text/css" />
-    <link rel="stylesheet" href="/css/dark.css" type="text/css" />
-    <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
-    <link rel="stylesheet" href="/css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/colors.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 
-    <link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="css/writer.css" type="text/css" />
+
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 
 
     <!--[if lt IE 9]>
@@ -43,8 +47,7 @@
 </head>
 {% endblock %}
 
-<body class="stretched">
-
+<body class="sticky-footer stretched">
 
 <!-- Document Wrapper
 	============================================= -->
@@ -52,7 +55,45 @@
 
     <div id="home" class="page-section" style="position:absolute;top:0;left:0;width:100%;height:200px;z-index:-2;"></div>
 
+    <div id="top-bar" class="transparent-topbar dark">
 
+        <div class="container clearfix">
+
+            <div class="col_half nobottommargin clearfix">
+
+                <!-- Top Links
+                ============================================= -->
+                <div class="top-links">
+                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
+                        <li class=""><a href="#" class="sf-with-ul">Language</a>
+                            <ul style="display: none;">
+                                <li><a href="#">Español</a></li>
+                                <li><a href="#">Ingles</a></li>
+                                <li><a href="#">Italiano</a></li>
+                                <li><a href="#">Frances</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .top-links end -->
+
+            </div>
+
+            <div class="col_half fright col_last clearfix nobottommargin">
+
+                <!-- Top Links
+                ============================================= -->
+                <div class="top-links">
+                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
+                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">Login</a></li>
+                        <li class="button button-rounded button-black"><a href="/signup" >Signup</a></li>
+                    </ul>
+                </div><!-- .top-links end -->
+
+            </div>
+
+        </div>
+
+    </div>
     <!-- Header
 		============================================= -->
     <header id="header" class="transparent-header dark">
@@ -67,15 +108,17 @@
                 ============================================= -->
                 <nav id="primary-menu" class="style-3">
 
-                    <ul data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-                        <li class="current"><a href="#" data-href="#wrapper"><div>Home</div></a></li>
+                    <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                        <li class="current"><a href="/"><div>Home</div></a></li>
                         <li><a href="#" data-href="#section-psicotango"><div>Psicotango</div></a></li>
+                        <li><a href="#" data-href="#section-team"><div>Docentes</div></a></li>
                         <li><a href="#" data-href="#section-books"><div>Libros</div></a></li>
                         <li><a href="#" data-href="#section-cursos"><div>Cursos Online</div></a></li>
                         <li><a href="#" data-href="#section-prices"><div>Precios</div></a></li>
                         <li><a href="#" data-href="#section-testimonials"><div>Testimonios</div></a></li>
                         <li><a href="#" data-href="#section-contact"><div>Contactenos</div></a></li>
                     </ul>
+
 
                 </nav><!-- #primary-menu end -->
 
@@ -85,17 +128,16 @@
 
     </header><!-- #header end -->
 
-    <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+    <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix dark">
 
         <div class="slider-parallax-inner">
 
             <div class="swiper-container swiper-parent">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide dark" style="background-image: url('/images/fondo_landingpage.jpg');">
+                    <div class="swiper-slide dark" style="background-image: url('images/fondo_landingpage.jpg');">
                         <div class="container clearfix">
                             <div class="slider-caption slider-caption-center">
-                                {#<h2 data-caption-animate="fadeInUp"></h2>#}
-                                <img class="img-responsive image_fade bottommargin-lg" style="display: block; margin-left: auto; margin-right: auto; width: 60%;" src="/images/psicotango_title.png">
+                                <img class="img-responsive image_fade bottommargin-lg center-block" src="images/psicotango_title.png">
                                 <p data-caption-animate="fadeInUp" data-caption-delay="200">
                                     El Tango, como manifestación única en el mundo, es una expresión destacada, auténtica y
                                     genuina de una cultura que necesita ser abrazada.
@@ -119,30 +161,414 @@
 
         <div class="content-wrap">
 
-            <section id="section-psicotango" class="page-section"></section>
+            <section id="section-psicotango" class="page-section">
+                <div class="container clearfix">
 
-            <section id="section-work" class="page-section topmargin-lg"></section>
+                    <div class="heading-block center">
+                        <h1>PSICO<span>TANGO</span></h1>
+                    </div>
 
-            <section id="section-team" class="page-section topmargin-lg"></section>
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="images/men_shoes.jpg" alt="Men Shoes" class="animated bounceInLeft" data-animate="bounceInLeft">
+                    </div>
 
-            <section id="section-services" class="page-section topmargin-lg"></section>
+                    <div class="col-xs-12 col-sm-9">
+                        <h4 class="center">
+                            Psicotango se basa en ideas como que el tango es un baile social, comunitario, gregario. Nacido para
+                            unir a los seres humanos. Cuenta con códigos y ritos necesarios para que ese conjunto sea sano, se
+                            fortalezca, aprendan uno de los otros. Brinda una formación complementaria
+                            respecto a las técnicas puras de la danza; tales como sus efectos benéficos
+                            en uno mismo, en la pareja y en el grupo. El tango es la metáfora de
+                            la vida misma. Conociéndonos nos daremos cuenta de nuestras
+                            grietas y bailaremos mejor la vida. Nadie puede estar solo, está
+                            claro en cada paso de esta danza.
+                        </h4>
 
-            <section id="section-pricing" class="page-section topmargin-lg"></section>
+                        <h4 class="center">
+                            Psicotango es una herramienta terapéutica
+                            desde lo social, psíquico y biológico . Se trata
+                            de poner el cuerpo y aprender a escucharlo.
+                            La teoría nos abre la cabeza, el cuerpo nos
+                            hará comprender la vida.
+                        </h4>
+
+                        <h4 class="center">
+                            Todos los ejercicios nos llevarán por ese
+                            camino.
+                        </h4>
+                    </div>
+                </div>
+
+            </section>
 
 
+            <section id="section-team" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1>DOCENTES</h1>
+                    </div>
+
+                    <div class="col-md-6 bottommargin">
+
+                        <div class="team team-list clearfix">
+                            <div class="team-image">
+                                <img src="images/monica_peri_profile.jpg" alt="Monica Peri" class="animated bounceInLeft" data-animate="bounceInLeft">
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title"><h4>Monica Peri</h4><span>Psicóloga</span></div>
+                                <div class="team-content">
+                                    Monica Peri, milonguera, periodista y locutora. Licenciada en Psicología.
+                                    Ha publicado cuentos en Página 12 y en la revista el Planeta Urbano.
+                                    Integrante del Grupo Dinzel. Escritora e Investigadora del Tango y su relación con el Psicoanalisis.
+                                    Coordinadora de Encuentros y Seminarios de Psicotango.
+                                    Nació en Bahía Blanca y vive actualmente en Buenos Aires, en una Casona del Abasto, barrio de Tango.
+                                </div>
+                                <a href="https://www.facebook.com/perimonica" class="social-icon si-rounded si-small si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 bottommargin">
+
+                        <div class="team team-list clearfix">
+                            <div class="team-image">
+                                <img src="images/monica_peri_profile.jpg" alt="Ignacio Lavalle" class="animated bounceInRight" data-animate="bounceInRight">
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title"><h4>Ignacio Lavalle</h4><span>Psicólogo</span></div>
+                                <div class="team-content">
+                                    Nacido en Bs. As. Obtuvo la Licenciatura en Psicología (UBA) y luego realizó
+                                    una maestría en Psicología Analítica, Fundación C.G. Jung de PA. Es escritor e
+                                    investigador de los efectos del tango-danza. Estudió tango desde 2002 en diversas
+                                    escuelas para quedarse en lo de los Dinzel. Coordina talleres de tango en hospitales
+                                    públicos con la finalidad de lograr efectos terapéuticos, así como encuentros de
+                                    Psicotango. Es también profesor de Tai-Chi-Chuan e integra ambas disciplinas.
+                                </div>
+                                <a href="https://www.facebook.com/perimonica" class="social-icon si-rounded si-small si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-books" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1>LIBROS <span>PUBLICADOS</span></h1>
+                    </div>
+
+                    <div id="portfolio" class="portfolio grid-container portfolio-3 portfolio-masonry clearfix">
+
+                        <div class="portfolio-item">
+                            <div class="book-wrap">
+                                <div class="book-card">
+                                    <a href="#" class="item-quick-view book-image" data-lightbox="ajax">
+                                        <img src="images/libroignacio.jpg" alt="Tango, una danza interior"></a>
+                                    <div class="book-detail">
+                                        <h2 class="book-title"><a href="#">Tango, una danza interior</a></h2>
+                                        <small class="book-category"><a href="#">03 Jun, 2016</a></small>
+                                        <!--<div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>Quick View</span></div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="book-wrap">
+                                <div class="book-card">
+                                    <a href="#" class="item-quick-view book-image" data-lightbox="ajax">
+                                        <img src="images/tapa-libro-web.jpg" alt="Book Image"></a>
+                                    <div class="book-detail">
+                                        <h2 class="book-title"><a href="#">Psicotango, danza como terapia</a></h2>
+                                        <small class="book-category"><a href="#">11 Mar, 2016</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="book-wrap">
+                                <div class="book-card">
+                                    <a href="#" class="item-quick-view book-image" data-lightbox="ajax">
+                                        <img src="images/tango_unabrazosanador.jpg" alt="Book Image">
+                                    </a>
+                                    <div class="book-detail">
+                                        <h2 class="book-title"><a href="#">Tango, un abrazo sanador</a></h2>
+                                        <small class="book-category"><a href="#">31 Jan, 2016</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="section-cursos" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1>CURSOS <span>ONLINE</span></h1>
+                        <p>(Nota: Aca iria el video que me paso Nacho de ustedes hablando de que se trata el curso)</p>
+                    </div>
+
+                    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                        <iframe src="http://www.youtube.com/embed/GHHPMKpDNtA" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-prices" class="page-section topmargin-lg dark">
+                <!-- Price Page Section - Parallax
+				============================================= -->
+                <div id="price" class="section page-section parallax nobottompadding nobottommargin dark" style="background-image: url('images/Coursera-Courses.jpg'); background-size: cover; height: 600px" data-stellar-background-ratio="0.8"></div>
+
+                <div class="container bottommargin dark clearfix" style="margin-top: -500px">
+                    <div class="heading-block bottommargin-lg center clearfix">
+                        <h1>PRECIOS DE LOS <span>CURSOS ONLINE</span></h1>
+                    </div>
+
+                    <!-- Price Items
+                    ============================================= -->
+                    <div class="dark col-padding clearfix" style="background-color: #121212">
+                        <div class="pricing bottommargin clearfix">
+                            <div class="col-sm-4">
+
+                                <div class="pricing-box">
+                                    <div class="pricing-title">
+                                        <h3>Módulo Uno</h3>
+                                    </div>
+                                    <div class="pricing-price">
+                                        <span class="price-unit">u$d</span>50
+                                    </div>
+                                    <div class="pricing-features">
+                                        <ul>
+                                            <li>4 Videos de 4 Cursos Introductorios</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-action">
+                                        <a href="/register" class="btn btn-danger btn-block btn-sm">Adquirir Curso</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                <div class="pricing-box best-price">
+                                    <div class="pricing-title">
+                                        <h3>Módulo Dos</h3>
+                                        <span>Mas popular</span>
+                                    </div>
+                                    <div class="pricing-price">
+                                        <span class="price-unit">u$d</span>80
+                                    </div>
+                                    <div class="pricing-features">
+                                        <ul>
+                                            <li>Lo del Módulo Uno</li>
+                                            <li>4 Videos de 4 Cursos Nivel Avanzado</li>
+                                            <li><i class="icon-star3"></i>
+                                                <i class="icon-star3"></i>
+                                                <i class="icon-star3"></i>
+                                                <i class="icon-star3"></i>
+                                                <i class="icon-star3"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-action">
+                                        <a href="/register" class="btn btn-danger btn-block btn-sm bgcolor border-color">Adquirir Curso</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                <div class="pricing-box">
+                                    <div class="pricing-title">
+                                        <h3>Seminario</h3>
+                                    </div>
+                                    <div class="pricing-price">
+                                        <span class="price-unit">u$d</span>100
+                                    </div>
+                                    <div class="pricing-features">
+                                        <ul>
+                                            <li>Lo del Módulo Uno</li>
+                                            <li>Lo del Módulo Dos</li>
+                                            <li>+ 2 videos mas de un Seminario de Psicotango</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-action">
+                                        <a href="/register" class="btn btn-danger btn-block btn-sm">Adquirir Curso</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section id="section-testimonials" class="section page-section parallax nobottompadding dark clearfix"
+                     style="background-image: url('images/uritorco_background.jpg');
+                 background-size: cover;" data-stellar-background-ratio="0.8">
+                <div class="container clearfix">
+
+                    <div class="heading-block bottommargin-lg center clearfix">
+                        <h1>TESTIMONIOS</h1>
+                    </div>
+
+                    <!-- Testimonial Slider
+                    ============================================= -->
+                    <div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding bottommargin-sm divcenter center clearfix" data-arrows="false" style="max-width: 700px">
+                        <div class="flexslider">
+                            <div class="slider-wrap">
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>Collaboratively enhance intermandated innovation via cutting-edge core competencies. Professionally extend covalent e-markets and mission-critical communities. Dramatically communicate revolutionary web services for interactive synergy. Synergistically.</p>
+                                        <div class="testi-meta">
+                                            Steve Jobs
+                                            <span class="ls0">Apple Inc.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>Intrinsicly synergize excellent content whereas user friendly action items. Rapidiously transition multimedia based information after top-line alignments. Proactively e-enable front-end e-commerce without mission-critical customer service.</p>
+                                        <div class="testi-meta">
+                                            Collis Ta'eed
+                                            <span class="ls0">Envato Inc.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>Compellingly engage multimedia based niche markets via value-added manufactured products. Competently formulate goal-oriented content for installed base users. Uniquely leverage other's granular ROI without 24/365 collaboration and idea-sharing.</p>
+                                        <div class="testi-meta">
+                                            John Doe
+                                            <span class="ls0">XYZ Inc.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="video-wrap" style="position: absolute; height: 100%; z-index: 1;">
+                    <div class="video-overlay" style="background: rgba(0,0,0,0.7);"></div>
+                </div>
+
+            </section>
+
+            <div id="section-contact" class="row norightmargin topmargin bottommargin-lg common-height">
+                <div class="heading-block bottommargin-lg center clearfix">
+                    <h1>CONTACTENOS</h1>
+                </div>
+
+                <div id="headquarters-map" class="col-md-8 gmap hidden-xs"></div>
+                <div class="col-md-4 dark" style="background-color: #ff0000;">
+                    <div style="padding: 40px;">
+                        <h4 class="font-body t600 ls1">Dejanos tus dudas</h4>
+
+                        <div style="font-size: 15px; line-height: 1.7;">
+                            <address style="line-height: 1.7;">
+                                Teniente Peron 2995 Pico 1C<br>
+                                Balvanera, Buenos Aires<br><br>
+                                <abbr title="Phone Number"><strong>Teléfono:</strong></abbr> (+54) 11 4870500<br>
+                                <abbr title="Email Address"><strong>Email:</strong></abbr> psicotango@gmail.com
+                            </address>
+
+                            <div class="clear topmargin-sm"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section><!-- #content end -->
 
     <!-- Footer
-    ============================================= -->
+		============================================= -->
     <footer id="footer" class="dark">
 
-        <div class="container">
+        <!-- Copyrights
+        ============================================= -->
+        <div id="copyrights">
 
+            <div class="container clearfix">
 
-        </div>
+                <div class="col_one_fourth">
+                    Copyrights &copy; 2018 Todos los derechos reservados.
+                    <br>
+                    Desarollado por Verónica Nisenbaum
+                </div>
 
+                <div class="col_three_fourth col_last tright">
+                    <div class="copyrights-menu copyright-links fright clearfix">
+                        <a href="/">Home</a>/
+                        <a href="#section-psicotango">Psicotango</a>/
+                        <a href="#section-team">Docentes</a>/
+                        <a href="#section-books">Libros</a>/
+                        <a href="#section-cursos">Cursos Online</a>/
+                        <a href="#section-prices">Precios</a>
+                        <a href="#section-contact">Contáctenos</a>
+                    </div>
+                    <div class="fright clearfix">
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+                            <i class="icon-facebook"></i>
+                            <i class="icon-facebook"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
+                            <i class="icon-twitter"></i>
+                            <i class="icon-twitter"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
+                            <i class="icon-gplus"></i>
+                            <i class="icon-gplus"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
+                            <i class="icon-pinterest"></i>
+                            <i class="icon-pinterest"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
+                            <i class="icon-vimeo"></i>
+                            <i class="icon-vimeo"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
+                            <i class="icon-github"></i>
+                            <i class="icon-github"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+                            <i class="icon-yahoo"></i>
+                            <i class="icon-yahoo"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
+                            <i class="icon-linkedin"></i>
+                            <i class="icon-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- #copyrights end -->
 
     </footer><!-- #footer end -->
 
@@ -156,11 +582,102 @@
 ============================================= -->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/plugins.js"></script>
+<script type="text/javascript" src="/js/hover3d.js" ></script>
 
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4"></script>
+<script type="text/javascript" src="/js/jquery.gmap.js"></script>
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="/js/functions.js"></script>
+<script type="text/javascript">
 
+    jQuery(window).load(function(){
+
+        // Google Map
+        jQuery('#headquarters-map').gMap({
+            address: 'Balvanera, Buenos Aires',
+            maptype: 'ROADMAP',
+            zoom: 13,
+            markers: [
+                {
+                    address: "Balvanera, Buenos Aires",
+                    html: "Balvanera, Buenos Aires",
+                    icon: {
+                        image: "images/map-icon-red.png",
+                        iconsize: [32, 36],
+                        iconanchor: [14,44]
+                    }
+                }
+            ],
+            doubleclickzoom: false,
+            controls: {
+                panControl: false,
+                zoomControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                streetViewControl: false,
+                overviewMapControl: false
+            },
+            styles: [
+                {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#ff0000"}]},
+                {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
+                {"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
+                {"featureType":"road","elementType":"all","stylers":[{"color":"#F0AD4E"},{"lightness":60}]},
+                {"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
+                {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+                {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
+                {"featureType":"water","elementType":"all","stylers":[{"color":"#2C3E50"},{"visibility":"on"}]}]
+        });
+
+    });
+
+    jQuery(document).ready( function(){
+
+        if( !jQuery('body').hasClass('device-touch') ) {
+
+            var lFollowX = 0,
+                    lFollowY = 0,
+                    x = 0,
+                    y = 0,
+                    friction = 1 / 30;
+
+            function moveBackground() {
+                x += (lFollowX - x) * friction;
+                y += (lFollowY - y) * friction;
+
+                translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+                jQuery('.move-bg').css({
+                    '-webit-transform': translate,
+                    '-moz-transform': translate,
+                    'transform': translate
+                });
+
+                window.requestAnimationFrame(moveBackground);
+            }
+
+            jQuery(window).on('mousemove click', function(e) {
+
+                var lMouseX = Math.max(-100, Math.min(100, jQuery(window).width() / 2 - e.clientX));
+                var lMouseY = Math.max(-100, Math.min(100, jQuery(window).height() / 2 - e.clientY));
+                lFollowX = (10 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+                lFollowY = (10 * lMouseY) / 100;
+
+            });
+
+            moveBackground();
+
+            jQuery(".book-wrap").hover3d({
+                selector: ".book-card",
+                shine: false,
+            });
+
+
+        }
+
+    });
+
+</script>
 </body>
 
 </html>
