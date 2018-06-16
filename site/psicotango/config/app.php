@@ -182,6 +182,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
 
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
     ],
 
     /*
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Twig' => TwigBridge\Facade\Twig::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
     ],
 
 ];

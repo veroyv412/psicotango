@@ -1,0 +1,24 @@
+{
+    "name": "frysch/laravel-localization-twig",
+    "description": "Adding twig functions for mcamara/laravel-localization",
+    "keywords": ["localization", "laravel", "php", "twig"],
+    "homepage": "https://github.com/frysch/laravel-localization-twig",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anders Fryksborn",
+            "email": "anders.fryksborn@gmail.com"
+        }
+    ],
+    "require": {
+        "rcrowe/twigbridge": "~0.8",
+        "mcamara/laravel-localization": "~1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Frysch\\LaravelLocalizationTwig\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

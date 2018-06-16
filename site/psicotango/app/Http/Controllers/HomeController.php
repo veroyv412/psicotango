@@ -7,6 +7,7 @@ use TwigBridge\Facade\Twig;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
+use Mcamara\LaravelLocalization\LaravelLocalization;
 
 class HomeController extends Controller
 {
@@ -30,16 +31,17 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function getHome(){
+    public function getHome(Request $request, LaravelLocalization $e){
+        $app = app();
+        $t = $app['translator'];
         $todayName = strtolower(date('l', strtotime('now')));
 
-        $logged_user = Auth::user();
         //$categories = \Models\Category::all();
         //$categoriesCount = \Models\Category::getCategoriesCount();
         //$todayDeals = \Models\Deal::with('business')->where($todayName, '=', '1')->where('deleted', '=', '0')->get();
         
         return Twig::render('index', [
-            'logged_user'       => $logged_user,
+            //'logged_user'       => $logged_user,
             //'categories'        => $categories,
             //'categories_count'  => $categoriesCount,
             //'today_deals'       => $todayDeals

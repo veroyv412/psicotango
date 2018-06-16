@@ -65,12 +65,12 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class=""><a href="#" class="sf-with-ul">Language</a>
+                        <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
                             <ul style="display: none;">
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Ingles</a></li>
-                                <li><a href="#">Italiano</a></li>
-                                <li><a href="#">Frances</a></li>
+                                <li><a href="{{ l10n_url('es') }}">{{ trans('messages.spanish') }}</a></li>
+                                <li><a href="{{ l10n_url('en') }}">{{ trans('messages.english') }}</a></li>
+                                {#<li><a href="#">Italiano</a></li>
+                                <li><a href="#">Frances</a></li>#}
                             </ul>
                         </li>
                     </ul>
@@ -84,8 +84,8 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">Login</a></li>
-                        <li class="button button-rounded button-black"><a href="/signup" >Signup</a></li>
+                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
+                        <li class="button button-rounded button-black"><a href="/signup" >{{ trans('messages.signup') }}</a></li>
                     </ul>
                 </div><!-- .top-links end -->
 
@@ -104,12 +104,12 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class=""><a href="#" class="sf-with-ul">Language</a>
+                        <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
                             <ul style="display: none;">
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Ingles</a></li>
-                                <li><a href="#">Italiano</a></li>
-                                <li><a href="#">Frances</a></li>
+                                <li><a href="{{ l10n_url('es') }}">{{ trans('messages.spanish') }}</a></li>
+                                <li><a href="{{ l10n_url('en') }}">{{ trans('messages.english') }}</a></li>
+                                {#<li><a href="#">Italiano</a></li>
+                                <li><a href="#">Frances</a></li>#}
                             </ul>
                         </li>
                     </ul>
@@ -123,8 +123,8 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">Login</a></li>
-                        <li class="button button-rounded button-black"><a href="/signup" >Signup</a></li>
+                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
+                        <li class="button button-rounded button-black"><a href="/signup" >{{ trans('messages.signup') }}</a></li>
                     </ul>
                 </div><!-- .top-links end -->
 
@@ -152,14 +152,14 @@
                 <nav id="primary-menu" class="style-3">
 
                     <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-                        <li class="current"><a href="/"><div>Home</div></a></li>
+                        <li class="current"><a href="/"><div>{{ trans('messages.home') }}</div></a></li>
                         <li><a href="#" data-href="#section-psicotango"><div>Psicotango</div></a></li>
-                        <li><a href="#" data-href="#section-team"><div>Docentes</div></a></li>
-                        <li><a href="#" data-href="#section-books"><div>Libros</div></a></li>
-                        <li><a href="#" data-href="#section-cursos"><div>Cursos Online</div></a></li>
-                        <li><a href="#" data-href="#section-prices"><div>Precios</div></a></li>
-                        <li><a href="#" data-href="#section-testimonials"><div>Testimonios</div></a></li>
-                        <li><a href="#" data-href="#section-contact"><div>Contactenos</div></a></li>
+                        <li><a href="#" data-href="#section-team"><div>{{ trans('messages.teachers') }}</div></a></li>
+                        <li><a href="#" data-href="#section-books"><div>{{ trans('messages.books') }}</div></a></li>
+                        <li><a href="#" data-href="#section-cursos"><div>{{ trans('messages.online_courses') }}</div></a></li>
+                        <li><a href="#" data-href="#section-prices"><div>{{ trans('messages.prices') }}</div></a></li>
+                        <li><a href="#" data-href="#section-testimonials"><div>{{ trans('messages.testimonials') }}</div></a></li>
+                        <li><a href="#" data-href="#section-contact"><div>{{ trans('messages.contactus') }}</div></a></li>
                     </ul>
 
 
@@ -182,8 +182,7 @@
                             <div class="slider-caption slider-caption-center">
                                 <img class="img-responsive image_fade bottommargin-lg center-block" src="images/psicotango_title.png">
                                 <p data-caption-animate="fadeInUp" data-caption-delay="200">
-                                    El Tango, como manifestación única en el mundo, es una expresión destacada, auténtica y
-                                    genuina de una cultura que necesita ser abrazada.
+                                    {{ trans('messages.tango_description') }}
                                 </p>
                             </div>
                         </div>
@@ -197,6 +196,9 @@
 
 
     <div class="clear"></div>
+
+
+
 
     <!-- Content
     ============================================= -->
@@ -217,27 +219,15 @@
 
                     <div class="col-xs-12 col-sm-9">
                         <h4 class="center">
-                            Psicotango se basa en ideas como que el tango es un baile social, comunitario, gregario. Nacido para
-                            unir a los seres humanos. Cuenta con códigos y ritos necesarios para que ese conjunto sea sano, se
-                            fortalezca, aprendan uno de los otros. Brinda una formación complementaria
-                            respecto a las técnicas puras de la danza; tales como sus efectos benéficos
-                            en uno mismo, en la pareja y en el grupo. El tango es la metáfora de
-                            la vida misma. Conociéndonos nos daremos cuenta de nuestras
-                            grietas y bailaremos mejor la vida. Nadie puede estar solo, está
-                            claro en cada paso de esta danza.
+                            {{ trans('messages.psicotango_description') }}
                         </h4>
 
                         <h4 class="center">
-                            Psicotango es una herramienta terapéutica
-                            desde lo social, psíquico y biológico . Se trata
-                            de poner el cuerpo y aprender a escucharlo.
-                            La teoría nos abre la cabeza, el cuerpo nos
-                            hará comprender la vida.
+                            {{ trans('messages.psicotango_description1') }}
                         </h4>
 
                         <h4 class="center">
-                            Todos los ejercicios nos llevarán por ese
-                            camino.
+                            {{ trans('messages.psicotango_description2') }}
                         </h4>
                     </div>
                 </div>
@@ -248,7 +238,7 @@
             <section id="section-team" class="page-section topmargin-lg">
                 <div class="container clearfix">
                     <div class="heading-block center">
-                        <h1>DOCENTES</h1>
+                        <h1 class='caption'>{{ trans('messages.teachers') }}</h1>
                     </div>
 
                     <div class="col-md-6 bottommargin">
@@ -258,13 +248,9 @@
                                 <img src="images/monica_peri_profile.jpg" alt="Monica Peri" class="animated bounceInLeft" data-animate="bounceInLeft">
                             </div>
                             <div class="team-desc">
-                                <div class="team-title"><h4>Monica Peri</h4><span>Psicóloga</span></div>
+                                <div class="team-title"><h4>Monica Peri</h4><span>{{ trans('messages.psychologist_women') }}</span></div>
                                 <div class="team-content">
-                                    Monica Peri, milonguera, periodista y locutora. Licenciada en Psicología.
-                                    Ha publicado cuentos en Página 12 y en la revista el Planeta Urbano.
-                                    Integrante del Grupo Dinzel. Escritora e Investigadora del Tango y su relación con el Psicoanalisis.
-                                    Coordinadora de Encuentros y Seminarios de Psicotango.
-                                    Nació en Bahía Blanca y vive actualmente en Buenos Aires, en una Casona del Abasto, barrio de Tango.
+                                    {{ trans('messages.monica_peri_description') }}
                                 </div>
                                 <a href="https://www.facebook.com/perimonica" class="social-icon si-rounded si-small si-facebook">
                                     <i class="icon-facebook"></i>
@@ -282,14 +268,9 @@
                                 <img src="images/monica_peri_profile.jpg" alt="Ignacio Lavalle" class="animated bounceInRight" data-animate="bounceInRight">
                             </div>
                             <div class="team-desc">
-                                <div class="team-title"><h4>Ignacio Lavalle</h4><span>Psicólogo</span></div>
+                                <div class="team-title"><h4>Ignacio Lavalle</h4><span>{{ trans('messages.psychologist_men') }}</span></div>
                                 <div class="team-content">
-                                    Nacido en Bs. As. Obtuvo la Licenciatura en Psicología (UBA) y luego realizó
-                                    una maestría en Psicología Analítica, Fundación C.G. Jung de PA. Es escritor e
-                                    investigador de los efectos del tango-danza. Estudió tango desde 2002 en diversas
-                                    escuelas para quedarse en lo de los Dinzel. Coordina talleres de tango en hospitales
-                                    públicos con la finalidad de lograr efectos terapéuticos, así como encuentros de
-                                    Psicotango. Es también profesor de Tai-Chi-Chuan e integra ambas disciplinas.
+                                    {{ trans('messages.ignacio_lavalle_description') }}
                                 </div>
                                 <a href="https://www.facebook.com/perimonica" class="social-icon si-rounded si-small si-facebook">
                                     <i class="icon-facebook"></i>
@@ -305,7 +286,7 @@
             <section id="section-books" class="page-section topmargin-lg">
                 <div class="container clearfix">
                     <div class="heading-block center">
-                        <h1>LIBROS <span>PUBLICADOS</span></h1>
+                        <h1>{{ trans('messages.published_books') | raw }}</h1>
                     </div>
 
                     <div id="portfolio" class="portfolio grid-container portfolio-3 portfolio-masonry clearfix">
@@ -357,7 +338,7 @@
             <section id="section-cursos" class="page-section topmargin-lg">
                 <div class="container clearfix">
                     <div class="heading-block center">
-                        <h1>CURSOS <span>ONLINE</span></h1>
+                        <h1>{{ trans('messages.online_courses_title') | raw }}</h1>
                         <p>(Nota: Aca iria el video que me paso Nacho de ustedes hablando de que se trata el curso)</p>
                     </div>
 
@@ -374,7 +355,7 @@
 
                 <div class="container bottommargin dark clearfix" style="margin-top: -500px">
                     <div class="heading-block bottommargin-lg center clearfix">
-                        <h1>PRECIOS DE LOS <span>CURSOS ONLINE</span></h1>
+                        <h1>{{ trans('messages.prices_title') | raw }}</h1>
                     </div>
 
                     <!-- Price Items
@@ -385,7 +366,7 @@
 
                                 <div class="pricing-box">
                                     <div class="pricing-title">
-                                        <h3>Módulo Uno</h3>
+                                        <h3>{{ trans('messages.module_one') }}</h3>
                                     </div>
                                     <div class="pricing-price">
                                         <span class="price-unit">u$d</span>50
@@ -396,7 +377,7 @@
                                         </ul>
                                     </div>
                                     <div class="pricing-action">
-                                        <a href="/register" class="btn btn-danger btn-block btn-sm">Adquirir Curso</a>
+                                        <a href="/register" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
                                     </div>
                                 </div>
 
@@ -406,7 +387,7 @@
 
                                 <div class="pricing-box best-price">
                                     <div class="pricing-title">
-                                        <h3>Módulo Dos</h3>
+                                        <h3>{{ trans('messages.module_two') }}</h3>
                                         <span>Mas popular</span>
                                     </div>
                                     <div class="pricing-price">
@@ -424,7 +405,7 @@
                                         </ul>
                                     </div>
                                     <div class="pricing-action">
-                                        <a href="/register" class="btn btn-danger btn-block btn-sm bgcolor border-color">Adquirir Curso</a>
+                                        <a href="/register" class="btn btn-danger btn-block btn-sm bgcolor border-color">{{ trans('messages.get_course') }}</a>
                                     </div>
                                 </div>
 
@@ -434,7 +415,7 @@
 
                                 <div class="pricing-box">
                                     <div class="pricing-title">
-                                        <h3>Seminario</h3>
+                                        <h3>{{ trans('messages.seminary') }}</h3>
                                     </div>
                                     <div class="pricing-price">
                                         <span class="price-unit">u$d</span>100
@@ -447,7 +428,7 @@
                                         </ul>
                                     </div>
                                     <div class="pricing-action">
-                                        <a href="/register" class="btn btn-danger btn-block btn-sm">Adquirir Curso</a>
+                                        <a href="/register" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
                                     </div>
                                 </div>
 
@@ -465,7 +446,7 @@
                 <div class="container clearfix">
 
                     <div class="heading-block bottommargin-lg center clearfix">
-                        <h1>TESTIMONIOS</h1>
+                        <h1>{{ trans('messages.testimonials_title') }}</h1>
                     </div>
 
                     <!-- Testimonial Slider
@@ -514,13 +495,13 @@
 
             <div id="section-contact" class="row norightmargin topmargin nobottommargin common-height">
                 <div class="heading-block bottommargin-lg center clearfix">
-                    <h1>CONTACTENOS</h1>
+                    <h1>{{ trans('messages.contactus') }}</h1>
                 </div>
 
                 <div id="headquarters-map" class="col-md-8 gmap hidden-xs"></div>
                 <div class="col-md-4 dark" style="background-color: #333;">
                     <div style="padding: 40px;">
-                        <h4 class="font-body t600 ls1">Dejanos tus dudas</h4>
+                        <h4 class="font-body t600 ls1">{{ trans('messages.doubts') }}</h4>
 
                         <div style="font-size: 15px; line-height: 1.7;">
                             <address style="line-height: 1.7;">
@@ -551,20 +532,20 @@
             <div class="container clearfix">
 
                 <div class="col_one_fourth">
-                    Copyrights &copy; 2018 Todos los derechos reservados.
+                    Copyrights &copy; 2018 {{ trans('messages.all_rights') }}
                     <br>
-                    Desarollado por Verónica Nisenbaum
+                    {{ trans('messages.developed_by') }} Verónica Nisenbaum
                 </div>
 
                 <div class="col_three_fourth col_last tright">
                     <div class="copyrights-menu copyright-links fright clearfix">
                         <a href="/">Home</a>/
                         <a href="#section-psicotango">Psicotango</a>/
-                        <a href="#section-team">Docentes</a>/
-                        <a href="#section-books">Libros</a>/
-                        <a href="#section-cursos">Cursos Online</a>/
-                        <a href="#section-prices">Precios</a>
-                        <a href="#section-contact">Contáctenos</a>
+                        <a href="#section-team">{{ trans('messages.teachers') }}</a>/
+                        <a href="#section-books">{{ trans('messages.books') }}</a>/
+                        <a href="#section-cursos">{{ trans('messages.online_courses') }}</a>/
+                        <a href="#section-prices">{{ trans('messages.prices') }}</a>
+                        <a href="#section-contact">{{ trans('messages.contactus') }}</a>
                     </div>
                     <div class="fright clearfix">
                         <a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">

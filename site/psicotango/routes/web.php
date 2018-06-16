@@ -11,7 +11,37 @@
 |
 */
 
-Route::get('/', 'HomeController@getHome')->name('root');
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function()
+{
+    Route::get('/', 'HomeController@getHome')->name('root');
+
+
+    //Authentication
+    Route::get('/login', 'Auth\LoginController@getLogin')->name('login');
+    Route::post('/login', 'Auth\LoginController@postLogin');
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+    Route::get('/redirect/{provider}', 'Auth\SocialController@redirect');
+    Route::get('/callback/{provider}', 'Auth\SocialController@callback');
+
+// Registration Routes...
+    Route::get('/signup', 'Auth\RegisterController@getSignup')->name('signup');
+    Route::post('/signup', 'Auth\RegisterController@postSignup');
+
+// Password Reset Routes...
+    Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+    Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+});
+
+
+
 
 Route::get('/category/{category_slug}', 'SearchController@getCategorySearch');
 Route::get('/tags/{tag}', 'SearchController@getTagSearch');
@@ -24,24 +54,6 @@ Route::get('/deal-get/{deal_id}', 'DealController@getDealBuy');
 Route::get('/featured-deals/{weight}', 'DealController@getFeaturedDeals');
 
 Route::get('/c/{category_slug}/{s?}', 'SearchController@getDealsSearchJSON');
-
-//Authentication
-Route::get('/login', 'Auth\LoginController@getLogin')->name('login');
-Route::post('/login', 'Auth\LoginController@postLogin');
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-
-Route::get('/redirect/{provider}', 'Auth\SocialController@redirect');
-Route::get('/callback/{provider}', 'Auth\SocialController@callback');
-
-// Registration Routes...
-Route::get('/signup', 'Auth\RegisterController@getSignup')->name('signup');
-Route::post('/signup', 'Auth\RegisterController@postSignup');
-
-// Password Reset Routes...
-Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 //ADMIN
 Route::get('/admin/manage/business', 'BusinessController@index')->middleware('can:business-manage');

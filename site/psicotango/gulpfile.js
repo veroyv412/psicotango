@@ -13,6 +13,10 @@ require('laravel-elixir-vue-2');
  |
  */
 
+
+//we need to put all CSS and JS files in the correct path and then run gulp
+//or gulp --production and will minify it
+
 elixir((mix) => {
     mix.sass('app.scss').webpack('app.js');
 
