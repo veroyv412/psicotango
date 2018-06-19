@@ -70,12 +70,28 @@ return [
 
     //section-testimonials
     'testimonials_title' => 'Testimonios',
-
+    'testimonial_1' => 'El seminario me gustó mucho, sobre todo me movilizó mucho. Ayer quise contarles a algunos de mis compañeros de tango la experiencia, y me di cuenta que no encontraba muchas palabras, y que intelectualmente no me dejó tanto, pero sí sentí una energía muy movilizada dentro mío.',
+    'testimonial_2' => 'Deseo de verdad agradecer a Monica Peri, mi profesora de  psicotango por sus lecciones; fueron particularmente de aiuda para mi y mi  vida. Antes de conocerla y partecipar al seminario de psicotango, me pasaba de pensar en algunos aspectos de mi vida y mi caracter ma non muy  profundamente.',
+    'testimonial_3' => 'Psicotango un espacio contenedor y confortable donde bailar el tango es posible desde la integridad primaria del ritual de danzar ,hasta los aspectos culturales ancestrales de nuestro tango mas tradicional y la incorporaciòn de los aspectos contemporàneos modernos recientes, dandonos la posibilidad de recorrenos en el mito y la propia percepcion de los roles y conductas culturales a traves del anàlisis de la naturaleza y circustancia del movimiento experimentando la danza y permintiendo que aflore la forma propia de bailar el Tango. ',
+    
     //section-contactus
     'contactus_title' => 'Contáctenos',
     'doubts' => 'Dejanos tus dudas',
     
     //footer
     'all_rights' => 'Todos los derechos reservados',
-    'developed_by' => 'Desarrollado por'
+    'developed_by' => 'Desarrollado por',
+
+    //login
+    'need_account' => '¿Necesitas una cuenta?',
+    'forgot_password_text' => '¿Te olvidaste tu contraseña?',
+    
+    //signup
+    'name' => 'Nombre',
+    'lastname' => 'Apellido',
+    'email' => 'Email',
+    'password' => 'Contraseña',
+    'repeat_password' => 'Repetir Contraseña',
+    'signup_terms' => 'Al registrarse usted esta de acuerdo con los <a href="/terms">Términos y Condiciones</a>',
+    'signup_button_text' => 'Registrate!'
 ];

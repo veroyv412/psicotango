@@ -1,85 +1,55 @@
 {% block page_title %}Home{% endblock %}
 {% extends 'layout/auth_base.twig' %}
-{% block title %}Club Cultural{% endblock %}
-
-{% block header %}
-    {{ include('/layout/_top_bar_auth.twig') }}
-{% endblock %}
+{% block title %}Psicotango | Login {% endblock %}
 
 {% block content %}
-    <div class="site-wrapper _animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
-        <section id="page" class="container mTop-30 mBtm-50">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel-body frameLR bg-white shadow space-sm">
-                        <form method="POST" action="{{ url('/login') }}">
-                            {{ csrf_field() }}
-                            <div class="col-xs-12 col-md-6 col-md-offset-3">
-                                <h3 class="dark-grey text-center">
-                                    Iniciar Sesión
-                                </h3>
+    <form method="POST" action="{{ l10n_url_by_route('login') }}/login" class="nobottommargin dark-box">
+        {{ csrf_field() }}
+        <h1 class="text-center" style="text-transform: uppercase">{{ trans('messages.login') }}</h1>
 
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <a href="/redirect/facebook" class="btn btn-primary btn-raised btn-block ripple-effect" style="background-color: #3b5998">
-                                            <i class="fa fa-facebook" aria-hidden="true"></i> FACEBOOK
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <a href="/redirect/twitter" class="btn btn-primary btn-raised btn-block ripple-effect" style="background-color: #1da1f2">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i> TWITTER
-                                        </a>
-                                    </div>
-                                </div>
+        <div class="center">
+            <h4 style="margin-bottom: 15px;"></h4>
+            <a href="/redirect/facebook" class="button button-rounded si-facebook si-colored">Facebook</a>
+            <span class="hidden-xs">or</span>
+            <a href="/redirect/twitter" class="button button-rounded si-twitter si-colored">Twitter</a>
+        </div>
 
-                                <br>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div style="text-align: center"><h5>O INICIA SESION CON</h5></div>
-                                    </div>
-                                </div>
+        <div class="line line-sm"></div>
 
-                                <div class="form-group {{ errors.has('email') ? ' has-error' : '' }}">
-                                    <label>Email</label>
-                                    <input type="text" name="email" class="form-control" id="" value="{{ old('email') }}">
-                                    {% if errors.has('email') is not empty %}
-                                        <span class="help-block">{{ errors.first('email') }}</span>
-                                    {% endif %}
-                                </div>
+        <div class="form-group {{ errors.has('email') ? ' has-error' : '' }}">
+            <label>{{ trans('messages.email') }}</label>
+            <input type="text" name="email" class="form-control sm-form-control" value="{{ old('email') }}">
+            {% if errors.has('email') is not empty %}
+                <span class="help-block">{{ errors.first('email') }}</span>
+            {% endif %}
+        </div>
 
-                                <div class="form-group {{ errors.has('password') ? ' has-error' : '' }}">
-                                    <label>Password</label>
-                                    <input type="password" name="password" class="form-control" id="" value="">
-                                    {% if errors.has('password') %}
-                                        <span class="help-block">{{ errors.first('password') }}</span>
-                                    {% endif %}
-                                </div>
+        <div class="form-group {{ errors.has('password') ? ' has-error' : '' }}">
+            <label>{{ trans('messages.password') }}</label>
+            <input type="password" name="password" class="form-control sm-form-control" value="">
+            {% if errors.has('password') %}
+                <span class="help-block">{{ errors.first('password') }}</span>
+            {% endif %}
+        </div>
 
-                                <div class="form-group">
-                                    <label>
-                                        <a href="{{ url('/password/reset') }}">
-                                            ¿Te olvidaste tu contraseña?
-                                        </a>
-                                    </label>
-                                </div>
+        <div class="form-group">
+            <label>
+                <a href="{{ url('/password/reset') }}">
+                    {{ trans('messages.forgot_password_text') }}
+                </a>
+            </label>
+        </div>
 
-                                <div class="form-group">
-                                    <label>
-                                        ¿Necesitas una cuenta? <small><a href="/signup">Subscribite</a></small>
-                                    </label>
-                                </div>
+        <div class="form-group">
+            <label>
+                {{ trans('messages.need_account') }} <small><a href="/signup">{{ trans('messages.signup') }}</a></small>
+            </label>
+        </div>
 
-                                <button type="submit" class="btn btn-primary btn-raised btn-block ripple-effect">
-                                    Iniciar Sesión
-                                </button>
-                            </div>
-                        </form>
+        <button type="submit" class="button button-rounded button-green btn-block">
+            {{ trans('messages.login') }}
+        </button>
 
-                    </div>
-                    <!-- /inner wrap -->
-                </div>
-            </div>
 
-        </section>
-    </div>
+    </form>
 {% endblock %}

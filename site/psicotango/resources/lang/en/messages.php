@@ -65,6 +65,9 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
 
     //section-testimonials
     'testimonials_title' => 'Testimonials',
+    'testimonial_1' => 'I liked the seminar a lot, especially it moved me a lot. Yesterday I wanted to tell some of my tango partners the experience, and I realized that I did not find many words, and that intellectually I did not leave much, but I did feel a very mobilized energy within me.',
+    'testimonial_2' => 'I really want to thank Monica Peri, my teacher of psychotango for his lessons; they were particularly of aido for me and my lifetime. Before meeting her and taking part in the psychotango seminar, I passed to think about some aspects of my life and my character is not very deeply.',
+    'testimonial_3' => 'Psicotango a container and comfortable space where dancing tango is possible from the primary integrity of the dance ritual, to the ancestral cultural aspects of our most traditional tango and the incorporation of recent modern contemporary aspects, giving us the possibility of recrossing the myth and the own perception of the cultural roles and conducts through the analysis of the nature and circumstance of the movement experiencing the dance and allowing the Tango dance form to emerge.',
 
     //section-contactus
     'contactus_title' => 'Contáctenos',
@@ -72,5 +75,18 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
 
     //footer
     'all_rights' => 'All Rights Reserved',
-    'developed_by' => 'Developed por'
+    'developed_by' => 'Developed por',
+    
+    //login
+    'need_account' => 'Need an account?',
+    'forgot_password_text' => '¿Te olvidaste tu contraseña?',
+    
+    //signup
+    'name' => 'Name',
+    'lastname' => 'Last Name',
+    'email' => 'Email',
+    'password' => 'Password',
+    'repeat_password' => 'Repeat Password',
+    'signup_terms' => 'By registering you are accepting this <a href="/terms">Terms and Conditions</a>',
+    'signup_button_text' => 'Signup'
 ];

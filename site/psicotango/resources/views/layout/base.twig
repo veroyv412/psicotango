@@ -9,25 +9,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#005281">
+    <meta name="theme-color" content="#ff0000">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Stylesheets
 	============================================= -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/colors.css" type="text/css" />
-    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
-    <link rel="stylesheet" href="css/dark.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/colors.css" type="text/css" />
+    <link rel="stylesheet" href="/css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
 
-    <link rel="stylesheet" href="css/writer.css" type="text/css" />
+    <link rel="stylesheet" href="/css/writer.css" type="text/css" />
 
 
-    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="/css/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
@@ -84,8 +84,8 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
-                        <li class="button button-rounded button-black"><a href="/signup" >{{ trans('messages.signup') }}</a></li>
+                        <li class="button button-rounded button-red"><a href="{{ l10n_url_by_route('login') }}/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
+                        <li class="button button-rounded button-black"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
                     </ul>
                 </div><!-- .top-links end -->
 
@@ -123,8 +123,8 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class="button button-rounded button-red"><a href="/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
-                        <li class="button button-rounded button-black"><a href="/signup" >{{ trans('messages.signup') }}</a></li>
+                        <li class="button button-rounded button-red"><a href="{{ l10n_url_by_route('login') }}/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
+                        <li class="button button-rounded button-black"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
                     </ul>
                 </div><!-- .top-links end -->
 
@@ -456,29 +456,24 @@
                             <div class="slider-wrap">
                                 <div class="slide">
                                     <div class="testi-content">
-                                        <p>Collaboratively enhance intermandated innovation via cutting-edge core competencies. Professionally extend covalent e-markets and mission-critical communities. Dramatically communicate revolutionary web services for interactive synergy. Synergistically.</p>
+                                        <p>{{ trans('messages.testimonial_1') }}</p>
                                         <div class="testi-meta">
-                                            Steve Jobs
-                                            <span class="ls0">Apple Inc.</span>
+                                            Laura
                                         </div>
                                     </div>
                                 </div>
                                 <div class="slide">
                                     <div class="testi-content">
-                                        <p>Intrinsicly synergize excellent content whereas user friendly action items. Rapidiously transition multimedia based information after top-line alignments. Proactively e-enable front-end e-commerce without mission-critical customer service.</p>
+                                        <p>{{ trans('messages.testimonial_2') }}</p>
                                         <div class="testi-meta">
-                                            Collis Ta'eed
-                                            <span class="ls0">Envato Inc.</span>
+                                            Paola Marabini
                                         </div>
                                     </div>
                                 </div>
                                 <div class="slide">
                                     <div class="testi-content">
-                                        <p>Compellingly engage multimedia based niche markets via value-added manufactured products. Competently formulate goal-oriented content for installed base users. Uniquely leverage other's granular ROI without 24/365 collaboration and idea-sharing.</p>
-                                        <div class="testi-meta">
-                                            John Doe
-                                            <span class="ls0">XYZ Inc.</span>
-                                        </div>
+                                        <p>{{ trans('messages.testimonial_3') }}</p>
+
                                     </div>
                                 </div>
                             </div>
@@ -521,80 +516,7 @@
 
     </section><!-- #content end -->
 
-    <!-- Footer
-		============================================= -->
-    <footer id="footer" class="dark">
-
-        <!-- Copyrights
-        ============================================= -->
-        <div id="copyrights">
-
-            <div class="container clearfix">
-
-                <div class="col_one_fourth">
-                    Copyrights &copy; 2018 {{ trans('messages.all_rights') }}
-                    <br>
-                    {{ trans('messages.developed_by') }} Verónica Nisenbaum
-                </div>
-
-                <div class="col_three_fourth col_last tright">
-                    <div class="copyrights-menu copyright-links fright clearfix">
-                        <a href="/">Home</a>/
-                        <a href="#section-psicotango">Psicotango</a>/
-                        <a href="#section-team">{{ trans('messages.teachers') }}</a>/
-                        <a href="#section-books">{{ trans('messages.books') }}</a>/
-                        <a href="#section-cursos">{{ trans('messages.online_courses') }}</a>/
-                        <a href="#section-prices">{{ trans('messages.prices') }}</a>
-                        <a href="#section-contact">{{ trans('messages.contactus') }}</a>
-                    </div>
-                    <div class="fright clearfix">
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
-                            <i class="icon-facebook"></i>
-                            <i class="icon-facebook"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
-                            <i class="icon-twitter"></i>
-                            <i class="icon-twitter"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
-                            <i class="icon-gplus"></i>
-                            <i class="icon-gplus"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
-                            <i class="icon-pinterest"></i>
-                            <i class="icon-pinterest"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
-                            <i class="icon-vimeo"></i>
-                            <i class="icon-vimeo"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
-                            <i class="icon-github"></i>
-                            <i class="icon-github"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
-                            <i class="icon-yahoo"></i>
-                            <i class="icon-yahoo"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
-                            <i class="icon-linkedin"></i>
-                            <i class="icon-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div><!-- #copyrights end -->
-
-    </footer><!-- #footer end -->
+    {{ include('layout/_footer', {}) }}
 
 </div><!-- #wrapper end -->
 

@@ -26,14 +26,15 @@ Route::group(
     Route::post('/login', 'Auth\LoginController@postLogin');
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
+    //SOCIAL
     Route::get('/redirect/{provider}', 'Auth\SocialController@redirect');
     Route::get('/callback/{provider}', 'Auth\SocialController@callback');
 
-// Registration Routes...
+    // Registration Routes...
     Route::get('/signup', 'Auth\RegisterController@getSignup')->name('signup');
     Route::post('/signup', 'Auth\RegisterController@postSignup');
 
-// Password Reset Routes...
+    // Password Reset Routes...
     Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
     Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
     Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
