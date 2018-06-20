@@ -1,101 +1,48 @@
-<header>
-    {{ include('/layout/_top_bar.twig') }}
-    <div id="nav-wrap">
-        <div class="nav-wrap-holder">
-            <div class="container" id="nav_wrapper">
-                <nav class="navbar navbar-static-top nav-white" id="main_navbar" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
-                      <span class="sr-only">
-                        Toggle navigation
-                          </span>
-                          <span class="icon-bar">
-                          </span>
-                          <span class="icon-bar">
-                          </span>
-                          <span class="icon-bar">
-                          </span>
-                        </button>
-                        <a href="/" class="navbar-brand logo col-sm-3">
-                            <img src="/images/logo2.png" alt="" class="img-responsive">
-                        </a>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="Navbar">
-                        <!-- regular link -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="/">
-                                    Home
-                                </a>
-                            </li>
-                            {#<li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Pages
-                                  <span class="caret">
-                                  </span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="details_2.html">
-                                            Deal Page 1
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>#}
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Categorias
-                                  <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="/category/today">
-                                            Hoy
-                                        </a>
-                                    </li>
-                                    {% for category in categories %}
-                                    <li>
-                                        <a href="/category/{{ category.category_slug }}">
-                                            {{ category.category_name }}
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            {% if Auth.user.hasRole('admin')%}
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        Admin
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="/admin/manage/business">
-                                                Administrar Clientes
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/admin/manage/deals">
-                                                Administrar Descuentos
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            {% endif %}
-                            <li>
-                                <a href="/contactus">
-                                    Contactenos
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- /.div nav wrap holder -->
-    </div>
-    <!-- /#nav wrap -->
+<!-- Header
+		============================================= -->
+<header id="header" class="transparent-header dark">
 
-</header>
+    <div id="header-wrap">
+
+        <div class="container clearfix">
+
+            <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+            <div id="logo" class="top-links">
+                <a href="/" class="standard-logo hidden-xs" data-dark-logo="images/logo_transparent.png"><img src="/images/logo_transparent.png" alt="Psicotango"></a>
+                <ul class="visible-xs sf-js-enabled clearfix" style="touch-action: pan-y; padding-top: 25px">
+                    <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
+                        <ul style="display: none;">
+                            <li><a href="{{ l10n_url('es') }}">{{ trans('messages.spanish') }}</a></li>
+                            <li><a href="{{ l10n_url('en') }}">{{ trans('messages.english') }}</a></li>
+                            {#<li><a href="#">Italiano</a></li>
+                            <li><a href="#">Frances</a></li>#}
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- #logo end -->
+
+            <!-- Primary Navigation
+            ============================================= -->
+            <nav id="primary-menu" class="style-3">
+
+                <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                    <li class="button button-rounded button-red button-large visible-xs" style="margin-bottom: 10px !important"><a href="{{ l10n_url_by_route('login') }}/login">{{ trans('messages.login') }}</a></li>
+                    <li class="button button-rounded button-blue button-large visible-xs" style="margin-bottom: 20px !important"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
+                    <li class="current"><a href="/"><div>{{ trans('messages.home') }}</div></a></li>
+                    <li><a href="#" data-href="#section-psicotango"><div>Psicotango</div></a></li>
+                    <li><a href="#" data-href="#section-team"><div>{{ trans('messages.teachers') }}</div></a></li>
+                    <li><a href="#" data-href="#section-books"><div>{{ trans('messages.books') }}</div></a></li>
+                    <li><a href="#" data-href="#section-cursos"><div>{{ trans('messages.online_courses') }}</div></a></li>
+                    <li><a href="#" data-href="#section-prices"><div>{{ trans('messages.prices') }}</div></a></li>
+                    <li><a href="#" data-href="#section-testimonials"><div>{{ trans('messages.testimonials') }}</div></a></li>
+                    <li><a href="#" data-href="#section-contact"><div>{{ trans('messages.contactus') }}</div></a></li>
+                </ul>
+
+            </nav><!-- #primary-menu end -->
+
+        </div>
+
+    </div>
+
+</header><!-- #header end -->

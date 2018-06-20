@@ -32,20 +32,21 @@ class HomeController extends Controller
     }
 
     public function getHome(Request $request, LaravelLocalization $e){
-        $app = app();
-        $t = $app['translator'];
-        $todayName = strtolower(date('l', strtotime('now')));
-
+        $loggedUser = Auth::user();
         //$categories = \Models\Category::all();
         //$categoriesCount = \Models\Category::getCategoriesCount();
         //$todayDeals = \Models\Deal::with('business')->where($todayName, '=', '1')->where('deleted', '=', '0')->get();
         
-        return Twig::render('index', [
-            //'logged_user'       => $logged_user,
-            //'categories'        => $categories,
-            //'categories_count'  => $categoriesCount,
-            //'today_deals'       => $todayDeals
-        ]);
+        if ( !empty($loggedUser) ){
+            return Twig::render('auth/index', [
+                'logged_user'       => $loggedUser,
+                //'categories'        => $categories,
+                //'categories_count'  => $categoriesCount,
+                //'today_deals'       => $todayDeals
+            ]);
+        } else {
+            return Twig::render('index', []);
+        }
     }
     
     
