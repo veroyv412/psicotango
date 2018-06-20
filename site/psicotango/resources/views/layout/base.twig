@@ -94,45 +94,6 @@
         </div>
 
     </div>
-    <div id="top-bar" class="transparent-topbar dark visible-xs">
-
-        <div class="container clearfix">
-
-            <div class="col_half nobottommargin clearfix">
-
-                <!-- Top Links
-                ============================================= -->
-                <div class="top-links">
-                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
-                            <ul style="display: none;">
-                                <li><a href="{{ l10n_url('es') }}">{{ trans('messages.spanish') }}</a></li>
-                                <li><a href="{{ l10n_url('en') }}">{{ trans('messages.english') }}</a></li>
-                                {#<li><a href="#">Italiano</a></li>
-                                <li><a href="#">Frances</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- .top-links end -->
-
-            </div>
-
-            <div class="col_half fright col_last clearfix nobottommargin">
-
-                <!-- Top Links
-                ============================================= -->
-                <div class="top-links">
-                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class="button button-rounded button-red"><a href="{{ l10n_url_by_route('login') }}/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
-                        <li class="button button-rounded button-black"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
-                    </ul>
-                </div><!-- .top-links end -->
-
-            </div>
-
-        </div>
-
-    </div>
     <!-- Header
 		============================================= -->
     <header id="header" class="transparent-header dark">
@@ -144,7 +105,9 @@
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                 <div id="logo">
-                    <a href="/" class="standard-logo" data-dark-logo="images/logo_transparent.png"><img src="images/logo_transparent.png" alt="Psicotango"></a>
+                    <a href="/" class="standard-logo hidden-xs" data-dark-logo="images/logo_transparent.png"><img src="/images/logo_transparent.png" alt="Psicotango"></a>
+                    <a href="{{ l10n_url_by_route('login') }}/login" class="button button-rounded button-red button-mini visible-xs" style="margin-left: 50px; margin-top: 20px">{{ trans('messages.login') }}</a>
+                    <a href="{{ l10n_url_by_route('signup') }}/signup" class="button button-rounded button-blue button-mini visible-xs" style="margin-left: 50px;">{{ trans('messages.signup') }}</a>
                 </div><!-- #logo end -->
 
                 <!-- Primary Navigation
