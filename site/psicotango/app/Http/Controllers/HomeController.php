@@ -33,16 +33,13 @@ class HomeController extends Controller
 
     public function getHome(Request $request, LaravelLocalization $e){
         $loggedUser = Auth::user();
-        //$categories = \Models\Category::all();
-        //$categoriesCount = \Models\Category::getCategoriesCount();
-        //$todayDeals = \Models\Deal::with('business')->where($todayName, '=', '1')->where('deleted', '=', '0')->get();
-        
+
         if ( !empty($loggedUser) ){
+            $userCourses = \Models\Plan::with('courses.lessons')->where('id', '=', $loggedUser->plan_id)->first()['courses'];
+
             return Twig::render('auth/index', [
                 'logged_user'       => $loggedUser,
-                //'categories'        => $categories,
-                //'categories_count'  => $categoriesCount,
-                //'today_deals'       => $todayDeals
+                'user_courses'      => $userCourses
             ]);
         } else {
             return Twig::render('index', []);

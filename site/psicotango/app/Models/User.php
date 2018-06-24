@@ -43,4 +43,9 @@ class User extends Authenticatable
         //it compares the role with the list of roles
         return !! $role->intersect($this->roles)->count();
     }
+
+    public function plan()
+    {
+        return $this->hasOne('Models\Plan', 'id', 'plan_id');
+    }
 }

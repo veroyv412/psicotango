@@ -93,5 +93,12 @@ return [
     'password' => 'Contraseña',
     'repeat_password' => 'Repetir Contraseña',
     'signup_terms' => 'Al registrarse usted esta de acuerdo con los <a href="/terms">Términos y Condiciones</a>',
-    'signup_button_text' => 'Registrate!'
+    'signup_button_text' => 'Registrate!',
+
+    //Logged User - Index page
+    'Module One' => 'Módulo Uno',
+    'Module Two' => 'Módulo Dos',
+    'Seminar'    => 'Seminario',
+    'interested_in_upgrade' => 'Interesado en ver los videos del proximo modulo?',
+    'upgrade'   => 'Actualizar Plan'
 ];

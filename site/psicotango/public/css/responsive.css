@@ -1785,6 +1785,10 @@
 
 	.button.button-desc span { font-size: 11px; }
 
+	#section-cursos .dark.col-padding {
+		padding: 20px;
+	}
+
 }
 
 
