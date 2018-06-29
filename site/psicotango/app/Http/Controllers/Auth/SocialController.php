@@ -19,6 +19,7 @@ class SocialController extends Controller
     {
         $user = $service->createOrGetUser(Socialite::driver($provider));
 
+        $user->generateToken();
         auth()->login($user);
 
         return redirect()->to('/');

@@ -26,6 +26,14 @@ class User extends Authenticatable
      */
     protected $hidden = ['password'];
 
+    public function generateToken()
+    {
+        $this->api_token = str_random(60);
+        $this->save();
+
+        return $this->api_token;
+    }
+    
     public function roles()
     {
         return $this->belongsToMany(\Models\Role::class);
@@ -48,4 +56,6 @@ class User extends Authenticatable
     {
         return $this->hasOne('Models\Plan', 'id', 'plan_id');
     }
+    
+    
 }

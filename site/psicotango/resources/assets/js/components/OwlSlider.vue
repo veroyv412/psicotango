@@ -28,7 +28,7 @@
                         stopOnHover : true,
                         autoHeight : true,
                     });
-            }, 0);
+                }, 0);
             }, response => {});
         }
     }

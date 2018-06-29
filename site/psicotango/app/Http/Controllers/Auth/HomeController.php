@@ -1,7 +1,31 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: veronicanisenbaum
- * Date: 6/26/18
- * Time: 18:11
- */
+
+namespace App\Http\Controllers\Auth;
+
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use TwigBridge\Facade\Twig;
+
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function getViewLesson(Request $request, $lesson_id){
+        $loggedUser = Auth::user();
+
+        return Twig::render('auth/view-lesson', [
+            'logged_user'       => $loggedUser,
+            'lesson_id'         => $lesson_id,
+            'locale'            => LaravelLocalization::getCurrentLocale()
+        ]);
+    }
+}

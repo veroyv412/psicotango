@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Http\Request;
 
 Route::group(
     [
@@ -41,6 +42,17 @@ Route::group(
     Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 });
 
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['auth', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ], function () {
+    //only authorized users can access these routes
+
+    Route::get('/view-lesson/{lesson_id}', 'Auth\HomeController@getViewLesson')->name('viewLesson');
+
+    
+});
 
 
 

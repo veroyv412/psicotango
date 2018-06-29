@@ -14,7 +14,8 @@ class AddsNextAndPreviousFieldsToLessonsTable extends Migration
     public function up()
     {
         Schema::table('lessons', function (Blueprint $table) {
-            //
+            $table->integer('next_lesson');
+            $table->integer('privious_lesson');
         });
     }
 
@@ -26,7 +27,7 @@ class AddsNextAndPreviousFieldsToLessonsTable extends Migration
     public function down()
     {
         Schema::table('lessons', function (Blueprint $table) {
-            //
+            $table->dropColumn(['next_lesson', 'privious_lesson']);
         });
     }
 }

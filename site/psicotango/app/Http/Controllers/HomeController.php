@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use Mcamara\LaravelLocalization\LaravelLocalization;
 
+
 class HomeController extends Controller
 {
     /**
@@ -17,9 +18,7 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        //$this->middleware('auth');
-    }
+    {}
 
     /**
      * Show the application dashboard.
@@ -31,15 +30,12 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function getHome(Request $request, LaravelLocalization $e){
+    public function getHome(Request $request){
         $loggedUser = Auth::user();
 
         if ( !empty($loggedUser) ){
-            $userCourses = \Models\Plan::with('courses.lessons')->where('id', '=', $loggedUser->plan_id)->first()['courses'];
-
             return Twig::render('auth/index', [
                 'logged_user'       => $loggedUser,
-                'user_courses'      => $userCourses
             ]);
         } else {
             return Twig::render('index', []);

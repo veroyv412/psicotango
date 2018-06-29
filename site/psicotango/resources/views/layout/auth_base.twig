@@ -15,20 +15,8 @@
         <!-- Stylesheets
 	============================================= -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
-        <link rel="stylesheet" href="/css/style.css" type="text/css" />
-        <link rel="stylesheet" href="/css/dark.css" type="text/css" />
-        <link rel="stylesheet" href="/css/colors.css" type="text/css" />
-        <link rel="stylesheet" href="/css/swiper.css" type="text/css" />
-        <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
-        <link rel="stylesheet" href="/css/animate.css" type="text/css" />
-        <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
-
-
-        <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+        <link rel="stylesheet" href="/css/vendor.css" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
 
         <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,11 +26,10 @@
         <link rel="apple-touch-icon" sizes="72x72" href="#">
         <link rel="apple-touch-icon" sizes="114x114" href="#">
 
-        <script type="text/javascript" src="/js/jquery.js"></script>
-
         <script>
-            window.Laravel = { 'csrfToken': '{{ csrf_token() }}'};
+            window.Laravel = { 'csrfToken': '{{ csrf_token() }}', 'api_token': '{{ logged_user.api_token }}', 'lang': '{{ LaravelLocalization.getCurrentLocale() }}' };
             window.baseURL = '{{ url('/') }}';
+            window.loggedUser = {{ logged_user | raw }}
         </script>
     </head>
 {% endblock %}
@@ -50,7 +37,7 @@
 <body class="stretched">
     <!-- Document Wrapper
 	============================================= -->
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="application clearfix">
 
         <nav class="navbar navbar-inverse nobottommargin" role="navigation">
             <div class="container-fluid">
@@ -87,8 +74,9 @@
 
         <section id="page-title" class="page-title-center">
             <div class="container clearfix">
-                <h1>Psicotango</h1>
-                <span>Un abrazo sanador</span>
+                <h1>{% block h1 %}{% endblock %}</h1>
+                <span>{% block h2 %}{% endblock %}</span>
+                {% block breadcrum %}{% endblock %}
             </div>
         </section>
 
@@ -101,8 +89,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-3">
                     <div class="container-fullwidth2 clearfix">
-                        {{ include('auth/_widget_books', {}) }}
-                        {{ include('auth/_widget_testimonials', {}) }}
+                        <featured-books></featured-books>
+                        <testimonials></testimonials>
                     </div>
                 </div>
             </div>
@@ -117,12 +105,11 @@
     <!-- Go To Top
     ============================================= -->
     <div id="gotoTop" class="icon-angle-up"></div>
+
     <!-- External JavaScripts
     ============================================= -->
-    <script type="text/javascript" src="/js/plugins.js"></script>
-    <!-- Footer Scripts
-    ============================================= -->
-    <script type="text/javascript" src="/js/functions.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/vendor.js"></script>
 </body>
 
 </html>

@@ -3,55 +3,37 @@
 {% block title %}Psicotango{% endblock %}
 
 {% block h1 %}PSICOTANGO{% endblock %}
-{% block h2 %}Un Abrazo Sanador{% endblock %}
+{% block h2 %}{% endblock %}
+
+{% block breadcrum %}
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">View Lesson</li>
+    </ol>
+{% endblock %}
 
 {% block content %}
+    <div class="fancy-title title-bottom-border">
+        <h1 id="lesson-title">...</h1>
+    </div>
 
+    <div id="player" class="player" style="height: 450px; width: 100%;" data-lesson_id="{{ lesson_id }}">Loading...</div>
 
-        <!-- Portfolio Filter
-					============================================= -->
-        <ul class="portfolio-filter clearfix" data-container="#portfolio">
-            {% for course in user_courses %}
-            <li class="{%  if loop.first %}activeFilter{% endif %}"><a href="#" data-filter=".{{ course.id }}">{{ trans('messages.'~course.name) }}</a></li>
-            {% endfor %}
-        </ul><!-- #portfolio-filter end -->
+    <div class="row topmargin">
+        <div class="col-xs-6 text-left"><a href="{{ l10n_url_by_route('view-lesson') }}/view-lesson/" id="previous"><< Previous</a></div>
+        <div class="col-xs-6 text-right"><a href="{{ l10n_url_by_route('view-lesson') }}/view-lesson/" id="next">Next >></a></div>
+    </div>
 
-        <div class="clear"></div>
-
-        <div id="portfolio" class="portfolio grid-container portfolio-2 clearfix">
-            {% for course in user_courses %}
-                {% for lesson in course.getLessons() %}
-                    <article class="portfolio-item {{ course.id }}">
-                        <div class="portfolio-image">
-                            <a href="#">
-                                <img src="{{ lesson.youtube_image }}" alt="{{ lesson.name }}">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="{{ l10n_url_by_route('view-lesson') }}/view-lesson" class="left-icon"><i class="icon-line-play"></i></a>
-                                <a href="{{ l10n_url_by_route('view-lesson') }}/view-lesson" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="#">{{ lesson.name }}</a></h3>
-                            {#<span><a href="#">Duration:</a>, <a href="#">UI Elements</a></span>#}
-                        </div>
-                    </article>
-                {% endfor %}
-            {% endfor %}
-        </div>
-
-
-        {% if logged_user.plan_id is null or logged_user.plan_id == 1 or logged_user.plan_id == 2 %}
+    {% if logged_user.plan_id is null or logged_user.plan_id == 1 or logged_user.plan_id == 2 %}
         <div class="promo promo-dark bottommargin topmargin">
             <h3>{{ trans('messages.interested_in_upgrade') }}</h3>
             <a href="{{ l10n_url_by_route('upgrade') }}/upgrade" class="button button-xlarge button-rounded">{{ trans('messages.upgrade') }}</a>
         </div>
-        {% endif %}
+    {% endif %}
 
-
-        <script type="application/javascript">
-            $(window).load(function(){
-                $('.grid-container').isotope({filter: '.3'});
-            });
-        </script>
+    <script type="application/javascript">
+        $(window).load(function(){
+            psicotango.viewLessonInit();
+        });
+    </script>
 {% endblock %}

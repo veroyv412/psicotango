@@ -40,7 +40,7 @@ return [
     |
     */
     'jsPath' => '/resources/assets/js/langs/',
-    'jsFile' => '/resources/assets/js/vue-i18n-locales.generated.js',
+    'jsFile' => '/public/js/vue-i18n-locales.generated.js',
 
     /*
     |--------------------------------------------------------------------------

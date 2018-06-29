@@ -19,6 +19,7 @@
     "animsition": "^4.0.2",
     "axios": "^0.16.2",
     "flexslider": "^2.6.4",
+    "vue-i18n": "^8.0.0",
     "vue-upload-image": "^1.0.5"
   }
 }

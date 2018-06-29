@@ -8,9 +8,10 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
-window.flexslider = require('flexslider');
+
 
 import Form from './utilities/Form';
+
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -30,13 +31,16 @@ window.Form = Form;
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
-
+    request.headers['X-CSRF-TOKEN'] = Laravel.csrfToken;
     next();
 });
 
 
 window.axios = require('axios');
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'Authorization': 'Bearer ' + Laravel.api_token,
+};
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

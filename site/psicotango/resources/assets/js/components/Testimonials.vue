@@ -1,49 +1,36 @@
 <template>
+    <!--Needs to be taken from database or JSON file-->
+    <div id="tesimonials" class="widget clearfix bottommargin">
 
-    <div id="p-carousel" class="widget clearfix">
-
-        <h4 class="highlight-me">messages.published_books</h4>
-        <div id="oc-portfolio-sidebar" class="owl-carousel carousel-widget" data-items="1" data-margin="10" data-loop="true" data-nav="false" data-autoplay="5000">
-
-            <div class="oc-item">
-                <div class="iportfolio">
-                    <div class="portfolio-image">
-                        <a href="#">
-                            <img src="/images/libroTangoDanzaTerapia.png" alt="Tango Terapia">
-                        </a>
-                        <div class="portfolio-overlay">
-                            <a href="/images/libroTangoDanzaTerapia.png" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+        <h4 class="highlight-me"><span v-html="$t('messages.testimonials_title')"></span></h4>
+        <div class="fslider testimonial noborder nopadding noshadow" data-animation="slide" data-arrows="false">
+            <div class="flexslider">
+                <div class="slider-wrap">
+                    <div class="slide">
+                        <div class="testi-content">
+                            <p v-html="$t('messages.testimonial_1')"></p>
+                            <div class="testi-meta">
+                                Laura
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="oc-item">
-                <div class="iportfolio">
-                    <div class="portfolio-image">
-                        <a href="#">
-                            <img src="/images/libroTangoDanzaInterior.png" alt="Tango Terapia">
-                        </a>
-                        <div class="portfolio-overlay">
-                            <a href="/images/libroTangoDanzaInterior.png" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                    <div class="slide">
+                        <div class="testi-content">
+                            <p v-html="$t('messages.testimonial_2')"></p>
+                            <div class="testi-meta">
+                                Paola Marabini
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="oc-item">
-                <div class="iportfolio">
-                    <div class="portfolio-image">
-                        <a href="#">
-                            <img src="/images/libroTangoUnAbrazoSanador1.png" alt="Tango Terapia">
-                        </a>
-                        <div class="portfolio-overlay">
-                            <a href="/images/libroTangoUnAbrazoSanador1.png" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                    <div class="slide">
+                        <div class="testi-content">
+                            <p v-html="$t('messages.testimonial_3')"></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </template>
 

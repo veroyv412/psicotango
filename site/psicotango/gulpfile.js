@@ -18,29 +18,32 @@ require('laravel-elixir-vue-2');
 //or gulp --production and will minify it
 
 elixir((mix) => {
-    mix.sass('app.scss').webpack('app.js');
+    mix.webpack('app.js');
 
     mix.scripts([
         //'vendor/vue.min.js',
         //'vendor/vue-resource.min.js',
     
-        './node_modules/jquery/dist/jquery.min.js',
-        'vendor/bootstrap.min.js',
-        './node_modules/animsition/dist/js/animsition.min.js',
-        'vendor/jquery.flexslider-min.js',
-        'vendor/owl.carousel/owl.carousel.min.js',
+        //'./node_modules/jquery/dist/jquery.min.js',
+        'vendor/jquery.js',
+        'vendor/hover3d.js',
+        'vendor/jquery.gmap.js',
+        'https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4',
         'vendor/plugins.js',
-    ], 'public/js/vendor/vendor.js');
+        'vendor/functions.js',
+        'psicotango.js',
+    ], 'public/js/vendor.js');
 
     mix.styles([
-        'vendor/animate.min.css',
-        './node_modules/animsition/dist/css/animsition.min.css',
-        'vendor/flexslider.css',
-        'vendor/font-awesome.css',
-        'vendor/plugins.min.css',
-        'vendor/themify-icons.css',
-        'vendor/owl.carousel.css',
-        'vendor/owl.theme.css',
-        'vendor/owl.transitions.css',
+        'bootstrap.css',
+        'style.css',
+        'colors.css',
+        'swiper.css',
+        'dark.css',
+        'font-icons.css',
+        'animate.css',
+        'magnific-popup.css',
+        'writer.css',
+        'responsive.css'
     ], 'public/css/vendor.css');
 });

@@ -146,7 +146,7 @@ return [
         |
         */
         'facades' => [
-            'HTML', 'URL', 'Lang', 'Config', 'Input', 'Form', 'Auth', 'Str', 'Session',
+            'HTML', 'URL', 'Lang', 'Config', 'Input', 'Form', 'Auth', 'Str', 'Session', 'LaravelLocalization'
         ],
 
         /*

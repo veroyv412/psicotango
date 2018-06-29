@@ -14,7 +14,16 @@ use Illuminate\Http\Request;
 */
 
 
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+    Route::get('/my-courses', 'Auth\ApiController@getLoggedUserCourses');
+    Route::get('/lesson/view/{lesson_id}', 'Auth\ApiController@getLesson');
+});
+
+
+
+
+
