@@ -1,0 +1,17 @@
+{% block page_title %}Profile{% endblock %}
+{% extends 'layout/auth_base.twig' %}
+{% block title %}Psicotango{% endblock %}
+
+{% block h1 %}PSICOTANGO{% endblock %}
+{% block h2 %}Profile {% endblock %}
+{% block breadcrum %}
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">{{ trans('messages.profile_settings') }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ trans('messages.profile_settings') }}</h1>
+    <profile-settings></profile-settings>
+{% endblock %}

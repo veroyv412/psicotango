@@ -100,5 +100,13 @@ return [
     'ModuleTwo' => 'Módulo Dos',
     'Seminar'    => 'Seminario',
     'interested_in_upgrade' => 'Interesado en ver los videos del proximo modulo?',
-    'upgrade'   => 'Actualizar Plan'
+    'upgrade'   => 'Actualizar Plan',
+
+    //Profile Settings
+    'profile_settings' => 'Perfil de Usuario',
+    'profile_settings_saved_successfully' => 'Los datos han sido guardados exitosamente',
+
+    //Save
+    'save' => 'Guardar',
+    'saving' => 'Guardando...',
 ];

@@ -40,6 +40,9 @@ Route::group(
     Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
     Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+
+    Route::get('/profile', 'Auth\HomeController@getProfile')->name('profile');
+
 });
 
 Route::group(
@@ -54,9 +57,14 @@ Route::group(
     
 });
 
+Route::post('/profile', 'Auth\HomeController@postProfile');
 
 
-Route::get('/category/{category_slug}', 'SearchController@getCategorySearch');
+
+
+
+//Legacy from other project
+/*Route::get('/category/{category_slug}', 'SearchController@getCategorySearch');
 Route::get('/tags/{tag}', 'SearchController@getTagSearch');
 Route::get('/search', 'SearchController@getDealsSearch');
 Route::post('/search', 'SearchController@getDealsSearch');
@@ -78,3 +86,4 @@ Route::get('/admin/manage/deals', 'AdminController@getManageDeals')->middleware(
 // EMAIL
 Route::get('/email/user_buy_deal', 'HomeController@getEmailUserByDeal');
 Route::get('/email/business_buy_deal', 'HomeController@getEmailBusinessByDeal');
+*/

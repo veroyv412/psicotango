@@ -48,20 +48,27 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">PSICOTANGO</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav nobottommargin">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ trans('messages.language') }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png" style="width: 16px"> {{ trans('messages.spanish') }}</a></li>
+                                <li><a href="{{ l10n_url('en') }}"><img src="/images/flags/usa.png" style="width: 16px"> {{ trans('messages.english') }}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right nobottommargin">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth.user().name }} {{ Auth.user().lastname }} <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth.user().name }} {{ Auth.user().last_name }} <b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ l10n_url_by_route('profile') }}/profile">Profile</a></li>
-                                <li><a href="{{ l10n_url_by_route('settings') }}/settings">Settings</a></li>
-                                <li><a href="{{ l10n_url_by_route('myvideos') }}/my-videos">My Videos</a></li>
+                                <li><a href="{{ l10n_url_by_route('profile') }}/profile"><i class="icon-user"></i> Profile</a></li>
+                                <li><a href="{{ l10n_url_by_route('settings') }}/settings"><i class="icon-cogs"></i> Settings</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ l10n_url_by_route('logout') }}/logout">Logout <i class="icon-signout"></i></a></li>
+                                <li><a href="{{ l10n_url_by_route('logout') }}/logout"><i class="icon-signout"></i> Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -84,7 +91,22 @@
         <section id="content">
             <div class="content-wrap">
                 <div class="col-xs-12 col-sm-9">
-                    <div class="container-fullwidth clearfix">{% block content %}{% endblock %}</div>
+                    <div class="container-fullwidth clearfix">
+                        {% if Session.get('success') %}
+                            <div class="style-msg successmsg">
+                                <div class="sb-msg"><i class="icon-thumbs-up"></i><strong>Yay!</strong> {{ Session.get('success') }}</div>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            </div>
+                        {% endif %}
+
+                        {% if Session.get('error') %}
+                            <div class="style-msg errormsg">
+                                <div class="sb-msg"><i class="icon-remove"></i><strong>Oh snap!</strong> {{ Session.get('error') }}</div>
+                            </div>
+                        {% endif %}
+
+                        {% block content %}{% endblock %}
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-3">
                     <div class="container-fullwidth2 clearfix">

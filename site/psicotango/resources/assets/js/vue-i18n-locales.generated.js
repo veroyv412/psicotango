@@ -56,7 +56,11 @@ export default {
             "ModuleTwo": "Module Two",
             "Seminar": "Seminar",
             "interested_in_upgrade": "Interested in watching more videos?",
-            "upgrade": "Upgrade"
+            "upgrade": "Upgrade",
+            "profile_settings": "Profile Account",
+            "profile_settings_saved_successfully": "Settings have been saved successfully",
+            "save": "Save",
+            "saving": "Saving..."
         },
         "pagination": {
             "previous": "&laquo; Previous",
@@ -206,7 +210,11 @@ export default {
             "ModuleTwo": "Módulo Dos",
             "Seminar": "Seminario",
             "interested_in_upgrade": "Interesado en ver los videos del proximo modulo?",
-            "upgrade": "Actualizar Plan"
+            "upgrade": "Actualizar Plan",
+            "profile_settings": "Perfil de Usuario",
+            "profile_settings_saved_successfully": "Los datos han sido guardados exitosamente",
+            "save": "Guardar",
+            "saving": "Guardando..."
         },
         "pagination": {
             "previous": "&laquo; Anterior",

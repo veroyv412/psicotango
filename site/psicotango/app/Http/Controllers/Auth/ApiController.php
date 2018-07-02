@@ -18,6 +18,14 @@ class ApiController extends Controller
     {
         $this->middleware('auth');
     }
+    
+    public function getLoggedUser(Request $request, AjaxResponse $ajax){
+        try {
+            return $ajax->success(Auth::user());
+        } catch (\Exception $e){
+            return $ajax->error($e->getMessage());
+        }
+    }
 
     public function getLesson(Request $request, AjaxResponse $ajax, $lesson_id){
         try {

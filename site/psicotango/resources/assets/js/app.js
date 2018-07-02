@@ -31,23 +31,14 @@ const replaceCenterSpaceUnderscore = function(value) {
 
 Vue.filter('replaceCenterSpaceUnderscore', replaceCenterSpaceUnderscore);
 
-
-
 Vue.component('featured-books', require('./components/FeaturedBooks.vue'));
 Vue.component('testimonials', require('./components/Testimonials.vue'));
 Vue.component('index-lessons', require('./components/IndexLessons.vue'));
 Vue.component('lesson-box', require('./components/LessonBox.vue'));
 Vue.component('lesson-view', require('./components/LessonView.vue'));
-//Vue.component('owl-slider', require('./components/OwlSlider.vue'));
-//Vue.component('ad-slider', require('./components/AdSlider.vue'));
-//Vue.component('featured-one-box', require('./components/FeaturedOneBox.vue'));
-//Vue.component('featured-one-boxes', require('./components/FeaturedOneBoxes.vue'));
-//Vue.component('featured-two-box', require('./components/FeaturedTwoBox.vue'));
-//Vue.component('featured-two-boxes', require('./components/FeaturedTwoBoxes.vue'));
-//Vue.component('search-deal', require('./components/SearchDeal.vue'));
-//Vue.component('search-deals', require('./components/SearchDeals.vue'));
-//Vue.component('business-form', require('./components/BusinessForm.vue'));
-//Vue.component('upload-image', require('./components/UploadImage.vue'));
+Vue.component('login', require('./components/Login.vue'));
+Vue.component('signup', require('./components/Signup.vue'));
+Vue.component('profile-settings', require('./components/ProfileSettings.vue'));
 
 Vue.filter('replaceSpaceUnderscore', function(text){
     return text.replace(text, ' ', '_');

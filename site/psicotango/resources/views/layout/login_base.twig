@@ -30,7 +30,7 @@
         <link rel="apple-touch-icon" sizes="114x114" href="#">
 
         <script>
-            window.Laravel = { 'csrfToken': '{{ csrf_token() }}'};
+            window.Laravel = { 'csrfToken': '{{ csrf_token() }}', 'api_token': '{{ Auth.user().api_token }}', 'lang': '{{ LaravelLocalization.getCurrentLocale() }}' };
             window.baseURL = '{{ url('/') }}';
         </script>
     </head>
@@ -39,7 +39,7 @@
 <body class="sticky-footer stretched">
     <!-- Document Wrapper
 	============================================= -->
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="clearfix application">
 
         <div class="clear"></div>
 
@@ -69,6 +69,7 @@
     ============================================= -->
     <div id="gotoTop" class="icon-angle-up"></div>
 
+    <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/vendor.js"></script>
 </body>
 

@@ -7,8 +7,8 @@
         <div id="player" class="player"  style="height: 450px; width: 100%;">Loading...</div>
 
         <div class="row topmargin">
-            <div class="col-xs-6 text-left"><a :href="'lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0"><< Previous</a></div>
-            <div class="col-xs-6 text-right"><a :href="'lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0">Next >></a></div>
+            <div class="col-xs-6 text-left"><a :href="'/lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0"><< Previous</a></div>
+            <div class="col-xs-6 text-right"><a :href="'/lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0">Next >></a></div>
         </div>
     </div>
 </template>
@@ -44,7 +44,7 @@
                                 anchor: 'center, center',
                                 onReady: function( player ) {
                                     if (first){
-                                        jQuery('#player').YTPChangeMovie({videoURL: response.data.data.youtube_id, ratio:'16/9'});
+                                        jQuery('#player').YTPChangeMovie({videoURL: response.data.data.youtube_id});
                                         first = false;
                                     }
                                 }

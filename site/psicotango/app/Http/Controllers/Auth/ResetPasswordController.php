@@ -43,4 +43,11 @@ class ResetPasswordController extends Controller
     {
         return Twig::render('auth/passwords/reset', ['token' => $token, 'email' => $request->email]);
     }
+
+    protected function sendResetResponse($response)
+    {
+        $user = $this->guard()->user();
+        $user->generateToken();
+        return redirect($this->redirectPath())->with('status', trans($response));
+    }
 }

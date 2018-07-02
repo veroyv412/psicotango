@@ -95,5 +95,14 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     'ModuleTwo' => 'Module Two',
     'Seminar' => 'Seminar',
     'interested_in_upgrade' => 'Interested in watching more videos?',
-    'upgrade' => 'Upgrade'
+    'upgrade' => 'Upgrade',
+    
+    //Profile Settings
+    'profile_settings' => 'Profile Account',
+    'profile_settings_saved_successfully' => 'Settings have been saved successfully',
+    
+    //Save
+    'save' => 'Save',
+    'saving' => 'Saving...',
+    
 ];
