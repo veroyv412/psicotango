@@ -9,16 +9,10 @@
 
     <index-lessons></index-lessons>
 
-    {% if logged_user.plan_id is null or logged_user.plan_id == 1 or logged_user.plan_id == 2 %}
+    {% if Auth.user().plan_id is null or Auth.user().plan_id == 1 or Auth.user().plan_id == 2 %}
     <div class="promo promo-dark bottommargin topmargin">
         <h3>{{ trans('messages.interested_in_upgrade') }}</h3>
         <a href="{{ l10n_url_by_route('upgrade') }}/upgrade" class="button button-xlarge button-rounded">{{ trans('messages.upgrade') }}</a>
     </div>
     {% endif %}
-
-    <script type="application/javascript">
-        /*$(window).load(function(){
-            psicotango.indexInit();
-        });*/
-    </script>
 {% endblock %}

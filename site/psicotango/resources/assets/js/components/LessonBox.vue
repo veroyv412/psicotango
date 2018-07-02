@@ -5,8 +5,8 @@
                 <img :src="lesson.youtube_image" :alt="lesson.name">
             </a>
             <div class="portfolio-overlay">
-                <a :href="'view-lesson/' + lesson.id" class="left-icon"><i class="icon-line-play"></i></a>
-                <a :href="'view-lesson/'+ lesson.id" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                <a :href="'lesson/' + lesson.id" class="left-icon"><i class="icon-line-play"></i></a>
+                <a :href="'lesson/'+ lesson.id" class="right-icon"><i class="icon-line-ellipsis"></i></a>
             </div>
         </div>
         <div class="portfolio-desc">

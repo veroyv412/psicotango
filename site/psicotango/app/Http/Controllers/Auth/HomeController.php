@@ -20,12 +20,8 @@ class HomeController extends Controller
     }
 
     public function getViewLesson(Request $request, $lesson_id){
-        $loggedUser = Auth::user();
-
-        return Twig::render('auth/view-lesson', [
-            'logged_user'       => $loggedUser,
-            'lesson_id'         => $lesson_id,
-            'locale'            => LaravelLocalization::getCurrentLocale()
+        return Twig::render('auth/lesson/view', [
+            'lesson_id'         => $lesson_id
         ]);
     }
 }

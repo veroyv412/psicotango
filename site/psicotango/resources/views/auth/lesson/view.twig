@@ -1,0 +1,24 @@
+{% block page_title %}Home{% endblock %}
+{% extends 'layout/auth_base.twig' %}
+{% block title %}Psicotango{% endblock %}
+
+{% block h1 %}PSICOTANGO{% endblock %}
+{% block h2 %}{% endblock %}
+
+{% block breadcrum %}
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">View Lesson</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <lesson-view lesson_id="{{ lesson_id }}"></lesson-view>
+
+    {% if Auth.user().plan_id is null or Auth.user().plan_id == 1 or Auth.user().plan_id == 2 %}
+        <div class="promo promo-dark bottommargin topmargin">
+            <h3>{{ trans('messages.interested_in_upgrade') }}</h3>
+            <a href="{{ l10n_url_by_route('upgrade') }}/upgrade" class="button button-xlarge button-rounded">{{ trans('messages.upgrade') }}</a>
+        </div>
+    {% endif %}
+{% endblock %}

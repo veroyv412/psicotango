@@ -96,8 +96,8 @@ return [
     'signup_button_text' => 'Registrate!',
 
     //Logged User - Index page
-    'Module One' => 'Módulo Uno',
-    'Module Two' => 'Módulo Dos',
+    'ModuleOne' => 'Módulo Uno',
+    'ModuleTwo' => 'Módulo Dos',
     'Seminar'    => 'Seminario',
     'interested_in_upgrade' => 'Interesado en ver los videos del proximo modulo?',
     'upgrade'   => 'Actualizar Plan'

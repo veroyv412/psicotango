@@ -3,7 +3,7 @@
         <!--Portfolio Filter ============================================= -->
         <ul class="portfolio-filter isotope clearfix" id="portfolio-filter" data-filter=".3" data-container="#portfolio">
             <li v-for="(course, key) in courses" :class="{ activeFilter: key == 0 }">
-                <a href="#" :data-filter="'.'+course.id">sss</a>
+                <a href="#" :data-filter="'.'+course.id">{{ $t('messages.'+replaceSpaces(course.name) ) }}</a>
             </li>
         </ul>
 
@@ -22,7 +22,11 @@
         data(){
             return { courses: [], lessons: [] }
         },
-
+        methods: {
+            replaceSpaces(course_name){
+                return course_name.replace(' ', '');
+            }
+        },
         mounted() {
             var _lessons = [];
             axios.get('/api/my-courses').then(response => {

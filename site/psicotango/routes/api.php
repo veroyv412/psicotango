@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth:api'], function() {
     });
 
     Route::get('/my-courses', 'Auth\ApiController@getLoggedUserCourses');
-    Route::get('/lesson/view/{lesson_id}', 'Auth\ApiController@getLesson');
+    Route::get('/lesson/{lesson_id}', 'Auth\ApiController@getLesson');
 });
 
 

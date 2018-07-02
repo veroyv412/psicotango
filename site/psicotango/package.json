@@ -7,18 +7,19 @@
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
-    "jquery": "^3.2.1",
-    "laravel-elixir": "^6.0.0-15",
-    "laravel-elixir-vue-2": "^0.2.0",
+    "jquery": "^3.3.1",
+    "laravel-elixir": "^6.0.0-18",
+    "laravel-elixir-vue-2": "^0.3.0",
     "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.16.2",
-    "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
+    "lodash": "^4.17.10",
+    "vue": "^2.5.16",
+    "vue-resource": "^1.5.1"
   },
   "dependencies": {
     "animsition": "^4.0.2",
     "axios": "^0.16.2",
-    "flexslider": "^2.6.4",
+    "flexslider": "^2.7.1",
+    "vue-filter": "^0.2.5",
     "vue-i18n": "^8.0.0",
     "vue-upload-image": "^1.0.5"
   }

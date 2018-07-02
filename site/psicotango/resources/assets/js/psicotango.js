@@ -112,7 +112,7 @@ Psicotango = {
                     $("#next").remove();
                 }
 
-                
+
                 jQuery(function(){
                     var options = {
                         videoURL: data.youtube_id,

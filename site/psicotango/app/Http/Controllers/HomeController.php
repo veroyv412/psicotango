@@ -31,12 +31,8 @@ class HomeController extends Controller
     }
 
     public function getHome(Request $request){
-        $loggedUser = Auth::user();
-
-        if ( !empty($loggedUser) ){
-            return Twig::render('auth/index', [
-                'logged_user'       => $loggedUser,
-            ]);
+        if ( !empty(Auth::check()) ){
+            return Twig::render('auth/index', []);
         } else {
             return Twig::render('index', []);
         }

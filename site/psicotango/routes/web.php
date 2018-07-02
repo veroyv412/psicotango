@@ -49,7 +49,7 @@ Route::group(
     ], function () {
     //only authorized users can access these routes
 
-    Route::get('/view-lesson/{lesson_id}', 'Auth\HomeController@getViewLesson')->name('viewLesson');
+    Route::get('/lesson/{lesson_id}', 'Auth\HomeController@getViewLesson')->name('viewLesson');
 
     
 });

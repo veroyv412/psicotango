@@ -52,8 +52,8 @@ export default {
             "repeat_password": "Repeat Password",
             "signup_terms": "By registering you are accepting this <a href=\"\/terms\">Terms and Conditions<\/a>",
             "signup_button_text": "Signup",
-            "Module One": "Module One",
-            "Module Two": "Module Two",
+            "ModuleOne": "Module One",
+            "ModuleTwo": "Module Two",
             "Seminar": "Seminar",
             "interested_in_upgrade": "Interested in watching more videos?",
             "upgrade": "Upgrade"
@@ -202,8 +202,8 @@ export default {
             "repeat_password": "Repetir Contraseña",
             "signup_terms": "Al registrarse usted esta de acuerdo con los <a href=\"\/terms\">Términos y Condiciones<\/a>",
             "signup_button_text": "Registrate!",
-            "Module One": "Módulo Uno",
-            "Module Two": "Módulo Dos",
+            "ModuleOne": "Módulo Uno",
+            "ModuleTwo": "Módulo Dos",
             "Seminar": "Seminario",
             "interested_in_upgrade": "Interesado en ver los videos del proximo modulo?",
             "upgrade": "Actualizar Plan"
