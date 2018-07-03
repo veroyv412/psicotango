@@ -15,6 +15,15 @@ require('./bootstrap');
 
 import VueInternationalization from 'vue-i18n';
 import Locale from './vue-i18n-locales.generated.js';
+import Errors from './errors.js';
+
+Object.defineProperties(Vue.prototype, {
+    "$errors": {
+        value: new Errors(),
+        writable: true
+    },
+});
+
 //import VueFilter from 'vue-filter'; //https://github.com/wy-ei/vue-filter#trim
 
 Vue.use(VueInternationalization);
@@ -49,4 +58,7 @@ const app = new Vue({
     loggedUser: window.loggedUser,
     delimiters: ['{{{', '}}}'],
     el: '.application',
+    data: {
+        errors: new Errors()
+    }
 });
