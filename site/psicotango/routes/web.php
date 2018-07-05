@@ -24,7 +24,6 @@ Route::group(
 
     //Authentication
     Route::get('/login', 'Auth\LoginController@getLogin')->name('login');
-    Route::post('/login', 'Auth\LoginController@postLogin');
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
     //SOCIAL
@@ -33,7 +32,6 @@ Route::group(
 
     // Registration Routes...
     Route::get('/signup', 'Auth\RegisterController@getSignup')->name('signup');
-    Route::post('/signup', 'Auth\RegisterController@postSignup');
 
     // Password Reset Routes...
     Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
@@ -58,9 +56,8 @@ Route::group(
 });
 
 Route::post('/profile', 'Auth\HomeController@postProfile');
-
-
-
+Route::post('/login', 'Auth\LoginController@postLogin');
+Route::post('/signup', 'Auth\RegisterController@postSignup');
 
 
 //Legacy from other project

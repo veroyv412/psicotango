@@ -3,67 +3,13 @@
 {% block title %}Psicotango | Signup {% endblock %}
 
 {% block content %}
-    <form method="POST" action="{{ l10n_url_by_route('signup') }}/signup" class="nobottommargin dark-box">
-        {{ csrf_field() }}
-        <h1 class="text-center" style="text-transform: uppercase">{{ trans('messages.signup') }}</h1>
+    <h1 class="text-center" style="text-transform: uppercase">{{ trans('messages.signup') }}</h1>
 
-        <div class="center">
-            <h4 style="margin-bottom: 15px;"></h4>
-            <a href="/redirect/facebook" class="button button-rounded btn-block si-facebook si-colored"><i class="icon-facebook"></i> Facebook</a>
-        </div>
+    <div class="center">
+        <h4 style="margin-bottom: 15px;"></h4>
+        <a href="/redirect/facebook" class="button button-rounded btn-block si-facebook si-colored"><i class="icon-facebook"></i> Facebook</a>
+    </div>
+    <div class="line line-sm"></div>
 
-        <div class="line line-sm"></div>
-
-        <div class="form-group  {{ errors.has('name') ? ' has-error' : '' }}">
-            <label>{{ trans('messages.name') }}</label>
-            <input type="text" name="email" class="form-control sm-form-control" value="{{ old('name') }}">
-            {% if errors.has('name') is not empty %}
-                <span class="help-block">{{ errors.first('name') }}</span>
-            {% endif %}
-        </div>
-
-        <div class="form-group {{ errors.has('last_name') ? ' has-error' : '' }}">
-            <label>{{ trans('messages.lastname') }}</label>
-            <input type="text" name="last_name" class="form-control sm-form-control" value="{{ old('last_name') }}">
-            {% if errors.has('last_name') is not empty %}
-                <span class="help-block">{{ errors.first('last_name') }}</span>
-            {% endif %}
-        </div>
-
-        <div class="form-group {{ errors.has('email') ? ' has-error' : '' }}">
-            <label>{{ trans('messages.email') }}</label>
-            <input type="text" name="email" class="form-control sm-form-control" value="{{ old('email') }}">
-            {% if errors.has('email') is not empty %}
-                <span class="help-block">{{ errors.first('email') }}</span>
-            {% endif %}
-        </div>
-
-        <div class="form-group {{ errors.has('password') ? ' has-error' : '' }}">
-            <label>{{ trans('messages.password') }}</label>
-            <input type="password" name="password" class="form-control sm-form-control" value="">
-            {% if errors.has('password') %}
-                <span class="help-block">{{ errors.first('password') }}</span>
-            {% endif %}
-        </div>
-
-        <div class="form-group {{ errors.has('password2') ? ' has-error' : '' }}">
-            <label>{{ trans('messages.repeat_password') }}</label>
-            <input type="password" name="password2" class="form-control sm-form-control" value="">
-            {% if errors.has('password2') %}
-                <span class="help-block">{{ errors.first('password2') }}</span>
-            {% endif %}
-        </div>
-
-        <div class="form-group">
-            <label>
-                {{ trans('messages.signup_terms') | raw }}
-            </label>
-        </div>
-
-        <button type="submit" class="button button-rounded button-green btn-block">
-            {{ trans('messages.signup_button_text') }}
-        </button>
-
-
-    </form>
+    <signup></signup>
 {% endblock %}
