@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'last_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'password_confirmation' => 'min:6'
+            'password_confirmation' => 'required|min:6'
         ]);
     }
 

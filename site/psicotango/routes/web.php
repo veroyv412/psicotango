@@ -51,14 +51,13 @@ Route::group(
     //only authorized users can access these routes
 
     Route::get('/lesson/{lesson_id}', 'Auth\HomeController@getViewLesson')->name('viewLesson');
-
-    
+    Route::get('/mpconnect', 'Auth\HomeController@getMercadoPagoConnect');
 });
 
 Route::post('/profile', 'Auth\HomeController@postProfile');
 Route::post('/login', 'Auth\LoginController@postLogin');
 Route::post('/signup', 'Auth\RegisterController@postSignup');
-
+Route::get('/mpconnect-redirect', 'HomeController@getMercadoPagoConnectRedirect');
 
 //Legacy from other project
 /*Route::get('/category/{category_slug}', 'SearchController@getCategorySearch');

@@ -64,4 +64,13 @@ class HomeController extends Controller
             'message' => $trans->get('messages.profile_settings_saved_successfully')
         ]);
     }
+
+    public function getMercadoPagoConnect(Request $request){
+        $applicationId = config('mercadopago.credentials.application_id');
+
+        $redirectUrl = urlencode(url('/mpconnect-redirect'));
+        $url = sprintf('https://auth.mercadopago.com.ar/authorization?client_id=%s&response_type=code&platform_id=mp&redirect_uri=%s', $applicationId, $redirectUrl);
+        return redirect($url);
+    }
+
 }

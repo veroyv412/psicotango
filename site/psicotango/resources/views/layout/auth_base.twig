@@ -66,7 +66,12 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth.user().name }} {{ Auth.user().last_name }} <b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ l10n_url_by_route('profile') }}/profile"><i class="icon-user"></i> Profile</a></li>
-                                <li><a href="{{ l10n_url_by_route('settings') }}/settings"><i class="icon-cogs"></i> Settings</a></li>
+                                {% if Auth.user.hasRole('psicotango') and Auth.user().mp_user_id is null %}
+                                    <li><a href="{{ l10n_url_by_route('mpconnect') }}/mpconnect"><i class="icon-credit"></i> Mercado Pago</a></li>
+                                {% endif %}
+                                {% if Auth.user().plan_id is null or Auth.user().plan_id == 1 or Auth.user().plan_id == 2 %}
+                                    <li><a href="{{ l10n_url_by_route('upgrade') }}/upgrade"><i class="icon-upload"></i> Upgrade</a></li>
+                                {% endif %}
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ l10n_url_by_route('logout') }}/logout"><i class="icon-signout"></i> Logout</a></li>
                             </ul>

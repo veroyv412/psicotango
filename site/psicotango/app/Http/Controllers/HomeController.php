@@ -38,7 +38,45 @@ class HomeController extends Controller
         }
     }
     
-    
+    public function getMercadoPagoConnectRedirect(Request $request){
+        try {
+            $trans = app('translator');
+            $mpCode = $request->get('code');
+            $accessToken = config('mercadopago.credentials.access_token');
+            $redirectUrl = url('/mpconnect-redirect');
+
+            $mp = new \MP($accessToken);
+
+            $data = array(
+                "uri" => "/oauth/token",
+                "data" => array(
+                    "client_secret" => $mp->get_access_token(),
+                    "grant_type" => "authorization_code",
+                    "code" => $mpCode,
+                    "redirect_uri" => $redirectUrl
+                ),
+                "headers" => array(
+                    "content-type" => "application/x-www-form-urlencoded"
+                ),
+                "authenticate" => false
+            );
+
+            $results = $mp->post($data);
+
+            $user = Auth::user();
+            $user->mp_access_token = $results['response']['access_token'];
+            $user->mp_refresh_token = $results['response']['refresh_token'];
+            $user->mp_user_id = $results['response']['user_id'];
+            $user->mp_expires_id = $results['response']['expires_in'];
+            $user->save();
+
+            Session::flash('success', $trans->get('messages.mercadopago_connect_success'));
+        } catch (\Exception $e){
+            Session::flash('error', $e->getMessage());
+        }
+
+        redirect('/');
+    }
     
     /* Email */
     public function getEmailUserByDeal(Request $request){

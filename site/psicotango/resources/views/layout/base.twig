@@ -401,7 +401,9 @@
                     <h1>{{ trans('messages.contactus') }}</h1>
                 </div>
 
-                <div id="headquarters-map" class="col-md-8 gmap hidden-xs"></div>
+                <div id="headquarters-map" class="col-md-8 gmap">
+                    <iframe src="https://maps.google.com/maps?q=Balvanera%2C%20Buenos%20Aires&t=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
                 <div class="col-md-4 dark" style="background-color: #333;">
                     <div style="padding: 40px;">
                         <h4 class="font-body t600 ls1">{{ trans('messages.doubts') }}</h4>
@@ -434,8 +436,9 @@
 
 <!-- External JavaScripts
 ============================================= -->
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4"></script>
 <script type="text/javascript" src="/js/vendor.js"></script>
-<script type="text/javascript">window.psicotango.indexMapInit(); window.psicotango.indexBooksInit();</script>
+<script type="text/javascript">window.psicotango.indexBooksInit(); //window.psicotango.indexMapInit();</script>
 </body>
 
 </html>

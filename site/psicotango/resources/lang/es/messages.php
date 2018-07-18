@@ -109,4 +109,7 @@ return [
     //Save
     'save' => 'Guardar',
     'saving' => 'Guardando...',
+    
+    //MercadoPago
+    'mercadopago_connect_success' => 'La conexion es exitosa.'
 ];

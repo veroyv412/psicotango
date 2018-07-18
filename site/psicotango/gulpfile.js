@@ -28,7 +28,6 @@ elixir((mix) => {
         'vendor/jquery.js',
         'vendor/hover3d.js',
         'vendor/jquery.gmap.js',
-        'https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4',
         'vendor/plugins.js',
         'vendor/functions.js',
         'psicotango.js',

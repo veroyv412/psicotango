@@ -13,7 +13,8 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "mcamara/laravel-localization": "^1.2",
         "frysch/laravel-localization-twig": "^1.0",
-        "martinlindhe/laravel-vue-i18n-generator": "^0.1.28"
+        "martinlindhe/laravel-vue-i18n-generator": "^0.1.28",
+        "mercadopago/sdk": "0.5.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

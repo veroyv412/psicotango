@@ -104,5 +104,7 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     //Save
     'save' => 'Save',
     'saving' => 'Saving...',
-    
+
+    //MercadoPago
+    'mercadopago_connect_success' => 'Conection is successful.'
 ];
