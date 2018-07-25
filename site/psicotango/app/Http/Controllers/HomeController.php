@@ -44,6 +44,7 @@ class HomeController extends Controller
             $mpCode = $request->get('code');
             $accessToken = config('mercadopago.credentials.access_token');
             $redirectUrl = url('/mpconnect-redirect');
+            $locale = App::getLocale();
 
             $mp = new \MP($accessToken);
 

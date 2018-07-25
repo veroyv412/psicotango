@@ -52,9 +52,17 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
 
     //section-books
     'published_books' => 'published <span>books</span>',
+    'quick_view' => 'Quick View',
+    'buy_book' => 'Shop',
 
     //section-courses
     'online_courses_title' => 'online <span>courses</span>',
+
+    //Tango una Pasion que Sana
+    'tango_passion_heals' => '<span>Tango</span>, a passion that heals',
+
+    //News
+    'news' => 'News',
 
     //section-prices
     'prices_title' => 'online courses <span>prices</span>',
@@ -68,6 +76,9 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     'testimonial_1' => 'I liked the seminar a lot, especially it moved me a lot. Yesterday I wanted to tell some of my tango partners the experience, and I realized that I did not find many words, and that intellectually I did not leave much, but I did feel a very mobilized energy within me.',
     'testimonial_2' => 'I really want to thank Monica Peri, my teacher of psychotango for his lessons; they were particularly of aido for me and my lifetime. Before meeting her and taking part in the psychotango seminar, I passed to think about some aspects of my life and my character is not very deeply.',
     'testimonial_3' => 'Psicotango a container and comfortable space where dancing tango is possible from the primary integrity of the dance ritual, to the ancestral cultural aspects of our most traditional tango and the incorporation of recent modern contemporary aspects, giving us the possibility of recrossing the myth and the own perception of the cultural roles and conducts through the analysis of the nature and circumstance of the movement experiencing the dance and allowing the Tango dance form to emerge.',
+
+    //section-gallery
+    'gallery' => 'Gallery',
 
     //section-contactus
     'contactus_title' => 'Contáctenos',

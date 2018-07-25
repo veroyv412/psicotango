@@ -38,6 +38,29 @@
 
 <body class="sticky-footer stretched">
 
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1987012354703452',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.0'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        {%  if LaravelLocalization.getCurrentLocale() == 'es' %}
+            js.src = "https://connect.facebook.net/es_ES/sdk.js";
+        {% else %}
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+        {% endif %}
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <!-- Document Wrapper
 	============================================= -->
 <div id="wrapper" class="clearfix">
@@ -48,16 +71,16 @@
 
         <div class="container clearfix">
 
-            <div class="col_half nobottommargin clearfix">
+            <div class="col_half fright col_last nobottommargin">
 
                 <!-- Top Links
                 ============================================= -->
                 <div class="top-links">
-                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
+                    <ul class="clearfix" style="touch-action: pan-y;">
                         <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
                             <ul style="display: none;">
-                                <li><a href="{{ l10n_url('es') }}">{{ trans('messages.spanish') }}</a></li>
-                                <li><a href="{{ l10n_url('en') }}">{{ trans('messages.english') }}</a></li>
+                                <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png"> {{ trans('messages.spanish') }}</a></li>
+                                <li><a href="{{ l10n_url('en') }}"><img src="/images/flags/usa.png"> {{ trans('messages.english') }}</a></li>
                                 {#<li><a href="#">Italiano</a></li>
                                 <li><a href="#">Frances</a></li>#}
                             </ul>
@@ -67,7 +90,7 @@
 
             </div>
 
-            <div class="col_half fright col_last clearfix nobottommargin">
+            {#<div class="col_half fright col_last clearfix nobottommargin">
 
                 <!-- Top Links
                 ============================================= -->
@@ -78,7 +101,7 @@
                     </ul>
                 </div><!-- .top-links end -->
 
-            </div>
+            </div>#}
 
         </div>
 
@@ -92,7 +115,7 @@
 
             <div class="swiper-container swiper-parent">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide dark" style="background-image: url('images/fondo_landingpage.jpg');">
+                    <div class="swiper-slide dark" style="background-image: url('images/fondo_psicotango.png');">
                         <div class="container clearfix">
                             <div class="slider-caption slider-caption-center">
                                 <img class="img-responsive image_fade bottommargin-lg center-block" src="images/psicotango_title.png">
@@ -123,7 +146,6 @@
 
             <section id="section-psicotango" class="page-section">
                 <div class="container clearfix">
-
                     <div class="heading-block center">
                         <h1>PSICO<span>TANGO</span></h1>
                     </div>
@@ -167,7 +189,7 @@
                                 <div class="team-content">
                                     {{ trans('messages.monica_peri_description') }}
                                 </div>
-                                <a href="https://www.facebook.com/perimonica" class="social-icon si-rounded si-small si-facebook">
+                                <a href="https://www.facebook.com/psicotango.danzacomoterapia" class="social-icon si-rounded si-small si-facebook">
                                     <i class="icon-facebook"></i>
                                     <i class="icon-facebook"></i>
                                 </a>
@@ -187,7 +209,7 @@
                                 <div class="team-content">
                                     {{ trans('messages.ignacio_lavalle_description') }}
                                 </div>
-                                <a href="https://www.facebook.com/perimonica" class="social-icon si-rounded si-small si-facebook">
+                                <a href="https://www.facebook.com/psicotango.danzacomoterapia" class="social-icon si-rounded si-small si-facebook">
                                     <i class="icon-facebook"></i>
                                     <i class="icon-facebook"></i>
                                 </a>
@@ -209,11 +231,11 @@
                         <div class="portfolio-item">
                             <div class="book-wrap">
                                 <div class="book-card">
-                                    <img src="images/libroTangoDanzaInterior.png" alt="Tango, una danza interior">
+                                    <a href="books/book_danza_interior.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaInterior.png" alt="Tango, una danza interior"></a>
                                     <div class="book-detail">
                                         <h2 class="book-title"><a href="#">Tango, una danza interior</a></h2>
-                                        <small class="book-category"><a href="#">03 Jun, 2016</a></small>
-                                        <!--<div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>Quick View</span></div>-->
+                                        <small class="book-category"><a href="#">01 Enero, 2007</a></small>
+                                        <div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>{{ trans('messages.quick_view') }}</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -221,10 +243,11 @@
                         <div class="portfolio-item">
                             <div class="book-wrap">
                                 <div class="book-card">
-                                    <img src="images/libroTangoDanzaTerapia.png" alt="Psicotango, danza como terapia">
+                                    <a href="books/book_danza_como_terapia.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaTerapia.png" alt="Psicotango, danza como terapia"></a>
                                     <div class="book-detail">
                                         <h2 class="book-title"><a href="#">Psicotango, danza como terapia</a></h2>
-                                        <small class="book-category"><a href="#">11 Mar, 2016</a></small>
+                                        <small class="book-category"><a href="#">2010</a></small>
+                                        <div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>{{ trans('messages.quick_view') }}</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -232,10 +255,11 @@
                         <div class="portfolio-item">
                             <div class="book-wrap">
                                 <div class="book-card">
-                                    <img src="images/libroTangoUnAbrazoSanador1.png" alt="Tango, un abrazo sanador">
+                                    <a href="books/book_tango_un_abrazo_sanador.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoUnAbrazoSanador1.png" alt="Tango, un abrazo sanador"></a>
                                     <div class="book-detail">
                                         <h2 class="book-title"><a href="#">Tango, un abrazo sanador</a></h2>
-                                        <small class="book-category"><a href="#">31 Jan, 2016</a></small>
+                                        <small class="book-category"><a href="#">2013</a></small>
+                                        <div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>{{ trans('messages.quick_view') }}</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -245,8 +269,30 @@
             </section>
 
 
-
             <section id="section-cursos" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="col_two_third">
+                        <div class="heading-block center">
+                            <h1>{{ trans('messages.tango_passion_heals') | raw }}</h1>
+                            <h5>Documental Primer Premio Festival Internacional en Zarate</h5>
+                        </div>
+
+                        <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                            <iframe src="https://www.youtube.com/embed/GHHPMKpDNtA" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
+                        </div>
+                    </div>
+                    <div class="col_one_third col_last">
+                        <div class="heading-block center">
+                            <h1>{{ trans('messages.news') | raw }}</h1>
+                        </div>
+
+                        <img src="images/psicotango_flyer2.jpg" alt="Psicotango">
+                    </div>
+                </div>
+            </section>
+
+
+            {#<section id="section-cursos" class="page-section topmargin-lg">
                 <div class="container clearfix">
                     <div class="heading-block center">
                         <h1>{{ trans('messages.online_courses_title') | raw }}</h1>
@@ -345,7 +391,7 @@
                     </div>
                 </div>
 
-            </section>
+            </section>#}
 
 
             <section id="section-testimonials" class="section page-section parallax nobottompadding dark clearfix"
@@ -396,6 +442,23 @@
 
             </section>
 
+            <section id="section-gallery">
+
+                <div class="heading-block bottommargin-lg center clearfix">
+                    <h1>{{ trans('messages.gallery') }}</h1>
+                </div>
+
+                <div class="masonry-thumbs col-6 clearfix" data-big="3" data-lightbox="gallery">
+                    {% for i in 1..21  %}
+                    <a href="/images/gallery/gallery{{ i }}.jpg" data-lightbox="gallery-item">
+                        <img class="image_fade" src="/images/gallery/gallery{{ i }}.jpg" alt="Psicotango">
+                        <span class="i-overlay on-hover"><img src="/images/icons/image.png" alt="Psicotango"></span>
+                    </a>
+                    {% endfor %}
+                </div>
+
+            </section>
+
             <div id="section-contact" class="row norightmargin topmargin nobottommargin common-height">
                 <div class="heading-block bottommargin-lg center clearfix">
                     <h1>{{ trans('messages.contactus') }}</h1>
@@ -410,14 +473,20 @@
 
                         <div style="font-size: 15px; line-height: 1.7;">
                             <address style="line-height: 1.7;">
-                                Teniente Peron 2995 Pico 1C<br>
+                                Teniente Peron 2900<br>
                                 Balvanera, Buenos Aires<br><br>
                                 <abbr title="Phone Number"><strong>Teléfono:</strong></abbr> (+54) 11 4870500<br>
-                                <abbr title="Email Address"><strong>Email:</strong></abbr> <a href="mailto:psicotango@gmail.com">psicotango@gmail.com</a>
+
+                                <br>
+
+                                <div class="fb-messengermessageus"
+                                     messenger_app_id="1987012354703452"
+                                     page_id="1573003909658313"
+                                     color="blue"
+                                     size="xlarge">
+                                </div>
+
                             </address>
-
-                            <div class="clear topmargin-sm"></div>
-
                         </div>
                     </div>
                 </div>
@@ -434,11 +503,28 @@
 ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
 
+
+
+{#<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     origin="http://psicotango.local"
+     page_id="1573003909658313">
+</div>#}
+
 <!-- External JavaScripts
 ============================================= -->
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4"></script>
 <script type="text/javascript" src="/js/vendor.js"></script>
-<script type="text/javascript">window.psicotango.indexBooksInit(); //window.psicotango.indexMapInit();</script>
+<script type="text/javascript">
+    window.psicotango.indexBooksInit(); //window.psicotango.indexMapInit();</script>
 </body>
 
 </html>
