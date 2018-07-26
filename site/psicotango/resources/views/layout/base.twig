@@ -67,11 +67,25 @@
 
     <div id="home" class="page-section" style="position:absolute;top:0;left:0;width:100%;height:200px;z-index:-2;"></div>
 
-    <div id="top-bar" class="transparent-topbar hidden-xs">
+    <div id="top-bar" class="hidden-xs">
 
-        <div class="container clearfix">
+        <div class="container dark clearfix">
 
-            <div class="col_half fright col_last nobottommargin">
+            <div class="col_half hidden-xs nobottommargin">
+
+                <!-- Top Links
+                ============================================= -->
+                <div class="top-links">
+                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
+                        <li><a href="#"><i class="icon-phone3"></i> (+54) 11 4870500</a></li>
+                        <li><a href="mailto:perimonica1@gmail.com" class="nott"><i class="icon-envelope2"></i> perimonica1@gmail.com</a></li>
+                        <li><a href="mailto:nacholavalle@hotmail.com" class="nott"><i class="icon-envelope2"></i> nacholavalle@hotmail.com</a></li>
+                    </ul>
+                </div><!-- .top-links end -->
+
+            </div>
+
+            <div class="col_half col_last fright nobottommargin">
 
                 <!-- Top Links
                 ============================================= -->
@@ -90,7 +104,35 @@
 
             </div>
 
-            {#<div class="col_half fright col_last clearfix nobottommargin">
+        </div>
+
+    </div>
+
+
+    {#<div id="top-bar" class="transparent-topbar hidden-xs">
+
+        <div class="container clearfix">
+
+            <div class="col_half fright col_last nobottommargin">
+
+                <!-- Top Links
+                ============================================= -->
+                <div class="top-links">
+                    <ul class="clearfix" style="touch-action: pan-y;">
+                        <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
+                            <ul style="display: none;">
+                                <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png"> {{ trans('messages.spanish') }}</a></li>
+                                <li><a href="{{ l10n_url('en') }}"><img src="/images/flags/usa.png"> {{ trans('messages.english') }}</a></li>
+                                #}{#<li><a href="#">Italiano</a></li>
+                                <li><a href="#">Frances</a></li>#}{#
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .top-links end -->
+
+            </div>
+
+            #}{#<div class="col_half fright col_last clearfix nobottommargin">
 
                 <!-- Top Links
                 ============================================= -->
@@ -101,15 +143,15 @@
                     </ul>
                 </div><!-- .top-links end -->
 
-            </div>#}
+            </div>#}{#
 
         </div>
 
-    </div>
+    </div>#}
 
     {{ include('layout/_header', {}) }}
 
-    <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix dark">
+    <section id="slider" class="swiper_wrapper full-screen clearfix dark">
 
         <div class="slider-parallax-inner">
 
@@ -150,23 +192,24 @@
                         <h1>PSICO<span>TANGO</span></h1>
                     </div>
 
-                    <div class="col-xs-12 col-sm-3">
-                        <img src="images/men_shoes.jpg" alt="Men Shoes" class="animated bounceInLeft" data-animate="bounceInLeft">
-                    </div>
-
                     <div class="col-xs-12 col-sm-9">
-                        <h4 class="center">
+                        <h4 class="left">
                             {{ trans('messages.psicotango_description') }}
                         </h4>
 
-                        <h4 class="center">
+                        <h4 class="left">
                             {{ trans('messages.psicotango_description1') }}
                         </h4>
 
-                        <h4 class="center">
+                        <h4 class="left">
                             {{ trans('messages.psicotango_description2') }}
                         </h4>
                     </div>
+
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="/images/men_shoes.jpg" alt="Men Shoes" class="animated bounceInLeft" data-animate="bounceInLeft">
+                    </div>
+
                 </div>
 
             </section>
@@ -182,7 +225,7 @@
 
                         <div class="team team-list clearfix">
                             <div class="team-image">
-                                <img src="images/monica_peri_profile.jpg" alt="Monica Peri" class="animated bounceInLeft" data-animate="bounceInLeft">
+                                <img src="/images/monica_peri_profile.jpg" alt="Monica Peri" class="animated bounceInLeft" data-animate="bounceInLeft">
                             </div>
                             <div class="team-desc">
                                 <div class="team-title"><h4>Monica Peri</h4><span>{{ trans('messages.psychologist_women') }}</span></div>
@@ -202,7 +245,7 @@
 
                         <div class="team team-list clearfix">
                             <div class="team-image">
-                                <img src="images/ignacioLavalleProfile.jpg" alt="Ignacio Lavalle" class="animated bounceInRight" data-animate="bounceInRight">
+                                <img src="/images/ignacioLavalleProfile.jpg" alt="Ignacio Lavalle" class="animated bounceInRight" data-animate="bounceInRight">
                             </div>
                             <div class="team-desc">
                                 <div class="team-title"><h4>Ignacio Lavalle</h4><span>{{ trans('messages.psychologist_men') }}</span></div>
@@ -231,7 +274,7 @@
                         <div class="portfolio-item">
                             <div class="book-wrap">
                                 <div class="book-card">
-                                    <a href="books/book_danza_interior.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaInterior.png" alt="Tango, una danza interior"></a>
+                                    <a href="/books/book_danza_interior.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaInterior.png" alt="Tango, una danza interior"></a>
                                     <div class="book-detail">
                                         <h2 class="book-title"><a href="#">Tango, una danza interior</a></h2>
                                         <small class="book-category"><a href="#">01 Enero, 2007</a></small>
@@ -243,7 +286,7 @@
                         <div class="portfolio-item">
                             <div class="book-wrap">
                                 <div class="book-card">
-                                    <a href="books/book_danza_como_terapia.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaTerapia.png" alt="Psicotango, danza como terapia"></a>
+                                    <a href="/books/book_danza_como_terapia.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaTerapia.png" alt="Psicotango, danza como terapia"></a>
                                     <div class="book-detail">
                                         <h2 class="book-title"><a href="#">Psicotango, danza como terapia</a></h2>
                                         <small class="book-category"><a href="#">2010</a></small>
@@ -255,7 +298,7 @@
                         <div class="portfolio-item">
                             <div class="book-wrap">
                                 <div class="book-card">
-                                    <a href="books/book_tango_un_abrazo_sanador.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoUnAbrazoSanador1.png" alt="Tango, un abrazo sanador"></a>
+                                    <a href="/books/book_tango_un_abrazo_sanador.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoUnAbrazoSanador1.png" alt="Tango, un abrazo sanador"></a>
                                     <div class="book-detail">
                                         <h2 class="book-title"><a href="#">Tango, un abrazo sanador</a></h2>
                                         <small class="book-category"><a href="#">2013</a></small>
@@ -284,9 +327,10 @@
                     <div class="col_one_third col_last">
                         <div class="heading-block center">
                             <h1>{{ trans('messages.news') | raw }}</h1>
+                            <h5>Psicotango en la Universidad Nacional de las Artes (UNA)</h5>
                         </div>
 
-                        <img src="images/psicotango_flyer2.jpg" alt="Psicotango">
+                        <img src="/images/psicotango_flyer2.jpg" alt="Psicotango">
                     </div>
                 </div>
             </section>
@@ -395,7 +439,7 @@
 
 
             <section id="section-testimonials" class="section page-section parallax nobottompadding dark clearfix"
-                     style="background-image: url('images/uritorco_background.jpg');
+                     style="background-image: url('/images/uritorco_background2.jpg');
                  background-size: cover;" data-stellar-background-ratio="0.8">
                 <div class="container clearfix">
 
