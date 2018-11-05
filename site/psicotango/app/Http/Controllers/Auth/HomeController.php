@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Mockery\Exception;
 use TwigBridge\Facade\Twig;
 use App\Services\AjaxResponse;
 use Illuminate\Support\Facades\Session;
@@ -22,10 +23,81 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function getViewLesson(Request $request, $lesson_id){
-        return Twig::render('auth/lesson/view', [
-            'lesson_id'         => $lesson_id
+    public function getCheckoutPlan(Request $request, $plan_id){
+        return Twig::render('auth/checkout-plan', [
+            'plan_id'           => $plan_id,
+            'mp_public_key'     => config('mercadopago.credentials.public_key')
         ]);
+    }
+
+    public function postCheckoutPlan(Request $request, AjaxResponse $ajax){
+        $trans = app('translator');
+
+        $plan_id = request('plan_id');
+        $plan = \Models\Plan::find($plan_id);
+        if ( empty($plan) ){
+            return response()->json([
+                'errors' => [
+                    [ 'code' => 'invalid_plan', 'description' => $trans->get('messages.invalid_plan') ]
+                ]
+            ], 400);
+        }
+
+        try {
+            $user = Auth::user();
+            $user->plan_id = request('plan_id');
+            //$user->save();
+
+            $mercadoPago = \Models\MercadoPago::first();
+            if ( !empty($mercadoPago) ){
+                $userToken = $mercadoPago->mp_access_token;
+
+                $dateTimeExpires = new \DateTime();
+                $dateTimeExpires->setTimestamp($mercadoPago->mp_expires_in);
+
+                $today = new \DateTime();
+                if ( $today >= $dateTimeExpires ){
+                    //$userToken = $this->refreshToken();
+                }
+
+                $mp = new \MP($userToken);
+                $mp->sandbox_mode(true);
+
+                $payment_data = array(
+                    "transaction_amount" => floor($plan->price),
+                    "token" => request('card_token'),
+                    "description" => $plan->name,
+                    "installments" => 1,
+                    "payer" => array (
+                        "id" => $mercadoPago->mp_user_id
+                    ),
+                    "payment_method_id" => request('payment_method'),
+                    "application_fee" => 2.56
+                );
+
+                $payment = $mp->post("/v1/payments", $payment_data);
+
+                return $ajax->success([
+                    'user' => $user,
+                    'message' => $trans->get('messages.payment_successfully')
+                ]);
+            }
+        } catch (\Exception $e){
+            return response()->json([
+                'errors' => [
+                    [ 'code' => $e->getCode(), 'description' => $e->getMessage() ]
+                ]
+            ], 400);
+        }
+
+    }
+
+    public function refreshToken(){
+
+    }
+
+    public function getViewLesson(Request $request, $lesson_id){
+
     }
 
     public function getProfile(Request $request){
@@ -63,14 +135,6 @@ class HomeController extends Controller
             'user' => $user,
             'message' => $trans->get('messages.profile_settings_saved_successfully')
         ]);
-    }
-
-    public function getMercadoPagoConnect(Request $request){
-        $applicationId = config('mercadopago.credentials.application_id');
-
-        $redirectUrl = urlencode(url('/mpconnect-redirect'));
-        $url = sprintf('https://auth.mercadopago.com.ar/authorization?client_id=%s&response_type=code&platform_id=mp&redirect_uri=%s', $applicationId, $redirectUrl);
-        return redirect($url);
     }
 
 }

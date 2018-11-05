@@ -122,5 +122,36 @@ return [
     'saving' => 'Guardando...',
     
     //MercadoPago
-    'mercadopago_connect_success' => 'La conexion es exitosa.'
+    'mercadopago_connect_success' => 'La conexion es exitosa.',
+
+    //Plan
+    'select_plan' => 'Seleccionar <span>Curso</span>',
+    'checkout'    => 'Realizar <span>Pago</span>',
+    'invalid_plan' => 'El Plan es invalido',
+
+    //Payment
+    'cardholder_name' => 'Nombre tal cual aparece en la tarjeta',
+    'card_number' => 'Numero de Tarjeta',
+    'cvv' => 'Codigo de Seguridad',
+    'expiration_month' => 'Mes de Expiracion',
+    'expiration_year' => 'Año de Expiracion',
+    'doc_type'  => 'Tipo de Documento',
+    'doc_number'  => 'Numero de Documento',
+    'pay' => 'Pagar',
+    'sending_information' => 'Enviando Informacion...',
+
+    //MercadoPago Payment translations
+    'fix_errors' => 'Oups, algo no esta bien!',
+    '205' => 'El Numero de la tarjeta es requerido',
+    '208' => 'El Mes de Expiracion es requerido',
+    '209' => 'El Año de Expiracion es requerido',
+    '325' => 'El Mes de Expiracion es invalido, por favor introduzca numeros de dos digitos, ej. 12',
+    '326' => 'El Año de Expiracion es invalido, por favor introduzca numeros de dos digitos, ej. 25',
+    'E301' => 'El Numero de la tarjeta es invalido',
+    'E302' => 'El Codigo de Seguridad es invalido',
+    '221' => 'El Nombre de la tarjeta es requerido',
+    '212'   => 'El Tipo de Documento es requerido',
+    '214'   => 'El Numero de Documento es requerido',
+    '334' => 'El Numero de Documento es invalido',
+    '316' => 'El Numero de la tarjeta es requerido es invalido',
 ];

@@ -51,12 +51,17 @@ Route::group(
     //only authorized users can access these routes
 
     Route::get('/lesson/{lesson_id}', 'Auth\HomeController@getViewLesson')->name('viewLesson');
-    Route::get('/mpconnect', 'Auth\HomeController@getMercadoPagoConnect');
+    Route::get('/checkout/plan/{plan_id}', 'Auth\HomeController@getCheckoutPlan');
+
 });
 
 Route::post('/profile', 'Auth\HomeController@postProfile');
 Route::post('/login', 'Auth\LoginController@postLogin');
 Route::post('/signup', 'Auth\RegisterController@postSignup');
+Route::post('/checkout/plan', 'Auth\HomeController@postCheckoutPlan');
+
+//This is for Veronica ONLY
+Route::get('/mpconnect', 'HomeController@getMercadoPagoConnect');
 Route::get('/mpconnect-redirect', 'HomeController@getMercadoPagoConnectRedirect');
 
 //Legacy from other project

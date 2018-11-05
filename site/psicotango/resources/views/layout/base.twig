@@ -80,17 +80,6 @@
                         <li><a href="#"><i class="icon-phone3"></i> (+54) 11 4870500</a></li>
                         <li><a href="mailto:perimonica1@gmail.com" class="nott"><i class="icon-envelope2"></i> perimonica1@gmail.com</a></li>
                         <li><a href="mailto:nacholavalle@hotmail.com" class="nott"><i class="icon-envelope2"></i> nacholavalle@hotmail.com</a></li>
-                    </ul>
-                </div><!-- .top-links end -->
-
-            </div>
-
-            <div class="col_half col_last fright nobottommargin">
-
-                <!-- Top Links
-                ============================================= -->
-                <div class="top-links">
-                    <ul class="clearfix" style="touch-action: pan-y;">
                         <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
                             <ul style="display: none;">
                                 <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png"> {{ trans('messages.spanish') }}</a></li>
@@ -104,50 +93,17 @@
 
             </div>
 
+            <div class="col_half col_last fright nobottommargin">
+                <a href="{{ l10n_url_by_route('login') }}/login" class="button button-rounded button-reveal button-large button-red"><i class="icon-lock"></i><span>{{ trans('messages.login') }}</span></a>
+                <a href="{{ l10n_url_by_route('signup') }}/signup" class="button button-rounded button-reveal button-large button-black"><i class="icon-user"></i><span>{{ trans('messages.signup') }}</span></a>
+            </div>
+
         </div>
 
     </div>
 
 
-    {#<div id="top-bar" class="transparent-topbar hidden-xs">
 
-        <div class="container clearfix">
-
-            <div class="col_half fright col_last nobottommargin">
-
-                <!-- Top Links
-                ============================================= -->
-                <div class="top-links">
-                    <ul class="clearfix" style="touch-action: pan-y;">
-                        <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
-                            <ul style="display: none;">
-                                <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png"> {{ trans('messages.spanish') }}</a></li>
-                                <li><a href="{{ l10n_url('en') }}"><img src="/images/flags/usa.png"> {{ trans('messages.english') }}</a></li>
-                                #}{#<li><a href="#">Italiano</a></li>
-                                <li><a href="#">Frances</a></li>#}{#
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- .top-links end -->
-
-            </div>
-
-            #}{#<div class="col_half fright col_last clearfix nobottommargin">
-
-                <!-- Top Links
-                ============================================= -->
-                <div class="top-links">
-                    <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-                        <li class="button button-rounded button-red"><a href="{{ l10n_url_by_route('login') }}/login" class="sf-with-ul">{{ trans('messages.login') }}</a></li>
-                        <li class="button button-rounded button-black"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
-                    </ul>
-                </div><!-- .top-links end -->
-
-            </div>#}{#
-
-        </div>
-
-    </div>#}
 
     {{ include('layout/_header', {}) }}
 
@@ -336,15 +292,14 @@
             </section>
 
 
-            {#<section id="section-cursos" class="page-section topmargin-lg">
+            <section id="section-cursos" class="page-section topmargin-lg">
                 <div class="container clearfix">
                     <div class="heading-block center">
                         <h1>{{ trans('messages.online_courses_title') | raw }}</h1>
-                        <p>(Nota: Aca iria el video que me paso Nacho de ustedes hablando de que se trata el curso)</p>
                     </div>
 
                     <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
-                        <iframe src="https://www.youtube.com/embed/GHHPMKpDNtA" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
+                        <iframe src="https://www.youtube.com/embed/9lLNywVnMWU" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
                     </div>
                 </div>
             </section>
@@ -376,7 +331,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-action">
-                                    <a href="/register" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
+                                    <a href="{{ l10n_url_by_route('signup') }}/signup" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
                                 </div>
                             </div>
 
@@ -404,7 +359,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-action">
-                                    <a href="/register" class="btn btn-danger btn-block btn-sm bgcolor border-color">{{ trans('messages.get_course') }}</a>
+                                    <a href="{{ l10n_url_by_route('signup') }}/signup" class="btn btn-danger btn-block btn-sm bgcolor border-color">{{ trans('messages.get_course') }}</a>
                                 </div>
                             </div>
 
@@ -427,7 +382,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-action">
-                                    <a href="/register" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
+                                    <a href="{{ l10n_url_by_route('signup') }}/signup" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
                                 </div>
                             </div>
 
@@ -435,7 +390,7 @@
                     </div>
                 </div>
 
-            </section>#}
+            </section>
 
 
             <section id="section-testimonials" class="section page-section parallax nobottompadding dark clearfix"

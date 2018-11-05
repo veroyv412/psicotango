@@ -117,5 +117,36 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     'saving' => 'Saving...',
 
     //MercadoPago
-    'mercadopago_connect_success' => 'Conection is successful.'
+    'mercadopago_connect_success' => 'Connection is successful.',
+
+    //Plan
+    'select_plan' => 'Select <span>Course</span>',
+    'checkout' => 'Checkout',
+    'invalid_plan' => 'The Plan is invalid',
+
+    //Payment
+    'cardholder_name' => 'Cardholder Name',
+    'card_number' => 'Card Number',
+    'cvv' => 'Securuty Code',
+    'expiration_month' => 'Expiration Month',
+    'expiration_year' => 'Expiration Year',
+    'doc_type'  => 'Doc Type',
+    'doc_number'  => 'Doc Number',
+    'pay' => 'Pay',
+    'sending_information' => 'Sending Information...',
+
+    //MercadoPago Payment translations
+    'fix_errors' => 'Oups, something is wrong!',
+    '205' => 'Card Number is required',
+    '208' => 'Card Expiration Month is required',
+    '209' => 'Card Expiration Year is required',
+    '325' => 'The Expiration Month is invalid, please type the month in two digits numbers: Ex. 12',
+    '326' => 'The Expiration Year is invalid, please type the year in two digits numbers: Ex. 25',
+    'E301' => 'The Card Number is Invalid',
+    'E302' => 'The Security Code is invalid',
+    '221' => 'The Card Holder name is required',
+    '212'   => 'The Document Type is required',
+    '214'   => 'The Document Number is required',
+    '334' => 'The Document Number is invalid',
+    '316' => 'Card Holder name is invalid',
 ];

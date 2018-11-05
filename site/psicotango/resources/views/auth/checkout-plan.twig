@@ -1,0 +1,8 @@
+{% block page_title %}Home{% endblock %}
+{% extends 'layout/checkout_base.twig' %}
+{% block title %}Psicotango | Checkout {% endblock %}
+
+{% block content %}
+    <h1 class="text-center" style="text-transform: uppercase">{{ trans('messages.checkout') | raw }}</h1>
+    <payment plan_id="{{ plan_id }}" email="{{ Auth.user().email }}"></payment>
+{% endblock %}

@@ -36,44 +36,29 @@
     </head>
 {% endblock %}
 
-<body class="sticky-footer stretched">
-    <!-- Document Wrapper
-	============================================= -->
-    <div id="wrapper" class="clearfix application">
+<body class="stretched">
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix application">
 
-        <div class="clear"></div>
-
-        <!-- Content
-        ============================================= -->
-        <section id="content" style="background: url('/images/san-telmo.jpg') center no-repeat;">
-
-            <div class="content-wrap">
-                <div class="panel panel-default divcenter noradius noborder dark" style="max-width: 700px; background-color: rgba(0,0,0,0.8);">
-                    <div class="panel-body" style="padding: 40px;">
-                        {% block content %}{% endblock %}
-                    </div>
-                </div>
+    <section id="slider" class="slider-parallax full-screen  error404-wrap" style="background: url(/images/san-telmo.jpg) center;">
+        <div class="slider-parallax-inner">
+            <div class="container vertical-middle center clearfix">
+                {% block content %}{% endblock %}
             </div>
-        </section><!-- #content end -->
+        </div>
+    </section>
 
+    {{ include('layout/_footer', {}) }}
 
-        {{ include('layout/_footer', {}) }}
+</div><!-- #wrapper end -->
 
-    </div><!-- #wrapper end -->
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
 
-    <!-- Go To Top
-    ============================================= -->
-    <div id="gotoTop" class="icon-angle-up"></div>
-
-    <script type="text/javascript" src="/js/app.js"></script>
-    <script type="text/javascript" src="/js/vendor.js"></script>
-
-    {% if mp_public_key != '' %}
-        <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-        <script type="application/javascript">
-            Mercadopago.setPublishableKey("{{ mp_public_key }}");
-        </script>
-    {% endif %}
+<script type="text/javascript" src="/js/app.js"></script>
+<script type="text/javascript" src="/js/vendor.js"></script>
 </body>
 
 </html>

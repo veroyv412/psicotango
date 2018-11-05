@@ -52,12 +52,12 @@
                     password_confirmation: '',
                     email: '',
                 }),
-                save: this.$t('messages.save')}
+                save: this.$t('messages.signup')}
         },
         mounted() {},
         methods: {
             onSubmit(){
-                this.save = this.$t('messages.saving');
+                this.save = this.$t('messages.sending_information');
                 this.form.setFormElement(document.getElementById('signupForm'));
                 this.form.post('/signup')
                         .then( response => { window.location.href = "/" })

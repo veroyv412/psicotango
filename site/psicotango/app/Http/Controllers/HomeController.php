@@ -32,19 +32,31 @@ class HomeController extends Controller
 
     public function getHome(Request $request){
         if ( !empty(Auth::check()) ){
-            return Twig::render('auth/index', []);
+            $user = Auth::user();
+            if ( !empty($user->plan_id) ){
+                return Twig::render('auth/index', []);
+            } else {
+                return Twig::render('auth/select-plan', []);
+            }
         } else {
             return Twig::render('index', []);
         }
     }
-    
+
+    public function getMercadoPagoConnect(Request $request){
+        $applicationId = config('mercadopago.credentials.application_id');
+
+        $redirectUrl = urlencode(url('/mpconnect-redirect'));
+        $url = sprintf('https://auth.mercadopago.com.ar/authorization?client_id=%s&response_type=code&platform_id=mp&redirect_uri=%s', $applicationId, $redirectUrl);
+        return redirect($url);
+    }
+
     public function getMercadoPagoConnectRedirect(Request $request){
         try {
             $trans = app('translator');
             $mpCode = $request->get('code');
             $accessToken = config('mercadopago.credentials.access_token');
             $redirectUrl = url('/mpconnect-redirect');
-            $locale = App::getLocale();
 
             $mp = new \MP($accessToken);
 
@@ -64,19 +76,19 @@ class HomeController extends Controller
 
             $results = $mp->post($data);
 
-            $user = Auth::user();
-            $user->mp_access_token = $results['response']['access_token'];
-            $user->mp_refresh_token = $results['response']['refresh_token'];
-            $user->mp_user_id = $results['response']['user_id'];
-            $user->mp_expires_id = $results['response']['expires_in'];
-            $user->save();
+            $mercadopago = new \Models\MercadoPago();
+            $mercadopago->mp_access_token = $results['response']['access_token'];
+            $mercadopago->mp_refresh_token = $results['response']['refresh_token'];
+            $mercadopago->mp_user_id = $results['response']['user_id'];
+            $mercadopago->mp_expires_in = $results['response']['expires_in'];
+            $mercadopago->save();
 
             Session::flash('success', $trans->get('messages.mercadopago_connect_success'));
         } catch (\Exception $e){
             Session::flash('error', $e->getMessage());
         }
 
-        redirect('/');
+        return redirect('/');
     }
     
     /* Email */

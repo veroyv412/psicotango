@@ -41,12 +41,12 @@
                     password: '',
                     email: '',
                 }),
-                save: this.$t('messages.save')}
+                save: this.$t('messages.login')}
         },
         mounted() {},
         methods: {
             onSubmit(){
-                this.save = this.$t('messages.saving');
+                this.save = this.$t('messages.sending_information');
                 this.form.setFormElement(document.getElementById('loginForm'));
                 this.form.post('/login')
                         .then( response => { window.location.href = "/" })

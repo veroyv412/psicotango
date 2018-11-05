@@ -47,6 +47,8 @@ Vue.component('lesson-box', require('./components/LessonBox.vue'));
 Vue.component('lesson-view', require('./components/LessonView.vue'));
 Vue.component('login', require('./components/Login.vue'));
 Vue.component('signup', require('./components/Signup.vue'));
+Vue.component('select-plan', require('./components/SelectPlan.vue'))
+Vue.component('payment', require('./components/Payment.vue'))
 Vue.component('profile-settings', require('./components/ProfileSettings.vue'));
 
 Vue.filter('replaceSpaceUnderscore', function(text){
