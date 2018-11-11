@@ -1,6 +1,43 @@
+<div id="top-bar" class="hidden-xs">
+
+    <div class="container dark clearfix">
+
+        <div class="col_half hidden-xs nobottommargin">
+
+            <!-- Top Links
+            ============================================= -->
+            <div class="top-links">
+                <ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
+                    <li><a href="#"><i class="icon-phone3"></i> (+54) 11 4870500</a></li>
+                    <li><a href="mailto:perimonica1@gmail.com" class="nott"><i class="icon-envelope2"></i> perimonica1@gmail.com</a></li>
+                    <li><a href="mailto:nacholavalle@hotmail.com" class="nott"><i class="icon-envelope2"></i> nacholavalle@hotmail.com</a></li>
+                    <li class=""><a href="#" class="sf-with-ul">{{ trans('messages.language') }}</a>
+                        <ul style="display: none;">
+                            <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png"> {{ trans('messages.spanish') }}</a></li>
+                            <li><a href="{{ l10n_url('en') }}"><img src="/images/flags/usa.png"> {{ trans('messages.english') }}</a></li>
+                            {#<li><a href="#">Italiano</a></li>
+                            <li><a href="#">Frances</a></li>#}
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- .top-links end -->
+
+        </div>
+
+        {% if Auth.user() is null %}
+        <div class="col_half col_last fright nobottommargin">
+            <a href="{{ l10n_url_by_route('login') }}/login" class="button button-rounded button-reveal button-large button-red"><i class="icon-lock"></i><span>{{ trans('messages.login') }}</span></a>
+            <a href="{{ l10n_url_by_route('signup') }}/signup" class="button button-rounded button-reveal button-large button-black"><i class="icon-user"></i><span>{{ trans('messages.signup') }}</span></a>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
 <!-- Header
 		============================================= -->
-<header id="header" class="transparent-header floating-header">
+<header id="header" class="transparent-header {% if tab == 'home' %}floating-header{% else %}light{% endif %}">
 
     <div id="header-wrap">
 
@@ -22,22 +59,41 @@
                 </ul>
             </div><!-- #logo end -->
 
+            {% if Auth.user() is not null %}
+            <div id="top-account" class="dropdown">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user"></i><i class="icon-angle-down"></i></a>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                    <li><a href="{{ l10n_url_by_route('profile') }}/profile"><i class="icon-user"></i> {{ trans('messages.profile') }}</a></li>
+                    {% if Auth.user().plan_id is not null and Auth.user().plan_id == 1 %}
+                        <li><a href="{{ l10n_url_by_route('upgrade') }}/checkout/plan/2"><i class="icon-upload"></i> {{ trans('messages.upgrade') }}</a></li>
+                    {% endif %}
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{ l10n_url_by_route('logout') }}/logout"><i class="icon-signout"></i> {{ trans('messages.logout') }}</a></li>
+                </ul>
+            </div>
+            {% endif %}
+
             <!-- Primary Navigation
             ============================================= -->
             <nav id="primary-menu" class="style-3">
 
-                <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                <ul class="_one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                    {% if Auth.user() is null %}
                     <li class="button button-rounded button-red button-large visible-xs" style="margin-bottom: 10px !important"><a href="{{ l10n_url_by_route('login') }}/login">{{ trans('messages.login') }}</a></li>
                     <li class="button button-rounded button-black button-large visible-xs" style="margin-bottom: 20px !important"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
-                    <li class="current"><a href="/"><div>{{ trans('messages.home') }}</div></a></li>
-                    <li><a href="#" data-href="#section-psicotango"><div>Psicotango</div></a></li>
-                    <li><a href="#" data-href="#section-team"><div>{{ trans('messages.teachers') }}</div></a></li>
-                    <li><a href="#" data-href="#section-books"><div>{{ trans('messages.books') }}</div></a></li>
-                    <li><a href="#" data-href="#section-gallery"><div>{{ trans('messages.gallery') }}</div></a></li>
+                    {% endif %}
+                    <li {% if tab == 'home' %}class="current"{% endif %}><a href="/"><div>{{ trans('messages.home') }}</div></a></li>
+                    <li><a href="/#section-psicotango"><div>Psicotango</div></a></li>
+                    <li><a href="/#section-team"><div>{{ trans('messages.teachers') }}</div></a></li>
+                    <li><a href="/#section-books"><div>{{ trans('messages.books') }}</div></a></li>
+                    <li><a href="/#section-gallery"><div>{{ trans('messages.gallery') }}</div></a></li>
                     {#<li><a href="#" data-href="#section-cursos"><div>{{ trans('messages.online_courses') }}</div></a></li>
                     <li><a href="#" data-href="#section-prices"><div>{{ trans('messages.prices') }}</div></a></li>#}
-                    <li><a href="#" data-href="#section-testimonials"><div>{{ trans('messages.testimonials') }}</div></a></li>
-                    <li><a href="#" data-href="#section-contact"><div>{{ trans('messages.contactus') }}</div></a></li>
+                    <li><a href="/#section-testimonials"><div>{{ trans('messages.testimonials') }}</div></a></li>
+                    <li><a href="/#section-contact"><div>{{ trans('messages.contactus') }}</div></a></li>
+                    {% if Auth.user() is not null %}
+                        <li {% if tab == 'courses' %}class="current"{% endif %}><a href="/courses"><div>{{ trans('messages.my_courses') }}</div></a></li>
+                    {% endif %}
                 </ul>
 
             </nav><!-- #primary-menu end -->

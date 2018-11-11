@@ -50,9 +50,11 @@ Route::group(
     ], function () {
     //only authorized users can access these routes
 
+    Route::get('/courses', 'Auth\HomeController@getCourses');
     Route::get('/lesson/{lesson_id}', 'Auth\HomeController@getViewLesson')->name('viewLesson');
     Route::get('/checkout/plan/{plan_id}', 'Auth\HomeController@getCheckoutPlan');
-
+    Route::get('/checkout/paypal-success/user/{user_id}/plan/{plan_id}', 'Auth\HomeController@getPaypalSuccess');
+    Route::get('/checkout/paypal-cancel/user/{user_id}/plan/{plan_id}', 'Auth\HomeController@getPaypalCancel');
 });
 
 Route::post('/profile', 'Auth\HomeController@postProfile');
@@ -63,6 +65,9 @@ Route::post('/checkout/plan', 'Auth\HomeController@postCheckoutPlan');
 //This is for Veronica ONLY
 Route::get('/mpconnect', 'HomeController@getMercadoPagoConnect');
 Route::get('/mpconnect-redirect', 'HomeController@getMercadoPagoConnectRedirect');
+
+// EMAIL
+Route::get('/email/welcome/plan/{plan_id}', 'HomeController@getEmailWelcome');
 
 //Legacy from other project
 /*Route::get('/category/{category_slug}', 'SearchController@getCategorySearch');

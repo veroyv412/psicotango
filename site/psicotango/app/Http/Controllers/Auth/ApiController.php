@@ -28,8 +28,16 @@ class ApiController extends Controller
     }
 
     public function getLesson(Request $request, AjaxResponse $ajax, $lesson_id){
+        $trans = app('translator');
+
         try {
-            return $ajax->success(\Models\Lesson::find($lesson_id));
+            $lesson = \Models\Lesson::find($lesson_id);
+            if ( !empty($lesson) ){
+                return $ajax->success($lesson);
+            } else {
+                return $ajax->error( $trans->get('messages.invalid_lesson'));
+            }
+
         } catch (\Exception $e){
             return $ajax->error($e->getMessage());
         }

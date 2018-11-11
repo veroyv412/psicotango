@@ -35,6 +35,11 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'paypal' => [
+        'client_id' => env('PAYPAL_CLIENT_ID'),
+        'secret' => env('PAYPAL_CLIENT_SECRET')
+    ],
+
     'facebook' => [
         'client_id' => '1987012354703452',
         'client_secret' => 'eae383d4612d03e86915de3374a1a152',

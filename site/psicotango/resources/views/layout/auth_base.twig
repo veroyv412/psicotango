@@ -38,59 +38,19 @@
 	============================================= -->
     <div id="wrapper" class="application clearfix">
 
-        <nav class="navbar navbar-inverse nobottommargin" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav nobottommargin">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ trans('messages.language') }} <b class="caret"></b></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ l10n_url('es') }}"><img src="/images/flags/argentina.png" style="width: 16px"> {{ trans('messages.spanish') }}</a></li>
-                                <li><a href="{{ l10n_url('en') }}"><img src="/images/flags/usa.png" style="width: 16px"> {{ trans('messages.english') }}</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right nobottommargin">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth.user().name }} {{ Auth.user().last_name }} <b class="caret"></b></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ l10n_url_by_route('profile') }}/profile"><i class="icon-user"></i> Profile</a></li>
-                                {% if Auth.user.hasRole('psicotango') and Auth.user().mp_user_id is null %}
-                                    <li><a href="{{ l10n_url_by_route('mpconnect') }}/mpconnect"><i class="icon-credit"></i> Mercado Pago</a></li>
-                                {% endif %}
-                                {% if Auth.user().plan_id is null or Auth.user().plan_id == 1 or Auth.user().plan_id == 2 %}
-                                    <li><a href="{{ l10n_url_by_route('upgrade') }}/upgrade"><i class="icon-upload"></i> Upgrade</a></li>
-                                {% endif %}
-                                <li role="separator" class="divider"></li>
-                                <li><a href="{{ l10n_url_by_route('logout') }}/logout"><i class="icon-signout"></i> Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+        {{ include('layout/_header', {}) }}
 
         <div class="clear"></div>
 
-        <section id="page-title" class="page-title-center">
+        <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url(/images/caminito.jpg); padding: 120px 0px; background-position: 50% -15px;" data-stellar-background-ratio="0.3">
+
             <div class="container clearfix">
                 <h1>{% block h1 %}{% endblock %}</h1>
                 <span>{% block h2 %}{% endblock %}</span>
                 {% block breadcrum %}{% endblock %}
             </div>
-        </section>
 
+        </section>
         <!-- Content
         ============================================= -->
         <section id="content">

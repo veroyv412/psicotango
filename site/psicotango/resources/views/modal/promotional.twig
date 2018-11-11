@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div class="modal1 mfp-hide" id="promotional">
+    <div class="block divcenter" style="background-color: #FFF; max-width: 80%;">
+        <div class="ajax-modal-title">
+            <h2>{{ trans('messages.promotional') | raw }}</h2>
+        </div>
+
+        <div class="feature-box fbox-center fbox-effect nobottomborder nobottommargin" style="padding: 40px;">
+
+            <div class="heading-block bottommargin-sm center clearfix">
+                <h1>{{ trans('messages.prices_title') | raw }}</h1>
+            </div>
+
+            {{ include('prices') }}
+
+            <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                <iframe src="https://www.youtube.com/embed/9lLNywVnMWU" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
+            </div>
+
+        </div>
+        <div class="section center nomargin" style="padding: 30px;">
+            <a href="{{ l10n_url_by_route('signup') }}/signup" class="button">{{ trans('messages.get_your_course_now') | raw }}</a>
+        </div>
+    </div>
+</div>

@@ -3,4 +3,317 @@
 {% block title %}Psicotango{% endblock %}
 
 {% block content %}
+    <section id="slider" class="swiper_wrapper full-screen clearfix dark">
+
+        <div class="slider-parallax-inner">
+
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide dark" style="background-image: url('images/fondo_psicotango.png');">
+                        <div class="container clearfix">
+                            <div class="slider-caption slider-caption-center">
+                                <img class="img-responsive image_fade bottommargin-lg center-block" src="images/psicotango_title.png">
+                                <p data-caption-animate="fadeInUp" data-caption-delay="200">
+                                    {{ trans('messages.tango_description') }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="clear"></div>
+
+    {{ include('modal/promotional', {}) }}
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <section id="section-psicotango" class="page-section">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1>PSICO<span>TANGO</span></h1>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-9">
+                        <h4 class="left">
+                            {{ trans('messages.psicotango_description') }}
+                        </h4>
+
+                        <h4 class="left">
+                            {{ trans('messages.psicotango_description1') }}
+                        </h4>
+
+                        <h4 class="left">
+                            {{ trans('messages.psicotango_description2') }}
+                        </h4>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="/images/men_shoes.jpg" alt="Men Shoes" class="animated bounceInLeft" data-animate="bounceInLeft">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="section-team" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1 class='caption'>{{ trans('messages.teachers') }}</h1>
+                    </div>
+
+                    <div class="col-md-6 bottommargin">
+
+                        <div class="team team-list clearfix">
+                            <div class="team-image">
+                                <img src="/images/monica_peri_profile.jpg" alt="Monica Peri" class="animated bounceInLeft" data-animate="bounceInLeft">
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title"><h4>Monica Peri</h4><span>{{ trans('messages.psychologist_women') }}</span></div>
+                                <div class="team-content">
+                                    {{ trans('messages.monica_peri_description') }}
+                                </div>
+                                <a href="https://www.facebook.com/psicotango.danzacomoterapia" class="social-icon si-rounded si-small si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 bottommargin">
+
+                        <div class="team team-list clearfix">
+                            <div class="team-image">
+                                <img src="/images/ignacioLavalleProfile.jpg" alt="Ignacio Lavalle" class="animated bounceInRight" data-animate="bounceInRight">
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title"><h4>Ignacio Lavalle</h4><span>{{ trans('messages.psychologist_men') }}</span></div>
+                                <div class="team-content">
+                                    {{ trans('messages.ignacio_lavalle_description') }}
+                                </div>
+                                <a href="https://www.facebook.com/psicotango.danzacomoterapia" class="social-icon si-rounded si-small si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-books" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1>{{ trans('messages.published_books') | raw }}</h1>
+                    </div>
+
+                    <div id="portfolio" class="portfolio grid-container portfolio-3 portfolio-masonry clearfix">
+
+                        <div class="portfolio-item">
+                            <div class="book-wrap">
+                                <div class="book-card">
+                                    <a href="/books/book_danza_interior.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaInterior.png" alt="Tango, una danza interior"></a>
+                                    <div class="book-detail">
+                                        <h2 class="book-title"><a href="#">Tango, una danza interior</a></h2>
+                                        <small class="book-category"><a href="#">01 Enero, 2007</a></small>
+                                        <div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>{{ trans('messages.quick_view') }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="book-wrap">
+                                <div class="book-card">
+                                    <a href="/books/book_danza_como_terapia.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoDanzaTerapia.png" alt="Psicotango, danza como terapia"></a>
+                                    <div class="book-detail">
+                                        <h2 class="book-title"><a href="#">Psicotango, danza como terapia</a></h2>
+                                        <small class="book-category"><a href="#">2010</a></small>
+                                        <div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>{{ trans('messages.quick_view') }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="book-wrap">
+                                <div class="book-card">
+                                    <a href="/books/book_tango_un_abrazo_sanador.twig" class="item-quick-view book-image" data-lightbox="ajax"><img src="images/libroTangoUnAbrazoSanador1.png" alt="Tango, un abrazo sanador"></a>
+                                    <div class="book-detail">
+                                        <h2 class="book-title"><a href="#">Tango, un abrazo sanador</a></h2>
+                                        <small class="book-category"><a href="#">2013</a></small>
+                                        <div class="button button-white button-light capitalize button-circle"><i class="icon-line-zoom-in"></i><span>{{ trans('messages.quick_view') }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section-cursos" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="col_two_third">
+                        <div class="heading-block center">
+                            <h1>{{ trans('messages.tango_passion_heals') | raw }}</h1>
+                            <h5>Documental Primer Premio Festival Internacional en Zarate</h5>
+                        </div>
+
+                        <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                            <iframe src="https://www.youtube.com/embed/GHHPMKpDNtA" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
+                        </div>
+                    </div>
+                    <div class="col_one_third col_last">
+                        <div class="heading-block center">
+                            <h1>{{ trans('messages.news') | raw }}</h1>
+                            <h5>Psicotango en la Universidad Nacional de las Artes (UNA)</h5>
+                        </div>
+
+                        <img src="/images/psicotango_flyer2.jpg" alt="Psicotango">
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section-cursos" class="page-section topmargin-lg">
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h1>{{ trans('messages.online_courses_title') | raw }}</h1>
+                    </div>
+
+                    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/9lLNywVnMWU" frameborder="0" allowfullscreen="" id="GHHPMKpDNtA"></iframe>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section-prices" class="page-section topmargin-lg">
+                <!-- Price Page Section - Parallax
+				============================================= -->
+                <div class="heading-block bottommargin-sm center clearfix">
+                    <h1>{{ trans('messages.prices_title') | raw }}</h1>
+                </div>
+
+                <!-- Price Items
+                ============================================= -->
+                <div class="col-padding clearfix">
+                    {{ include('prices') }}
+                </div>
+
+            </section>
+
+
+            <section id="section-testimonials" class="section page-section parallax nobottompadding dark clearfix"
+                     style="background-image: url('/images/uritorco_background2.jpg');
+                 background-size: cover;" data-stellar-background-ratio="0.8">
+                <div class="container clearfix">
+
+                    <div class="heading-block bottommargin-lg center clearfix">
+                        <h1>{{ trans('messages.testimonials_title') }}</h1>
+                    </div>
+
+                    <!-- Testimonial Slider
+                    ============================================= -->
+                    <div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding bottommargin-sm divcenter center clearfix" data-arrows="false" style="max-width: 700px">
+                        <div class="flexslider">
+                            <div class="slider-wrap">
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>{{ trans('messages.testimonial_1') }}</p>
+                                        <div class="testi-meta">
+                                            Laura
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>{{ trans('messages.testimonial_2') }}</p>
+                                        <div class="testi-meta">
+                                            Paola Marabini
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>{{ trans('messages.testimonial_3') }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="video-wrap" style="position: absolute; height: 100%; z-index: 1;">
+                    <div class="video-overlay" style="background: rgba(0,0,0,0.7);"></div>
+                </div>
+
+            </section>
+
+            <section id="section-gallery">
+
+                <div class="heading-block bottommargin-lg center clearfix">
+                    <h1>{{ trans('messages.gallery') }}</h1>
+                </div>
+
+                <div class="masonry-thumbs col-6 clearfix" data-big="3" data-lightbox="gallery">
+                    {% for i in 1..21  %}
+                        <a href="/images/gallery/gallery{{ i }}.jpg" data-lightbox="gallery-item">
+                            <img class="image_fade" src="/images/gallery/gallery{{ i }}.jpg" alt="Psicotango">
+                            <span class="i-overlay on-hover"><img src="/images/icons/image.png" alt="Psicotango"></span>
+                        </a>
+                    {% endfor %}
+                </div>
+
+            </section>
+
+            <div id="section-contact" class="row norightmargin topmargin nobottommargin common-height">
+                <div class="heading-block bottommargin-lg center clearfix">
+                    <h1>{{ trans('messages.contactus') }}</h1>
+                </div>
+
+                <div id="headquarters-map" class="col-md-8 gmap">
+                    <iframe src="https://maps.google.com/maps?q=Balvanera%2C%20Buenos%20Aires&t=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 dark" style="background-color: #333;">
+                    <div style="padding: 40px;">
+                        <h4 class="font-body t600 ls1">{{ trans('messages.doubts') }}</h4>
+
+                        <div style="font-size: 15px; line-height: 1.7;">
+                            <address style="line-height: 1.7;">
+                                Teniente Peron 2900<br>
+                                Balvanera, Buenos Aires<br><br>
+                                <abbr title="Phone Number"><strong>Teléfono:</strong></abbr> (+54) 11 4870500<br>
+
+                                <br>
+
+                                <div class="fb-messengermessageus"
+                                     messenger_app_id="1987012354703452"
+                                     page_id="1573003909658313"
+                                     color="blue"
+                                     size="xlarge">
+                                </div>
+
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- #content end -->
 {% endblock %}

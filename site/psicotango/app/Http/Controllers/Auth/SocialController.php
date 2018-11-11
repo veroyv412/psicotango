@@ -22,6 +22,6 @@ class SocialController extends Controller
         $user->generateToken();
         auth()->login($user);
 
-        return redirect()->to('/');
+        return redirect()->to('/courses');
     }
 }

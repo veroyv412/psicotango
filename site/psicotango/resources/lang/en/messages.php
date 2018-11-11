@@ -68,7 +68,7 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     'prices_title' => 'online courses <span>prices</span>',
     'module_one' => 'Module One',
     'module_two' => 'Module Two',
-    'seminary' => 'Seminary',
+    'seminary' => 'PROMO! Seminary',
     'get_course' => 'Get Course',
 
     //section-testimonials
@@ -149,4 +149,21 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     '214'   => 'The Document Number is required',
     '334' => 'The Document Number is invalid',
     '316' => 'Card Holder name is invalid',
+
+    'promotional' => 'Promotional',
+    'get_your_course_now' => 'Get your online course right now!',
+
+    'welcome_payment' => 'Welcome to Psicotango, please enjoy these courses!',
+    'error_with_payment' => 'Oups, there was an error with your payment, please try again later.',
+
+    'my_courses' => 'My Courses',
+
+    'profile' => 'Profile',
+    'upgrade' => 'Upgrade Course',
+    'logout' => 'Logout',
+
+    'invalid_lesson' => 'The course is invalid',
+
+    'hello' => 'Hello',
+    'welcome_message' => 'Welcome to Psicotango. We have a great variety of online courses for you to learn and enjoy. Please fill free to contact us any time.'
 ];

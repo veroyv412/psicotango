@@ -73,7 +73,7 @@ return [
     'prices_title' => 'precio de los <span>cursos online</span>',
     'module_one' => 'Módulo Uno',
     'module_two' => 'Módulo Dos',
-    'seminary' => 'Seminario',
+    'seminary' => 'PROMO! Seminario',
     'get_course' => 'Adquirir Curso',
 
     //section-testimonials
@@ -154,4 +154,22 @@ return [
     '214'   => 'El Numero de Documento es requerido',
     '334' => 'El Numero de Documento es invalido',
     '316' => 'El Numero de la tarjeta es requerido es invalido',
+
+    'promotional' => 'Promocional',
+    'get_your_course_now' => 'Obtene el curso ahora!',
+
+    'welcome_payment' => 'Bienvenido a Psicotango. A partir de este momento usted tiene acceso a dichos cursos cada vez que quiere acceder a ellos.',
+    'error_with_payment' => 'Oups, ha habido un error con el pago. Vuelva a intetarlo mas tarde',
+
+    'my_courses' => 'Mis Cursos',
+
+    'profile' => 'Mis Datos',
+    'upgrade' => 'Actualizar Curso',
+    'logout' => 'Logout',
+
+    'invalid_lesson' => 'El Curso online es invalido',
+
+    //Welcome Email
+    'hello' => 'Hola',
+    'welcome_message' => 'Bienvenidos a Psicotango. Tenemos una variedad de cursos para aprender y disfrutar la cantidad de veces que usted quiera. Ante cuallquier inquietud no dude en comunicarse.'
 ];

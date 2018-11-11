@@ -7,8 +7,6 @@ use TwigBridge\Facade\Twig;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
-use Mcamara\LaravelLocalization\LaravelLocalization;
-
 
 class HomeController extends Controller
 {
@@ -33,14 +31,12 @@ class HomeController extends Controller
     public function getHome(Request $request){
         if ( !empty(Auth::check()) ){
             $user = Auth::user();
-            if ( !empty($user->plan_id) ){
-                return Twig::render('auth/index', []);
-            } else {
+            if ( empty($user->plan_id) ){
                 return Twig::render('auth/select-plan', []);
             }
-        } else {
-            return Twig::render('index', []);
         }
+
+        return Twig::render('index', ['tab' => 'home']);
     }
 
     public function getMercadoPagoConnect(Request $request){
@@ -92,6 +88,20 @@ class HomeController extends Controller
     }
     
     /* Email */
+    public function getEmailWelcome(Request $request, $plan_id){
+        $plan = \Models\Plan::find($plan_id);
+        $loggedUser = Auth::user();
+
+        Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($loggedUser){
+            $m->from('psicotango@gmail.com', 'Psicotango');
+            $m->to('veroyv412@gmail.com', 'Veronica')->subject('Bienvenidos a Psicotango');
+        });
+
+        return Twig::render('emails.welcome', [
+            'plan' => $plan
+        ]);
+    }
+
     public function getEmailUserByDeal(Request $request){
         $loggedUser = Auth::user();
         $deal = \Models\Deal::with('category')

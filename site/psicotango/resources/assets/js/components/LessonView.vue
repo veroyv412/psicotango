@@ -1,14 +1,27 @@
 <template>
-    <div class="view-lesson">
+    <div class="view-lesson" v-if="lesson.youtube_id != ''">
         <div class="fancy-title title-bottom-border">
             <h1 id="lesson-title">{{lesson.name}}</h1>
         </div>
 
-        <div id="player" class="player"  style="height: 450px; width: 100%;">Loading...</div>
+        <div class="fluid-width-video-wrapper">
+            <div id="player" class="player"  style="height: 450px; width: 100%;">Loading...</div>
+        </div>
 
         <div class="row topmargin">
-            <div class="col-xs-6 text-left"><a :href="'/lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0"><< Previous</a></div>
-            <div class="col-xs-6 text-right"><a :href="'/lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0">Next >></a></div>
+            <div class="col-xs-6 text-left"><a :href="'/lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0" class="button button-3d button-rounded button-black"><< Previous</a></div>
+            <div class="col-xs-6 text-right"><a :href="'/lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0" class="button button-3d button-rounded button-black">Next >></a></div>
+        </div>
+    </div>
+    <div class="view-lesson" v-else-if="lesson.youtube_id == ''">
+        <div class="fancy-title title-bottom-border">
+            <h1 id="lesson-title">{{lesson.name}}</h1>
+        </div>
+
+        <img :src="lesson.youtube_image" :alt="lesson.name">
+
+        <div class="row topmargin">
+            <div class="col-xs-12 text-right"><a href="javascript:window.print();" class="button button-3d button-rounded button-black"><i class="icon-print"></i>Print</a></div>
         </div>
     </div>
 </template>
@@ -33,6 +46,9 @@
                             var options = {
                                 videoURL: 'pBSV2tOqzZ4',
                                 containment:'#player',
+                                showControls: true,
+                                realfullscreen: true,
+                                mute:false,
                                 mobileFallbackImage: response.data.data.youtube_image,
                                 playOnlyIfVisible  : false,
                                 ratio:'16/9',
