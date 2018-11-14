@@ -9,8 +9,11 @@
         </div>
 
         <div class="row topmargin">
-            <div class="col-xs-6 text-left"><a :href="'/lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0" class="button button-3d button-rounded button-black"><< Previous</a></div>
-            <div class="col-xs-6 text-right"><a :href="'/lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0" class="button button-3d button-rounded button-black">Next >></a></div>
+            <div class="col-xs-4 text-left"><a :href="'/lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0" class="button button-3d button-rounded button-black"><< Anterior</a></div>
+            <div class="col-xs-8 text-right">
+                <a href="javascript:jQuery('#player').YTPFullscreen()" id="fullscreen" class="button button-3d button-rounded button-black"><i class="icon-fullscreen"></i> Fullscreen</a>
+                <a :href="'/lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0" class="button button-3d button-rounded button-black">Siguiente >></a>
+            </div>
         </div>
     </div>
     <div class="view-lesson" v-else-if="lesson.youtube_id == ''">
@@ -44,7 +47,7 @@
                         jQuery(function(){
                             var first = true;
                             var options = {
-                                videoURL: 'pBSV2tOqzZ4',
+                                videoURL: 'oTuTfkPN3E0',
                                 containment:'#player',
                                 showControls: true,
                                 realfullscreen: true,
@@ -56,11 +59,25 @@
                                 optimizeDisplay: true,
                                 remember_last_time: true,
                                 showYTLogo: false,
-                                stopMovieOnBlur: true,
                                 anchor: 'center, center',
                                 onReady: function( player ) {
                                     if (first){
-                                        jQuery('#player').YTPChangeMovie({videoURL: response.data.data.youtube_id});
+                                        jQuery('#player').YTPChangeMovie(
+                                            {
+                                                videoURL: response.data.data.youtube_id,
+                                                showControls: true,
+                                                realfullscreen: true,
+                                                mute:false,
+                                                mobileFallbackImage: response.data.data.youtube_image,
+                                                playOnlyIfVisible  : false,
+                                                ratio:'16/9',
+                                                autoPlay:true,
+                                                optimizeDisplay: true,
+                                                remember_last_time: true,
+                                                showYTLogo: false,
+                                                anchor: 'center, center',
+                                            });
+
                                         first = false;
                                     }
                                 }
