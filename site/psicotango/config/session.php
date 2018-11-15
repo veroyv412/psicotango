@@ -122,7 +122,7 @@ return [
     |
     */
 
-    'cookie' => 'psicotango_session',
+    'cookie' => env('SESSION_COOKIE', null),
 
     /*
     |--------------------------------------------------------------------------
