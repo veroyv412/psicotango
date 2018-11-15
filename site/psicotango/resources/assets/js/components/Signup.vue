@@ -31,9 +31,9 @@
             <span class="help-block" v-if="form.errors.has('password_confirmation')" v-text="form.errors.get('password_confirmation')"></span>
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label v-html="$t('messages.signup_terms')"></label>
-        </div>
+        </div>-->
 
         <button type="submit" class="button button-rounded button-green btn-block" :disabled="form.errors.any()">
             {{ save }}

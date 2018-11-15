@@ -171,6 +171,10 @@ class HomeController extends Controller
         return redirect('/');
     }
 
+    public function getPaypalCancel(Request $request){
+        return Twig::render('paypal-cancel', ['tab' => 'paypal-cancel']);
+    }
+
     public function postCheckoutPlan(Request $request, AjaxResponse $ajax){
         $trans = app('translator');
 

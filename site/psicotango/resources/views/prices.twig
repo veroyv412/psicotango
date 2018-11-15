@@ -1,7 +1,7 @@
 
 
 <div class="pricing bottommargin clearfix">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 
         <div class="pricing-box">
             <div class="pricing-title">
@@ -13,6 +13,9 @@
             <div class="pricing-features">
                 <ul>
                     <li>4 Videos de 4 Cursos Introductorios</li>
+                    <li></li>
+                    <li><b>Adquiriendo este Módulo, puede abonar u$d 50 extra para el Módulo 2.</b></li>
+                    <li><b>El Módulo 2 incluye 4 Videos de Nivel Avanzado.</b></li>
                 </ul>
             </div>
             <div class="pricing-action">
@@ -26,7 +29,7 @@
 
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 
         <div class="pricing-box best-price">
             <div class="pricing-title">
@@ -59,30 +62,5 @@
 
     </div>
 
-    <div class="col-sm-4">
 
-        <div class="pricing-box ">
-            <div class="pricing-title">
-                <h3>{{ trans('messages.module_two') }}</h3>
-            </div>
-            <div class="pricing-price">
-                <span class="price-unit">u$d</span>50
-            </div>
-            <div class="pricing-features">
-                <ul>
-                    <li>4 Videos de 4 Cursos Introductorios</li>
-                    <li>+ 4 Videos de 4 Cursos Nivel Avanzado</li>
-
-                </ul>
-            </div>
-            <div class="pricing-action">
-                {% if Auth.user() is null  %}
-                    <a href="{{ l10n_url_by_route('signup') }}/signup" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
-                {% else %}
-                    <a href="/checkout/plan/2" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
-                {% endif %}
-            </div>
-        </div>
-
-    </div>
 </div>

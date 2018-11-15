@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+
+{% block head %}
+    <head>
+        <title>{% block title %}Psicotango | Un Abrazo Sanador{% endblock %}</title>
+
+        <!-- These 3 MUST come first for Bootstrap to work. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ff0000">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!-- Stylesheets
+        ============================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/css/vendor.css" type="text/css" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="/images/favicon.png">
+        <link rel="apple-touch-icon" href="#">
+        <link rel="apple-touch-icon" sizes="72x72" href="#">
+        <link rel="apple-touch-icon" sizes="114x114" href="#">
+
+        <script>
+            window.Laravel = { 'csrfToken': '{{ csrf_token() }}'};
+            window.baseURL = '{{ url('/') }}';
+        </script>
+    </head>
+{% endblock %}
+
+<body class="sticky-footer stretched">
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1987012354703452',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.0'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        {%  if LaravelLocalization.getCurrentLocale() == 'es' %}
+        js.src = "https://connect.facebook.net/es_ES/sdk.js";
+        {% else %}
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        {% endif %}
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="application clearfix">
+
+    <section id="slider" class="slider-parallax full-screen with-header force-full-screen clearfix slider-parallax-visible">
+
+        <div class="slider-parallax-inner">
+
+            <div class="full-screen force-full-screen dark" style="background: url(/images/fondo_psicotango.png) center center / cover no-repeat;">
+
+                <div class="container clearfix">
+                    <div class="emphasis-title vertical-middle center">
+                        <h2 data-animate="fadeInDown"><strong>Oh!! Que pena..</strong></h2>
+                        <h2 data-animate="fadeInDown">Has cancelado el pago!</h2>
+                        <h3 data-animate="fadeInUp" data-delay="400">No importa, aun estas a tiempo de volver a adquirirlo</h3>
+                        <a data-animate="fadeInUp" data-delay="800" href="{{ l10n_url_by_route('login') }}/logout" class="button button-rounded button-reveal button-large button-black"><i class="icon-home"></i><span>{{ trans('messages.home') }}</span></a>
+                        <a data-animate="fadeInUp" data-delay="800" href="{{ l10n_url_by_route('login') }}/courses" class="button button-rounded button-reveal button-large button-red"><i class="icon-coffee2"></i><span>{{ trans('messages.get_course') }}</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4"></script>
+<script type="text/javascript" src="/js/vendor.js"></script>
+</body>
+
+</html>
+
