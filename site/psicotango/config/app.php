@@ -185,8 +185,6 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
 
         MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
-
-        Netshell\Paypal\PaypalServiceProvider::class,
     ],
 
     /*
@@ -237,7 +235,6 @@ return [
         'Twig' => TwigBridge\Facade\Twig::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
-        'Paypal' => Netshell\Paypal\Facades\Paypal::class,
     ],
 
 ];
