@@ -164,7 +164,7 @@ class HomeController extends Controller
             });
 
             Session::flash('success', $trans->get('messages.welcome_payment'));
-            return redirect('/');
+            return redirect('/courses');
         }
 
         Session::flash('error', $trans->get('messages.error_with_payment'));
