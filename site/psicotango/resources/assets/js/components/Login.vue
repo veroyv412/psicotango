@@ -49,8 +49,14 @@
                 this.save = this.$t('messages.sending_information');
                 this.form.setFormElement(document.getElementById('loginForm'));
                 this.form.post('/login')
-                        .then( response => { window.location.href = "/" })
-                        .catch( error => { this.save = this.$t('messages.save'); } );
+                        .then( response => {
+                            //console.log(response);
+                            window.location.href = "/";
+                        })
+                        .catch( error => {
+                            console.log(error);
+                            this.save = this.$t('messages.save');
+                        });
             }
         },
     }
