@@ -16,7 +16,6 @@
             <div class="row">
                 <div class="col-xs-4 text-left"><a :href="'/lesson/'+ lesson.privious_lesson" id="previous" v-if="lesson.privious_lesson != 0" class="button button-3d button-rounded button-black"><< Anterior</a></div>
                 <div class="col-xs-8 text-right">
-                    <a href="javascript:jQuery('#player').YTPFullscreen()" id="fullscreen" class="button button-3d button-rounded button-black"><i class="icon-fullscreen"></i> Fullscreen</a>
                     <a :href="'/lesson/'+ lesson.next_lesson" id="next" v-if="lesson.next_lesson != 0" class="button button-3d button-rounded button-black">Siguiente >></a>
                 </div>
             </div>
@@ -51,7 +50,7 @@
                 'autoplay': true,
                 'related': false,
                 'info': false,
-                'controls': false,
+                'controls': true,
                 'height': '450px',
                 'width': '100%',
                 'modestBranding': true
