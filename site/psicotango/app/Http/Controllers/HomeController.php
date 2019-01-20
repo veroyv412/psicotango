@@ -39,6 +39,14 @@ class HomeController extends Controller
         return Twig::render('index', ['tab' => 'home']);
     }
 
+    public function getTerms(Request $request){
+        return Twig::render('terms');
+    }
+
+    public function getPolicy(Request $request){
+        return Twig::render('policy');
+    }
+
     public function getMercadoPagoConnect(Request $request){
         $applicationId = config('mercadopago.credentials.application_id');
 

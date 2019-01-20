@@ -21,6 +21,8 @@ Route::group(
 {
     Route::get('/', 'HomeController@getHome')->name('root');
 
+    Route::get('/terms', 'HomeController@getTerms');
+    Route::get('/policy', 'HomeController@getPolicy');
 
     //Authentication
     Route::get('/login', 'Auth\LoginController@getLogin')->name('login');

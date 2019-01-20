@@ -98,7 +98,7 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     'email' => 'Email',
     'password' => 'Password',
     'repeat_password' => 'Repeat Password',
-    'signup_terms' => 'By registering you are accepting this <a href="/terms">Terms and Conditions</a>',
+    'signup_terms' => 'By registering you are accepting this <a href="/terms" target="_blank">Terms and Conditions</a>',
     'signup_button_text' => 'Signup',
     
     //Logged User - Index page
