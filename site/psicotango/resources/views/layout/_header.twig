@@ -25,10 +25,10 @@
         </div>
 
         {% if Auth.user() is null %}
-        <div class="col_half col_last fright nobottommargin">
+        {#<div class="col_half col_last fright nobottommargin">
             <a href="{{ l10n_url_by_route('login') }}/login" class="button button-rounded button-reveal button-large button-red"><i class="icon-lock"></i><span>{{ trans('messages.login') }}</span></a>
             <a href="{{ l10n_url_by_route('signup') }}/signup" class="button button-rounded button-reveal button-large button-black"><i class="icon-user"></i><span>{{ trans('messages.signup') }}</span></a>
-        </div>
+        </div>#}
         {% endif %}
 
     </div>
@@ -79,8 +79,8 @@
 
                 <ul class="_one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
                     {% if Auth.user() is null %}
-                    <li class="button button-rounded button-red button-large visible-xs" style="margin-bottom: 10px !important"><a href="{{ l10n_url_by_route('login') }}/login">{{ trans('messages.login') }}</a></li>
-                    <li class="button button-rounded button-black button-large visible-xs" style="margin-bottom: 20px !important"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>
+                    {#<li class="button button-rounded button-red button-large visible-xs" style="margin-bottom: 10px !important"><a href="{{ l10n_url_by_route('login') }}/login">{{ trans('messages.login') }}</a></li>
+                    <li class="button button-rounded button-black button-large visible-xs" style="margin-bottom: 20px !important"><a href="{{ l10n_url_by_route('signup') }}/signup" >{{ trans('messages.signup') }}</a></li>#}
                     {% endif %}
                     <li {% if tab == 'home' %}class="current"{% endif %}><a href="/"><div>{{ trans('messages.home') }}</div></a></li>
                     <li><a href="/#section-psicotango"><div>Psicotango</div></a></li>
