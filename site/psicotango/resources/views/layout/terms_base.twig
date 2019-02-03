@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+
+{% block head %}
+    <head>
+        <title>{% block title %}Psicotango | Un Abrazo Sanador{% endblock %}</title>
+
+        <!-- These 3 MUST come first for Bootstrap to work. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ff0000">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!-- Stylesheets
+	============================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/css/vendor.css" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="/images/favicon.png">
+        <link rel="apple-touch-icon" href="#">
+        <link rel="apple-touch-icon" sizes="72x72" href="#">
+        <link rel="apple-touch-icon" sizes="114x114" href="#">
+
+        <script>
+            window.Laravel = { 'csrfToken': '{{ csrf_token() }}', 'api_token': '{{ Auth.user().api_token }}', 'lang': '{{ LaravelLocalization.getCurrentLocale() }}' };
+            window.baseURL = '{{ url('/') }}';
+        </script>
+
+        <script src='https://www.youtube.com/iframe_api' async></script>
+    </head>
+{% endblock %}
+
+<body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapper" class="application clearfix">
+
+        <div class="clear"></div>
+
+        <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url(/images/caminito.jpg); padding: 120px 0px; background-position: 50% -15px;" data-stellar-background-ratio="0.3">
+
+            <div class="container clearfix">
+                <h1>{% block h1 %}{% endblock %}</h1>
+                <span>{% block h2 %}{% endblock %}</span>
+                {% block breadcrum %}{% endblock %}
+            </div>
+
+        </section>
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+            <div class="content-wrap">
+                <div class="col-xs-12">
+                    <div class="container-fullwidth clearfix">
+                        {% if Session.get('success') %}
+                            <div class="style-msg successmsg">
+                                <div class="sb-msg"><i class="icon-thumbs-up"></i><strong>Yay!</strong> {{ Session.get('success') }}</div>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            </div>
+                        {% endif %}
+
+                        {% if Session.get('error') %}
+                            <div class="style-msg errormsg">
+                                <div class="sb-msg"><i class="icon-remove"></i><strong>Oh snap!</strong> {{ Session.get('error') }}</div>
+                            </div>
+                        {% endif %}
+
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section><!-- #content end -->
+
+        <div class="clear"></div>
+
+        {{ include('layout/_footer', {}) }}
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/vendor.js"></script>
+
+</body>
+
+</html>
+

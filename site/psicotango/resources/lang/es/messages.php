@@ -103,7 +103,7 @@ return [
     'email' => 'Email',
     'password' => 'Contraseña',
     'repeat_password' => 'Repetir Contraseña',
-    'signup_terms' => 'Al registrarse usted esta de acuerdo con los <a href="/terms">Términos y Condiciones</a>',
+    'signup_terms' => 'Al registrarse usted esta de acuerdo con los <a href="/terms" target="_blank">Términos y Condiciones</a>',
     'signup_button_text' => 'Registrate!',
 
     //Logged User - Index page
