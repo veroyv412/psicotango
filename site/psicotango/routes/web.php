@@ -71,6 +71,9 @@ Route::get('/mpconnect-redirect', 'HomeController@getMercadoPagoConnectRedirect'
 // EMAIL
 Route::get('/email/welcome/plan/{plan_id}', 'HomeController@getEmailWelcome');
 
+Route::get('/paypal/transaction', 'Auth\HomeController@getPaypalTransaction');
+Route::get('/paypal/execution', 'Auth\HomeController@getPaypalExecution');
+
 //Legacy from other project
 /*Route::get('/category/{category_slug}', 'SearchController@getCategorySearch');
 Route::get('/tags/{tag}', 'SearchController@getTagSearch');

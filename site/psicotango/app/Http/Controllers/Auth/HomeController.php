@@ -10,6 +10,8 @@ use TwigBridge\Facade\Twig;
 use App\Services\AjaxResponse;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
+use PayPal\Api\PaymentExecution;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -125,50 +127,92 @@ class HomeController extends Controller
 
         $payment = \PayPal\Api\Payment::get($request->get('paymentId'), $this->_paypalContext);
         if (!empty($payment)){
-            $user = Auth::user();
-            $user->plan_id = $plan_id;
-            $user->save();
 
-            $plan = \Models\Plan::find($plan_id);
+            try {
+                $execution = new PaymentExecution();
+                $execution->setPayerId($request->get('PayerID'));
 
-            $registration = new \Models\Registration();
-            $registration->user_id = $user->id;
-            $registration->user_name = $user->name;
-            $registration->user_lastname = $user->last_name;
-            $registration->plan_id = $plan_id;
-            $registration->price = number_format($plan->price, 2);
-            $registration->payment_id = $request->get('paymentId');
+                $result = $payment->execute($execution, $this->_paypalContext);
 
-            $fee = (25*$plan->price)/100;
-            $registration->fee_price = number_format( $fee, 2);
-            $registration->save();
+                Log::debug('===== LOG for PaymentID : ' . $request->get('paymentId') . ' =====');
+                Log::debug($result);
 
-            Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
-                $m->from('info@psicotango.com', 'Psicotango');
-                $m->to($user->email, $user->name)->subject('Bienvenidos a Psicotango');
-            });
+                $user = Auth::user();
+                $user->plan_id = $plan_id;
+                $user->save();
 
-            Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
-                $m->from('psicotango@gmail.com', 'Psicotango');
-                $m->to('veroyv412@gmail.com', 'Veronica')->subject('Bienvenidos a Psicotango');
-            });
+                $plan = \Models\Plan::find($plan_id);
 
-            Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
-                $m->from('psicotango@gmail.com', 'Psicotango');
-                $m->to('perimonica1@gmail.com', 'Monica Peri')->subject('Bienvenidos a Psicotango');
-            });
+                $registration = new \Models\Registration();
+                $registration->user_id = $user->id;
+                $registration->user_name = $user->name;
+                $registration->user_lastname = $user->last_name;
+                $registration->plan_id = $plan_id;
+                $registration->price = number_format($plan->price, 2);
+                $registration->payment_id = $request->get('paymentId');
+                $registration->paypal_payer_id = $request->get('PayerID');
+                $registration->method = 'paypal';
 
-            Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
-                $m->from('psicotango@gmail.com', 'Psicotango');
-                $m->to('nacholavalle@hotmail.com', 'Ignacio Lavalle')->subject('Bienvenidos a Psicotango');
-            });
+                $fee = (25*$plan->price)/100;
+                $registration->fee_price = number_format( $fee, 2);
+                $registration->save();
 
-            Session::flash('success', $trans->get('messages.welcome_payment'));
-            return redirect('/courses');
+                /*Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
+                    $m->from('info@psicotango.com', 'Psicotango');
+                    $m->to($user->email, $user->name)->subject('Bienvenidos a Psicotango');
+                });
+
+                Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
+                    $m->from('psicotango@gmail.com', 'Psicotango');
+                    $m->to('veroyv412@gmail.com', 'Veronica')->subject('Bienvenidos a Psicotango');
+                });
+
+                Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
+                    $m->from('psicotango@gmail.com', 'Psicotango');
+                    $m->to('perimonica1@gmail.com', 'Monica Peri')->subject('Bienvenidos a Psicotango');
+                });
+
+                Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
+                    $m->from('psicotango@gmail.com', 'Psicotango');
+                    $m->to('nacholavalle@hotmail.com', 'Ignacio Lavalle')->subject('Bienvenidos a Psicotango');
+                });*/
+
+                Session::flash('success', $trans->get('messages.welcome_payment'));
+                return redirect('/courses');
+            } catch (\PayPal\Exception\PayPalConnectionException $ex) {
+                Session::flash('error', $ex->getMessage());
+                return redirect('/');
+            }
         }
 
         Session::flash('error', $trans->get('messages.error_with_payment'));
         return redirect('/');
+    }
+
+    public function getPaypalTransaction(Request $request){
+        try {
+            $payment = \PayPal\Api\Payment::get($request->get('paymentId'), $this->_paypalContext);
+            dd($payment);
+        } catch (Exception $e){
+            dd($e->getMessage());
+        }
+
+    }
+
+    public function getPaypalExecution(Request $request){
+        try {
+            $payment = \PayPal\Api\Payment::get($request->get('paymentId'), $this->_paypalContext);
+
+            $execution = new PaymentExecution();
+            $execution->setPayerId($request->get('PayerID'));
+
+            $result = $payment->execute($execution, $this->_paypalContext);
+
+            dd($result);
+        } catch (Exception $e){
+            dd($e->getMessage());
+        }
+
     }
 
     public function getPaypalCancel(Request $request){
