@@ -71,7 +71,7 @@ Route::get('/mpconnect-redirect', 'HomeController@getMercadoPagoConnectRedirect'
 // EMAIL
 Route::get('/email/welcome/plan/{plan_id}', 'HomeController@getEmailWelcome');
 
-Route::get('/paypal/transaction', 'Auth\HomeController@getPaypalTransaction');
+Route::get('/paypal/payment', 'Auth\HomeController@getPaypalPayment');
 Route::get('/paypal/execution', 'Auth\HomeController@getPaypalExecution');
 
 //Legacy from other project

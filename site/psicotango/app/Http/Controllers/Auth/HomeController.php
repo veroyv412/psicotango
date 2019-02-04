@@ -157,7 +157,7 @@ class HomeController extends Controller
                 $registration->fee_price = number_format( $fee, 2);
                 $registration->save();
 
-                /*Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
+                Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
                     $m->from('info@psicotango.com', 'Psicotango');
                     $m->to($user->email, $user->name)->subject('Bienvenidos a Psicotango');
                 });
@@ -175,7 +175,7 @@ class HomeController extends Controller
                 Mail::send('emails.welcome', ['plan' => $plan], function ($m) use ($user){
                     $m->from('psicotango@gmail.com', 'Psicotango');
                     $m->to('nacholavalle@hotmail.com', 'Ignacio Lavalle')->subject('Bienvenidos a Psicotango');
-                });*/
+                });
 
                 Session::flash('success', $trans->get('messages.welcome_payment'));
                 return redirect('/courses');
@@ -189,7 +189,7 @@ class HomeController extends Controller
         return redirect('/');
     }
 
-    public function getPaypalTransaction(Request $request){
+    public function getPaypalPayment(Request $request){
         try {
             $payment = \PayPal\Api\Payment::get($request->get('paymentId'), $this->_paypalContext);
             dd($payment);
