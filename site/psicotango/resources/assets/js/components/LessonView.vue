@@ -43,45 +43,40 @@
         props: ['lesson_id'],
 
         data(){
-            return { lesson: [], duration: '00:00' }
+            return { lesson: {}, duration: '00:00' }
         },
         mounted() {
 
             var _lessons = [];
             var _this = this;
             axios.get('/api/lesson/'+this.lesson_id).then(response => {
-                setTimeout(function(){
-                    const player = new YTPlayer('#player2', {
-                        'autoplay': true,
-                        'related': false,
-                        'info': false,
-                        'controls': true,
-                        'height': '450px',
-                        'width': '100%',
-                        'modestBranding': true
-                    });
+                const player = new YTPlayer('#player2', {
+                    'autoplay': true,
+                    'related': false,
+                    'info': false,
+                    'controls': true,
+                    'height': '450px',
+                    'width': '100%',
+                    'modestBranding': true
+                });
 
-                    this.lesson = response.data.data;
-                    player.load(response.data.data.youtube_id, true);
+                this.lesson = response.data.data;
+                console.log(this.lesson);
+                player.load(response.data.data.youtube_id, true);
 
-                    player.on('playing', () => {
-                        const time = player.getDuration();
-                        const minutes = Math.floor(time / 60);
-                        const seconds = Math.floor(time - minutes * 60);
+                player.on('playing', () => {
+                    const time = player.getDuration();
+                    const minutes = Math.floor(time / 60);
+                    const seconds = Math.floor(time - minutes * 60);
 
-                        _this.duration = minutes + ':' + seconds;
+                    _this.duration = minutes + ':' + seconds;
 
-                        //console.log($(".ytp-share-button"));
-                    })
+                    //console.log($(".ytp-share-button"));
+                })
 
-                    player.on('error', (err) => {
-                        console.log(err);
-                    });
-                }, 3000)
-
-
-
-
+                player.on('error', (err) => {
+                    console.log(err);
+                });
             }, response => {});
         }
     }
