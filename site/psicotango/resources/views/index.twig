@@ -192,7 +192,7 @@
                     <div class="heading-block center">
                         <h1>{{ trans('messages.online_courses_title') | raw }}</h1>
                         <h5>
-                            Inscribite en <a href="www.psicotango.com.ar">www.psicotango.com.ar</a> y podrás capacitarte a nivel introductorio o avanzado del método, desde cualquier parte del mundo y a tus tiempos!
+                            Inscribite en <a href="https://psicotango.com.ar/">www.psicotango.com.ar</a> y podrás capacitarte a nivel introductorio o avanzado del método, desde cualquier parte del mundo y a tus tiempos!
 
                             <br>En nuestros ocho videos de 20 minutos cada uno, aproximadamente, encontrarás teoría y práctica de la danza del tango como herramienta sanadora.
 
@@ -222,6 +222,29 @@
                 ============================================= -->
                 <div class="col-padding clearfix">
                     {{ include('prices') }}
+                </div>
+
+                <div class="container clearfix">
+                    <div class="promo promo-light bottommargin clearfix">
+                        <div class="col-xs-12 col-md-3">
+                            <img src="/images/monica_cursos_certificado.jpeg" alt="Curso" class="thumbnail">
+                        </div>
+                        <div class="col-xs-12 col-md-7">
+                            <h5>
+                                En el marco del SEMINARIO DE PSICOTANGO ,se entregó a la Lic.Cristina Narbono el Certificado de ESPECIALISTA  EN PSICOTANGO.
+                                Habiendo cursado sus 100 hrs.teorico /prácticas  que incluye el CURSO A DISTANCIA  y  aprobado el nivel 1 de Tango del Sistema Dinzel.
+                                FELICITACIONES!!
+                            </h5>
+
+                            <p>
+                                {% if Auth.user() is null  %}
+                                    <a href="{{ l10n_url_by_route('signup') }}/signup" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
+                                {% else %}
+                                    <a href="/checkout/plan/1" class="btn btn-danger btn-block btn-sm">{{ trans('messages.get_course') }}</a>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </section>
