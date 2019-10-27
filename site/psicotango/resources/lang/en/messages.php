@@ -68,7 +68,7 @@ professor of Tai-Chi-Chuan and integrates both disciplines.',
     'prices_title' => 'online courses <span>prices</span>',
     'module_one' => 'Module One',
     'module_two' => 'Module Two',
-    'seminary' => 'PROMO! Seminary',
+    'seminary' => 'NEW PROMOTION! Seminary',
     'get_course' => 'Get Course',
 
     //section-testimonials

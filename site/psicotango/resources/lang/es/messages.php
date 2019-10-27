@@ -73,7 +73,7 @@ return [
     'prices_title' => 'precio de los <span>cursos online</span>',
     'module_one' => 'Módulo Uno',
     'module_two' => 'Módulo Dos',
-    'seminary' => 'PROMO! Seminario',
+    'seminary' => 'NUEVA PROMO! Seminario',
     'get_course' => 'Adquirir Curso',
 
     //section-testimonials
@@ -83,7 +83,7 @@ return [
     'testimonial_3' => 'Psicotango un espacio contenedor y confortable donde bailar el tango es posible desde la integridad primaria del ritual de danzar ,hasta los aspectos culturales ancestrales de nuestro tango mas tradicional y la incorporaciòn de los aspectos contemporàneos modernos recientes, dandonos la posibilidad de recorrenos en el mito y la propia percepcion de los roles y conductas culturales a traves del anàlisis de la naturaleza y circustancia del movimiento experimentando la danza y permintiendo que aflore la forma propia de bailar el Tango. ',
 
     //section-gallery
-    'gallery' => 'Gallería',
+    'gallery' => 'Galería',
 
     //section-contactus
     'contactus_title' => 'Contáctenos',
@@ -155,7 +155,7 @@ return [
     '334' => 'El Numero de Documento es invalido',
     '316' => 'El Numero de la tarjeta es requerido es invalido',
 
-    'promotional' => 'Promocional',
+    'promotional' => 'NUEVA Promocion!',
     'get_your_course_now' => 'Obtene el curso ahora!',
 
     'welcome_payment' => 'Bienvenido a Psicotango. A partir de este momento usted tiene acceso a dichos cursos cada vez que quiere acceder a ellos.',
