@@ -182,7 +182,7 @@ export default {
             "ignacio_lavalle_description": "Nacido en Bs. As. Obtuvo la Licenciatura en Psicología (UBA) y luego realizó\n                                    una maestría en Psicología Analítica, Fundación C.G. Jung de PA. Es escritor e\n                                    investigador de los efectos del tango-danza. Estudió tango desde 2002 en diversas\n                                    escuelas para quedarse en lo de los Dinzel. Coordina talleres de tango en hospitales\n                                    públicos con la finalidad de lograr efectos terapéuticos, así como encuentros de\n                                    Psicotango. Es también profesor de Tai-Chi-Chuan e integra ambas disciplinas.",
             "published_books": "libros <span>publicados<\/span>",
             "online_courses_title": "cursos <span>online<\/span>",
-            "prices_title": "precio de los <span>cursos online<\/span>",
+            "prices_title": "<span>cursos online<\/span>",
             "module_one": "Módulo Uno",
             "module_two": "Módulo Dos",
             "seminary": "Seminario",

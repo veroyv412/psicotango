@@ -316,7 +316,7 @@ export default {
             "online_courses_title": "cursos <span>online</span>",
             "tango_passion_heals": "<span>Tango</span>, una pasión que sana",
             "news": "Novedades",
-            "prices_title": "precio de los <span>cursos online</span>",
+            "prices_title": "<span>cursos online</span>",
             "module_one": "Módulo Uno",
             "module_two": "Módulo Dos",
             "seminary": "PROMO! Seminario",

@@ -70,7 +70,7 @@ return [
     'news' => 'Novedades',
 
     //section-prices
-    'prices_title' => 'precio de los <span>cursos online</span>',
+    'prices_title' => '<span>cursos online</span>',
     'module_one' => 'Módulo Uno',
     'module_two' => 'Módulo Dos',
     'seminary' => 'NUEVA PROMO! Seminario',
