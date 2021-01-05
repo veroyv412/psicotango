@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "animsition": "^4.0.2",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "flexslider": "^2.7.1",
     "vue-filter": "^0.2.5",
     "vue-i18n": "^8.3.0",
